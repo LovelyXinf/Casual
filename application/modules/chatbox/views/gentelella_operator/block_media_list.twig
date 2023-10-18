@@ -1,0 +1,17 @@
+{% for item in items %}
+    <li data-click="add_amedia" data-id="{{ item.id }}" data-src="{{ item.media.mediafile.thumbs.middle }}">
+        <div>
+            <img src="{{ item.media.mediafile.thumbs.big }}" alt="{{ item.media.mediafile.photo_alt }}">
+            {% if item.last_used %}
+                {% helper last_used_str = date_format.tpl_date_format(item.last_used, date_format_st.date_time_literal) %}
+                <div class="chatbox-amedia__last-used" title="{% helper lang.l('text_media_last_used_date', 'chatbox', '', 'button', {'date': last_used_str}) %}">
+                    <i class="fa fa-check"></i>
+                </div>
+            {% endif %}
+        </div>
+    </li>
+{% else %}
+    <li class="empty">
+        {% helper lang.l('empty_user_images', 'chatbox') %}
+    </li>
+{% endfor %}

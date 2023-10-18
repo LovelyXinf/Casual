@@ -1,0 +1,80 @@
+{% if mobile_settings.use_notifications %}
+    <script src="https://www.gstatic.com/firebasejs/5.9.3/firebase.js"></script>
+    <script>
+        // Initialize Firebase
+        let config = {
+            apiKey: "{{ mobile_settings.api_key }}", /* api key from firebase AIzaSyB7IiMhfdqggDbb9z_iUXKp2RXuwXj-M0I */
+            authDomain: "{{ mobile_settings.auth_domain }}", /* заменить на домен из firebase myidoforfun-ab2a2.firebaseapp.com */
+            databaseURL: "{{ mobile_settings.database_url }}", /* заменить на урл из firebase https://myidoforfun-ab2a2.firebaseio.com */
+            projectId: "{{ mobile_settings.project_id }}", /* заменить на project id из firebase myidoforfun-ab2a2 */
+            storageBucket: "{{ mobile_settings.storage_bucket }}", /* заменить из firebase myidoforfun-ab2a2.appspot.com */
+            messagingSenderId: "{{ mobile_settings.messaging_sender_id }}" /* заменить из firebase 352807040534 */
+        };
+        firebase.initializeApp(config);
+    </script>
+    <script>
+        const messaging = firebase.messaging();
+        messaging.usePublicVapidKey("{{ mobile_settings.public_vapid_key }}"); /* Web Push certificates from firefox BFKHvUFrzxWUW5qggz46Hbzpw5n-6tCOz99gsQYm8G5keoeQJVO3wMrZB0KwdNjCU0ynlR5EsAvClM17tFu-Z-4 */
+
+        messaging.requestPermission().then(function() {
+            setFcmToken();
+        }).catch(function(err) {
+            console.log('Unable to get permission to notify.', err);
+        });
+
+        messaging.onTokenRefresh(function() {
+            setFcmToken();
+        });
+
+        messaging.onMessage(function(payload) {
+            if (typeof(notifications) != 'undefined') {
+                let options = {
+                    title: payload.data.title,
+                    text: payload.data.message || '<a href="[more]">{% helper lang.l('view', 'start') %}</a>',
+                    time: 15000,
+                    more: payload.data.link,
+                };
+                notifications.show(options);
+            }
+        });
+
+        function setFcmToken() {
+            messaging.getToken().then(function(token) {
+                if (token) {
+                    sendTokenToServer(token);
+                } else {
+                    sendTokenToServer(false);
+                }
+            }).catch(function(err) {
+                sendTokenToServer(false);
+            });
+        }
+
+        function sendTokenToServer(token) {
+            let deviceId = '';
+
+            if (typeof window.localStorage != 'undefined') {
+                deviceId = window.localStorage.getItem('device_id');
+                let old = window.localStorage.getItem('fcm_token');
+                if (old) {
+                    if (old == token) {
+                        return;
+                    } else {
+                        $.post('{{site_url}}mobile/deleteFcmRegistrationToken', {registration_id: token, device_id: deviceId});
+                    }
+                }
+                if (!deviceId) {
+                    deviceId = 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
+                        let r = Math.random() * 16 | 0, v = c == 'x' ? r : (r & 0x3 | 0x8);
+                        return v.toString(16);
+                    });
+                }
+                window.localStorage.setItem('device_id', deviceId);
+                window.localStorage.setItem('fcm_token', token);
+            }
+            if (token) {
+                $.post('{{site_url}}mobile/setFcmRegistrationToken', {registration_id: token, device_id: deviceId});
+            }
+        }
+    </script>
+{% endif %}

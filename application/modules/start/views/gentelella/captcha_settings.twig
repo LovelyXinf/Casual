@@ -1,0 +1,55 @@
+{% include '@app/header.twig' %}
+<div class="col-md-12 col-sm-12 col-xs-12">
+    <div class="x_panel">
+        <div class="x_content">
+            <form method="post" action="{{data.action}}" name="save_form" enctype="multipart/form-data"
+                  class="form-horizontal form-label-left">
+                <div class="form-group">
+                    <label class="control-label col-md-3 col-sm-3 col-xs-12">
+                        {% helper lang.l('field_captcha_type', 'start') %}:</label>
+                    <div class="col-md-9 col-sm-9 col-xs-12">
+                        <div id="captcha_type" class="btn-group" data-toggle="buttons">
+                            {% for item in captcha.types %}
+                                <label data-captcha="type" data-captcha_type="{{ item }}" class="btn btn-default{% if item == captcha.captcha_type %} active{% endif %}"
+                                       data-toggle-class="btn-primary" data-toggle-passive-class="btn-default">
+                                    <input type="radio" name="data[captcha_type]" value="{{ item }}"{% if item == captcha.captcha_type %} checked{% endif %}>{% helper lang.l('field_captcha_'~item, 'start') %}
+                                </label>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+            <div data-captcha="block" data-captcha_block="google" class="{% if captcha.captcha_type != 'google' %}hide{% endif %}">
+                <div class="form-group">
+                    <label class="control-label col-md-3 col-sm-3 col-xs-12">{% helper lang.l('btn_register', 'start') %}: </label>
+                    <div class="col-md-9 col-sm-9 col-xs-12">
+                        <a href="https://www.google.com/recaptcha/intro/index.html">https://www.google.com/recaptcha/intro/index.html</a>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-md-3 col-sm-3 col-xs-12">{% helper lang.l('field_captcha_google_site_key', 'start') %}: </label>
+                    <div class="col-md-9 col-sm-9 col-xs-12">
+                        <input class="form-control" type="text" value="{{ captcha.site_key }}" name="data[google_site_key]">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-md-3 col-sm-3 col-xs-12">{% helper lang.l('field_captcha_google_secret_key', 'start') %}: </label>
+                    <div class="col-md-9 col-sm-9 col-xs-12">
+                        <input class="form-control" type="text" value="{{ captcha.secret_key }}" name="data[google_secret_key]">
+                    </div>
+                </div>
+            </div>   
+            <button class="btn btn-primary" name="btn_save" value="1">{% helper lang.l('btn_save', 'start') %}</button>
+        </form>    
+    </div>
+</div>    
+</div>    
+<div class="clearfix"></div>
+{% helper utils.jscript('start', 'AdminStart.js') %}
+<script type='text/javascript'>
+    $(function () {
+        new AdminStart({
+            siteUrl: '{{ site_root }}'
+        });
+    });
+</script>
+{% include '@app/footer.twig' %}

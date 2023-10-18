@@ -1,0 +1,301 @@
+{% if not is_pjax %}
+    <!DOCTYPE html>
+    <html DIR="{{ _LANG.rtl }}" lang="{{ _LANG.code }}" xmlns="https://www.w3.org/1999/xhtml" />
+    <head>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+            <meta name="viewport" content="width=device-width, initial-scale=1">
+                <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+                    {% helper seo.seo_tags('robots') %}
+
+                    <base href="{{ site_root }}" />
+
+                    {% helper start.favicon({'type': 'user'}) %}
+                                    <link rel="stylesheet" href="{{ site_root }}uploads/themes-fixed/listera/styles/bootstrap-{{ _LANG.rtl }}.css" type="text/css" />
+                                    <link rel="stylesheet" href="{{ site_root }}uploads/themes-fixed/listera/styles/font-awesome.css" type="text/css" />
+                                    <link rel="stylesheet" href="{{ site_root }}application/views/flatty/css/fontawesome-5.0.11/css/fontawesome-all.min.css" type="text/css" /> 
+                                    {% helper theme.include_css('style', 'screen') %}
+                                    {% helper theme.css(load_type) %}
+                                    <link rel="stylesheet" href="{{ site_root }}uploads/themes-fixed/listera/styles/style-{{ _LANG.rtl }}.css" type="text/css" />
+                                    <style>
+                                        @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) { 
+                                            .index-listeria  .list-inline li {
+
+                                                padding-right: 20px;
+                                                float: left;
+                                                height: 30px;
+
+                                            }
+                                            .index-listeria  .list-inline li:last-child {
+
+                                                padding-top: 5px;
+
+                                            }
+                                            .index-listeria  .navbar-right li{
+                                                padding-top: 5px;
+
+                                            }
+
+                                        }
+                                    </style>
+
+                                {% endif %}
+
+                                {% helper seo.seo_tags('title') %}
+                                {% helper seo.seo_tags('description|keyword|canonical|og_title|og_type|og_url|og_image|og_site_name|og_description') %}
+
+                                <script>
+            var site_rtl_settings = '{{ _LANG.rtl }}';
+            var is_pjax = parseInt('{{ is_pjax }}');
+            var js_events
+            = {% helper json.json_encode(js_events) %};
+                    var id_user = {% if user_session_data.user_id %}{{ user_session_data.user_id }}{% else %}0{% endif %};
+                                </script>
+
+                                {% if not is_pjax %}
+                                    <script>
+                var site_url = '{{ site_url }}';
+                var base_url = '{{ base_url }}';
+                var img_folder = '{{ img_folder }}';
+                var site_error_position = 'center';
+                var use_pjax = 0;
+                var pjax_container = '#pjaxcontainer';
+                                    </script>
+
+                                    {% helper utils.jscript('', 'jquery.js', '', 'sync') %}
+                                    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+                                    {% helper utils.jscript('', 'jquery.pjax.js', '', 'sync') %}
+                                    {% helper utils.jscript('', 'functions.js') %}
+                                    {% helper utils.jscript('', 'nprogress/nprogress.min.js') %}
+                                    {% helper utils.jscript('', 'errors.js') %}
+                                    {% helper utils.jscript('', 'loading_content.js') %}
+                                    {% helper utils.jscript('', 'pginfo.js') %}
+                                    {% helper utils.jscript('', 'alerts.js') %}
+                                    {% helper utils.jscript('', 'notifications.js') %}
+                                    {% helper seo_advanced.seo_traker('top') %}
+                                    {% helper start.analytics() %}
+
+
+                                    </head>
+
+                                    <body class="index-listeria">
+
+                                        {% helper start.demo_panel({type: 'user', place: 'top'}) %}
+                                        <div id="pjaxcontainer" class="hp100">
+
+                                        {% endif %}
+                                        <div id="error_block" class="hide">{% for item in _PREDEFINED.error %}{% if item.text %}{{ item.text }}<br>{% endif %}{% endfor %}</div>
+                                        <div id="info_block" class="hide">{% for item in _PREDEFINED.info %}{% if item.text %}{{ item.text }}<br>{% endif %}{% endfor %}</div>
+                                        <div id="success_block" class="hide">{% for item in _PREDEFINED.success %}{% if item.text %}{{ item.text }}<br>{% endif %}{% endfor %}</div>
+
+
+
+                                        <div class="container">
+                                            <section class="b-topline">
+                                                <div class="row">
+                                                    <div class="col-xs-12 col-sm-6 col-md-10 b-topline__slogan">{% helper lang.l('online_personals', 'start') %}</div>
+                                                    <div class="col-xs-12 col-sm-6 col-md-2 b-topline__social">
+                                                        <div class="social">
+                                                            <i class="fa fa-vk fa-lg"></i>
+                                                            <i class="fa fa-facebook fa-lg"></i>
+                                                            <i class="fa fa-google fa-lg"></i>
+                                                            <i class="fa fa-twitter fa-lg"></i>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </section>
+
+                                            <section class="text-center logo">
+                                                <div class="center-block pt20">
+                                                    <div class="b-header__logo">
+                                                        <a href="{{ site_url }}">
+                                                            {% helper start.logo({type: 'user', settings: logo_settings}) %}
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                            </section>
+                                            <section>
+                                                <nav class="navbar navbar-collapse text-center pt20">
+                                                    <ul class="nav navbar-nav navbar-center">
+                                                        <li>
+                                                            {% helper reglang = lang.l('join_now', 'start') %}
+                                                            {% helper users.usersRegistration({'is_link': 1, 'page': 1, 'lang': reglang}) %}
+                                                        </li>
+                                                        <li>
+                                                            <a href="{{ site_url }}content/view/about-us">{% helper lang.l('about_us', 'start') %}</a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="{{ site_root }}contact_us/index/">{% helper lang.l('contacts', 'start') %}</a>
+                                                        </li>
+                                                        <li>
+                                                            <a id="btn_log" class="btn_border" onclick="{% helper start.setAnalytics('index', 'btn_sign_in') %}"  
+                                                               href="{% helper seo.seolink('users', 'login_form') %}">
+                                                                {% helper lang.l('btn_login', 'start') %}</a>
+                                                        </li>
+                                                        <li class="lang">
+                                                            {% helper users.users_lang_select({type: 'menu', template: 'dropdown'}) %}
+                                                        </li>
+                                                    </ul>
+                                                </nav>
+                                            </section>	
+                                        </div>
+
+                                        <main class="container">
+                                            <section class="b-teaser">
+                                                <img src="{{ site_root }}uploads/themes-fixed/listera/images/teaser.jpg" alt="teaser" class="img-responsive">
+                                                    <div class="b-teaser__content th-set__index_promo_text_main">
+                                                        <h3>{% helper lang.l('find_match', 'start') %}</h3>
+                                                        <div>{% helper lang.l('find_match_txt', 'start') %}</div>
+                                                        <div class="row btns">
+                                                            <div class="col-sm-12">
+                                                                {% helper reglang = lang.l('join_now', 'start') %}
+                                                                {% helper users.usersRegistration({'is_link': 1, 'page': 1, 'lang': reglang, 'class': 'th-set__input_color_bg'}) %}
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                            </section>
+
+                                            <section class="pd20">
+                                                <div class="text-center">
+                                                    <div class="headline_hr"></div>
+                                                    <span class="headline_title">{% helper lang.l('casual_dating', 'start') %}</span>
+                                                </div>
+                                                <div style="max-width: 70%;margin: 15px auto;">
+                                                    <p class="text-center">{% helper lang.l('find_match_txt', 'start') %}</p>
+                                                </div>
+                                            </section>
+
+                                            <section class="row text-center descr">
+                                                <div class="col-md-3">
+                                                    <div class="fa-bg-circle">
+                                                        <i class="fa fa-venus-mars fa-lg"></i>
+                                                    </div>
+                                                    <h2>46% / 54%<br><span>{% helper lang.l('malefemale_dist', 'start') %}</span></h2>
+                                                    <p>{% helper lang.l('malefemale_dist_txt1', 'start') %}</p>
+                                                </div>
+                                                <div class="col-md-3">
+                                                    <div class="fa-bg-circle">
+                                                        <i class="fa fa-users fa-lg"></i>
+                                                    </div>
+                                                    <h2>15.000<br><span>{% helper lang.l('members_each_week', 'start') %}</span></h2>
+                                                    <p>{% helper lang.l('new_opportunities', 'start') %}</p>
+                                                </div>
+                                                <div class="col-md-3">
+                                                    <div class="fa-bg-circle">
+                                                        <i class="fa fa-fighter-jet fa-lg"></i>
+                                                    </div>
+                                                    <h2>{% helper lang.l('fast_easy', 'start') %}</h2>
+                                                    <p>{% helper lang.l('fast_easy_txt', 'start') %}</p>
+                                                </div>
+                                                <div class="col-md-3">
+                                                    <div class="fa-bg-circle">
+                                                        <i class="fa fa-user-secret fa-lg"></i>
+                                                    </div>
+                                                    <h2>{% helper lang.l('stay_anon', 'start') %}</h2>
+                                                    <p>{% helper lang.l('stay_anon_txt', 'start') %}</p>
+                                                </div>
+                                            </section>
+
+                                            <section class="container-fluid">
+                                                <aside class="col-md-6 mobile-block">
+                                                    <img src="{{ site_root }}uploads/themes-fixed/listera/images/iphone.jpg" alt="" class="img-responsive">
+                                                </aside>
+                                                <div class="col-md-6">
+                                                    <div class="page-header mobile-title">
+                                                        <h2>{% helper lang.l('mobile_app_title_v2', 'start') %}</h2>
+                                                    </div>
+                                                    <p class="mobile-text">{% helper lang.l('mobile_app_txt_v2', 'start') %}</p>
+                                                    <p>
+                                                        {% helper mobile.mobileAppLinks({'viewtype': 'btnsBlack'}) %}
+                                                    </p>
+                                                </div>
+                                            </section>
+
+                                            <section class="well th-set__main_bg th-set__index_promo_text_on_bg">
+                                                <p class="text-center">{% helper lang.l('about_txt2', 'start') %}</p>
+                                                <ul class="nav text-center">
+                                                    <li class="pt20">
+                                                        {% helper reglang = lang.l('join_now', 'start') %}
+                                                        {% helper users.usersRegistration({'is_link': 1, 'page': 1, 'lang': reglang}) %}
+                                                    </li>
+                                                    <li class="pt10">
+                                                        <a id="btn_log" class="signin" onclick="{% helper start.setAnalytics('index', 'btn_sign_in') %}"  
+                                                           href="{% helper seo.seolink('users', 'login_form') %}">
+                                                            {% helper lang.l('btn_login', 'start') %}</a>
+                                                    </li>
+                                                </ul>
+                                            </section>
+                                        </main>
+                                        <footer class="th-set__index_footer_bg">
+                                            <div class="container">
+                                            <hr class="hr-bottom">
+                                                <div class="row">
+                                                    <section class="col-md-10">
+                                                        <ul class="row">
+                                                            <li class="col-sm-6 col-md-3">
+                                                                <p>{% helper lang.l('help', 'start') %}</p> 
+                                                                <ul>
+                                                                    <li>
+                                                                        <a href="{{ site_url }}contact_us">{% helper lang.l('contact_us', 'start') %}</a>
+                                                                    </li>	
+                                                                    <li>
+                                                                        <a href="{{ site_url }}site_map">{% helper lang.l('sitemap', 'start') %}</a>
+                                                                    </li>
+                                                                </ul>
+                                                            </li>
+                                                            <li class="col-sm-6 col-md-3">
+                                                                <p>{% helper lang.l('about_us', 'start') %}</p>
+                                                                <ul>
+                                                                    <li>
+                                                                        <a href="{{ site_url }}content/view/about-us">{% helper lang.l('about_us', 'start') %}</a>
+                                                                    </li>
+                                                                    <li>
+                                                                        <a href="{{ site_url }}news/index">{% helper lang.l('header_news', 'news') %}</a>
+                                                                    </li>
+                                                                </ul>
+                                                            </li>
+                                                            <li class="col-sm-6 col-md-3">
+                                                                <p>{% helper lang.l('privacy', 'start') %}</p>
+                                                                <ul>
+                                                                    <li>
+                                                                        <a href="{{ site_url }}content/view/privacy-and-security">{% helper lang.l('privacy', 'start') %}</a>
+                                                                    </li>
+                                                                    <li>
+                                                                        <a href="{{ site_url }}content/view/legal-terms">{% helper lang.l('terms', 'start') %}</a>
+                                                                    </li>
+                                                                </ul>
+                                                            </li>
+                                                            <li class="col-sm-6 col-md-3">
+                                                                <a href="{{ mobile_url }}" class="btn_tnl" data-bind="mobile">
+                                                                    {% helper lang.l('mobile_version', 'mobile') %}
+                                                                </a>
+                                                            </li>
+                                                        </ul>
+                                                    </section>
+                                                    <section class="col-sm-12 col-md-2">
+                                                        <div class="social">
+                                                            <i class="fa fa-vk fa-lg"></i>
+                                                            <i class="fa fa-facebook fa-lg"></i>
+                                                            <i class="fa fa-google fa-lg"></i>
+                                                            <i class="fa fa-twitter fa-lg"></i>
+                                                        </div>
+                                                    </section>
+                                                </div>
+                                                <div class="row">
+                                                    <section id="copyright" class="col-md-12">
+                                                        <div class="copyright">
+                                                            {%if DEMO_MODE %}{{ demo_copyright }}{% else %}{% helper start.getCopyright('index_page') %}{% endif %}
+                                                        </div>
+                                                    </section>
+                                                </div>
+                                            </div>
+                                        </footer>
+                                    </div>
+                                    <!-- pjaxcontainer -->
+                                    {% helper cookie_policy.cookie_policy_block() %}
+                                    {% helper languages.lang_editor() %}
+                                    {% helper seo_advanced.seo_traker('footer') %}
+                                    {% helper start.intercom() %}
+                                    {% helper start.amplitude() %}
+                                    {% helper mobile.appTopBanner() %}
+                                </body>
+                                </html>

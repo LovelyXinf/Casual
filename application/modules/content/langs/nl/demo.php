@@ -1,0 +1,3 @@
+<?php
+
+$install_lang["content"] = "<p><span style=\"font-size:20px\">Welkom bij Dating Pro, professionele service</span></p><p><span style=\"font-size:20px\">voor Online Daten en netwerken.<br />Duizenden leden worden lid van our gemeenschap</span></p><p><span style=\"font-size:20px\">van overal in de wereld.<br />Creeer een profiel, plaats je foto's en snel</span></p><p><span style=\"font-size:20px\">zal je communiceren met al deze ongelooflijke mensen.</span></p><p><span style=\"font-size:20px\"> Wij hopen dat onze site is de plek waar je</span></p><p><span style=\"font-size:20px\"> je levensmaat zult vinden!</span></p>";

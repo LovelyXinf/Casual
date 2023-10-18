@@ -1,0 +1,25 @@
+<div class="content-page">
+    <div class="ui-title">{% helper lang.l('header_main', 'mailbox') %}</div>
+    <div class="ui-descr">
+        {% helper lang.l('field_usr_inf_description', 'mailbox') %}
+    </div>
+</div>
+{% for item in spam %}
+    <div class="col-xs-12 content-page">
+        <div class="ui-title bb">{% helper lang.l('field_sender', 'mailbox') %}: {{ item.sender.output_name }} {{ item.date_add }}</div>
+        <div>
+            {% helper lang.l('field_subject', 'mailbox') %}: {{ item.subject }}
+        </div>
+        <div>
+            {% helper lang.l('field_message', 'mailbox') %}: {{ item.message }}
+        </div>
+        {% if item.attaches_count %}
+            <div>
+                {% helper lang.l('field_attaches', 'mailbox') %}: 
+                {% for attach in item.attaches %}
+                    <a href="spam/{{ attach.filename }}">{{ attach.filename }}</a>
+                {% endfor %}
+            </div>
+        {% endif %}
+    </div>
+{% endfor %}

@@ -1,0 +1,21 @@
+<style>
+    .c-transfer-form ul { margin: 2rem 0 0; }
+    .c-transfer-form ul li label { cursor: pointer; display: block; }
+</style>
+
+<form class="c-transfer-form">
+    <input type="hidden" name="user_id" value="{{ user_id }}" />
+    <input type="hidden" name="contact_id" value="{{ contact_id }}" />
+
+    <h2>{% helper lang.l('header_select_operator', 'chatbox') %}</h2>
+    <ul class="c-transfer-form__list">
+        {% for operator in operators %}
+            <li>
+                <label for="">
+                    <input type="radio" name="operator_id" value="{{ operator.id }}" class="flat" {% if loop.first %}checked{% endif %}>
+                    {{ operator.name }}
+                </label>
+            </li>
+        {% endfor %}
+    </ul>
+</form>

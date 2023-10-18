@@ -1,0 +1,17 @@
+<div class="content-page">
+    <div class="ui-title">{% helper lang.l('header_main', 'mailbox') %}</div>
+    <div class="ui-descr">
+        {% helper lang.l('field_usr_inf_description', 'mailbox') %}
+    </div>
+</div>
+{% for item in outbox %}
+    <div class="col-xs-12 content-page">
+        <div class="ui-title bb">{% helper lang.l('field_recipient', 'mailbox') %}: {{ item.recipient.output_name }} {{ item.date_add }}</div>
+        <div>
+            {% helper lang.l('field_subject', 'mailbox') %}: {{ item.subject }}
+        </div>
+        <div>
+            {% helper lang.l('field_message', 'mailbox') %}: {{ item.message }}
+        </div>
+    </div>
+{% endfor %}

@@ -1,0 +1,677 @@
+	1	Severance	39.7672200	-95.2499800	US	KS	0	0	Severance	Severance
+	1	Prairie View	39.8325100	-99.5726100	US	KS	0	0	Prairie View	Prairie View
+	1	Stockton	39.4380700	-99.2651000	US	KS	0	0	Stockton	Стоктън
+	1	Abbyville	37.9708500	-98.2042300	US	KS	0	0	Abbyville	Abbyville
+	1	Abilene	38.9172200	-97.2139100	US	KS	0	0	Abilene	Абилин
+	1	Ada	39.1513900	-97.8892100	US	KS	0	0	Ada	Ada
+	1	Admire	38.6411200	-96.1030500	US	KS	0	0	Admire	Admire
+	1	Agenda	39.7077800	-97.4317000	US	KS	0	0	Agenda	Agenda
+	1	Agra	39.7616800	-99.1192500	US	KS	0	0	Agra	Agra
+	1	Alden	38.2422300	-98.3120100	US	KS	0	0	Alden	Alden
+	1	Alexander	38.4694600	-99.5531700	US	KS	0	0	Alexander	Alexander
+	1	Albert	38.4527900	-99.0114800	US	KS	0	0	Albert	Albert
+	1	Allen	38.6561200	-96.1697200	US	KS	0	0	Allen	Аллен
+	1	Alma	39.0166700	-96.2891600	US	KS	0	0	Alma	Alma
+	1	Almena	39.8922300	-99.7070600	US	KS	0	0	Almena	Almena
+	1	Alta Vista	38.8638900	-96.4891700	US	KS	0	0	Alta Vista	Alta Vista
+	1	Altamont	37.1903400	-95.2971900	US	KS	0	0	Altamont	Altamont
+	1	Alton	39.4708400	-98.9481400	US	KS	0	0	Alton	Alton
+	1	Altoona	37.5239400	-95.6613700	US	KS	0	0	Altoona	Алтуна
+	1	Americus	38.5069600	-96.2619400	US	KS	0	0	Americus	Americus
+	1	Andale	37.7905700	-97.6294900	US	KS	0	0	Andale	Andale
+	1	Andover	37.7139000	-97.1364300	US	KS	0	0	Andover	Andover
+	1	Anthony	37.1533600	-98.0311700	US	KS	0	0	Anthony	Anthony
+	1	Arcadia	37.6419900	-94.6238500	US	KS	0	0	Arcadia	Аркадия
+	1	Argonia	37.2658500	-97.7656100	US	KS	0	0	Argonia	Argonia
+	1	Arkansas City	37.0619700	-97.0383700	US	KS	0	0	Arkansas City	Arkansas City
+	1	Arlington	37.8966800	-98.1786700	US	KS	0	0	Arlington	Арлингтон
+	1	Arma	37.5439400	-94.7002400	US	KS	0	0	Arma	Arma
+	1	Ashland	37.1886400	-99.7656800	US	KS	0	0	Ashland	Ashland
+	1	Assaria	38.6802800	-97.6044800	US	KS	0	0	Assaria	Assaria
+	1	Atchison	39.5630500	-95.1216400	US	KS	0	0	Atchison	Atchison
+	1	Athol	39.7650100	-98.9195200	US	KS	0	0	Athol	Athol
+	1	Atlanta	37.4364100	-96.7647500	US	KS	0	0	Atlanta	Атланта
+	1	Attica	37.2414100	-98.2267400	US	KS	0	0	Attica	Attica
+	1	Auburn	38.9061100	-95.8161000	US	KS	0	0	Auburn	Auburn
+	1	Augusta	37.6866800	-96.9767000	US	KS	0	0	Augusta	Огаста
+	1	Aurora	39.4519400	-97.5272600	US	KS	0	0	Aurora	Аврора
+	1	Axtell	39.8716700	-96.2589000	US	KS	0	0	Axtell	Axtell
+	1	Asherville	39.4058400	-97.9769900	US	KS	0	0	Asherville	Asherville
+	1	Baileyville	39.8444400	-96.1850100	US	KS	0	0	Baileyville	Baileyville
+	1	Baldwin City	38.7750100	-95.1863600	US	KS	0	0	Baldwin City	Baldwin City
+	1	Barnard	39.1905600	-98.0419900	US	KS	0	0	Barnard	Barnard
+	1	Barnes	39.7119500	-96.8744700	US	KS	0	0	Barnes	Barnes
+	1	Bartlett	37.0547900	-95.2108000	US	KS	0	0	Bartlett	Бартлетт
+	1	Basehor	39.1416700	-94.9385800	US	KS	0	0	Basehor	Basehor
+	1	Bassett	37.9028100	-95.4041500	US	KS	0	0	Bassett	Bassett
+	1	Baxter Springs	37.0236800	-94.7355000	US	KS	0	0	Baxter Springs	Baxter Springs
+	1	Bazine	38.4444600	-99.6920600	US	KS	0	0	Bazine	Bazine
+	1	Beattie	39.8611100	-96.4197400	US	KS	0	0	Beattie	Beattie
+	1	Bellaire	37.7625100	-97.2669900	US	KS	0	0	Bellaire	Bellaire
+	1	Belle Plaine	37.3939100	-97.2811500	US	KS	0	0	Belle Plaine	Belle Plaine
+	1	Belleville	39.8244500	-97.6325400	US	KS	0	0	Belleville	Belleville
+	1	Beloit	39.4561200	-98.1061600	US	KS	0	0	Beloit	Beloit
+	1	Belpre	37.9500200	-99.1003800	US	KS	0	0	Belpre	Belpre
+	1	Belvue	39.2166600	-96.1780500	US	KS	0	0	Belvue	Belvue
+	1	Bendena	39.7411100	-95.1794200	US	KS	0	0	Bendena	Bendena
+	1	Benedict	37.6253300	-95.7505400	US	KS	0	0	Benedict	Benedict
+	1	Bennington	39.0305600	-97.5942000	US	KS	0	0	Bennington	Bennington
+	1	Bentley	37.8861200	-97.5169900	US	KS	0	0	Bentley	Bentley
+	1	Benton	37.7889000	-97.1086500	US	KS	0	0	Benton	Бентон
+	1	Bern	39.9622200	-95.9719400	US	KS	0	0	Bern	Bern
+	1	Beverly	39.0127800	-97.9756000	US	KS	0	0	Beverly	Beverly
+	1	Bison	38.5227900	-99.1973200	US	KS	0	0	Bison	Bison
+	1	Blue Mound	38.0900300	-95.0063600	US	KS	0	0	Blue Mound	Blue Mound
+	1	Blue Rapids	39.6819400	-96.6597400	US	KS	0	0	Blue Rapids	Blue Rapids
+	1	Bluff City	37.0764100	-97.8750600	US	KS	0	0	Bluff City	Bluff City
+	1	Bogue	39.3626400	-99.6884400	US	KS	0	0	Bogue	Bogue
+	1	Bonner Springs	39.0597300	-94.8835800	US	KS	0	0	Bonner Springs	Bonner Springs
+	1	Bronson	37.8958700	-95.0733100	US	KS	0	0	Bronson	Bronson
+	1	Brookville	38.7750100	-97.8683800	US	KS	0	0	Brookville	Brookville
+	1	Brownell	38.6402900	-99.7462300	US	KS	0	0	Brownell	Brownell
+	1	Bucklin	37.5472400	-99.6342900	US	KS	0	0	Bucklin	Bucklin
+	1	Buffalo	37.7097700	-95.6974800	US	KS	0	0	Buffalo	Буффало
+	1	Bucyrus	38.7264000	-94.7182900	US	KS	0	0	Bucyrus	Bucyrus
+	1	Buhler	38.1344500	-97.7700500	US	KS	0	0	Buhler	Buhler
+	1	Bunker Hill	38.8758400	-98.7039700	US	KS	0	0	Bunker Hill	Bunker Hill
+	1	Burden	37.3128000	-96.7542000	US	KS	0	0	Burden	Burden
+	1	Burdett	38.1919600	-99.5267800	US	KS	0	0	Burdett	Burdett
+	1	Burlingame	38.7538900	-95.8349900	US	KS	0	0	Burlingame	Берлингем
+	1	Burlington	38.1944700	-95.7427600	US	KS	0	0	Burlington	Берлингтон
+	1	Burns	38.0903000	-96.8864100	US	KS	0	0	Burns	Burns
+	1	Burr Oak	39.8661200	-98.3050500	US	KS	0	0	Burr Oak	Burr Oak
+	1	Burrton	38.0239000	-97.6697700	US	KS	0	0	Burrton	Burrton
+	1	Bushong	38.6430600	-96.2572200	US	KS	0	0	Bushong	Bushong
+	1	Bushton	38.5125100	-98.3953400	US	KS	0	0	Bushton	Bushton
+	1	Byers	37.7875200	-98.8670400	US	KS	0	0	Byers	Byers
+	1	Caldwell	37.0322500	-97.6069900	US	KS	0	0	Caldwell	Колдуэлл
+	1	Cambridge	37.3161400	-96.6644700	US	KS	0	0	Cambridge	Кембридж
+	1	Caney	37.0114600	-95.9352600	US	KS	0	0	Caney	Caney
+	1	Canton	38.3861200	-97.4280900	US	KS	0	0	Canton	Canton
+	1	Carbondale	38.8186200	-95.6891500	US	KS	0	0	Carbondale	Carbondale
+	1	Carlton	38.6872300	-97.2933600	US	KS	0	0	Carlton	Carlton
+	1	Cassoday	38.0389100	-96.6391800	US	KS	0	0	Cassoday	Cassoday
+	1	Catharine	38.9272300	-99.2167700	US	KS	0	0	Catharine	Catharine
+	1	Cedar	38.9791700	-94.9344100	US	KS	0	0	Cedar	Cedar
+	1	Cedar	39.6572300	-98.9403600	US	KS	0	0	Cedar	Cedar
+	1	Cawker City	39.5125100	-98.4336700	US	KS	0	0	Cawker City	Cawker City
+	1	Cedar Point	38.2600200	-96.8197400	US	KS	0	0	Cedar Point	Cedar Point
+	1	Cedar Vale	37.1042000	-96.5000100	US	KS	0	0	Cedar Vale	Cedar Vale
+	1	Centralia	39.7258300	-96.1272200	US	KS	0	0	Centralia	Centralia
+	1	Chanute	37.6792100	-95.4572000	US	KS	0	0	Chanute	Chanute
+	1	Chapman	38.9722200	-97.0225100	US	KS	0	0	Chapman	Chapman
+	1	Chase	38.3550100	-98.3495100	US	KS	0	0	Chase	Chase
+	1	Chautauqua	37.0203400	-96.1766600	US	KS	0	0	Chautauqua	Chautauqua
+	1	Cheney	37.6300100	-97.7825500	US	KS	0	0	Cheney	Cheney
+	1	Cherokee	37.3458900	-94.8088500	US	KS	0	0	Cherokee	Cherokee
+	1	Cherryvale	37.2703400	-95.5524800	US	KS	0	0	Cherryvale	Cherryvale
+	1	Chetopa	37.0372900	-95.0899600	US	KS	0	0	Chetopa	Chetopa
+	1	Chicopee	37.3820000	-94.7419100	US	KS	0	0	Chicopee	Chicopee
+	1	Circleville	39.5083300	-95.8586000	US	KS	0	0	Circleville	Circleville
+	1	Claflin	38.5250100	-98.5336800	US	KS	0	0	Claflin	Claflin
+	1	Clay Center	37.5194600	-96.7711400	US	KS	0	0	Clay Center	Clay Center
+	1	Clay Center	39.3769400	-97.1247400	US	KS	0	0	Clay Center	Clay Center
+	1	Clearwater	37.5028000	-97.5044900	US	KS	0	0	Clearwater	Clearwater
+	1	Clifton	39.5672200	-97.2786400	US	KS	0	0	Clifton	Клифтон
+	1	Climax	37.7197500	-96.2233300	US	KS	0	0	Climax	Climax
+	1	Clyde	39.5911100	-97.3989200	US	KS	0	0	Clyde	Clyde
+	1	Coats	37.5119600	-98.8242600	US	KS	0	0	Coats	Coats
+	1	Coffeyville	37.0373000	-95.6163700	US	KS	0	0	Coffeyville	Coffeyville
+	1	Coldwater	37.2689100	-99.3267800	US	KS	0	0	Coldwater	Coldwater
+	1	Colony	38.0708600	-95.3655400	US	KS	0	0	Colony	Colony
+	1	Columbus	37.1692300	-94.8441200	US	KS	0	0	Columbus	Колумбус
+	1	Colwich	37.7791800	-97.5364400	US	KS	0	0	Colwich	Colwich
+	1	Concordia	39.5708400	-97.6625400	US	KS	0	0	Concordia	Concordia
+	1	Conway Springs	37.3903000	-97.6422700	US	KS	0	0	Conway Springs	Conway Springs
+	1	Corning	39.6572200	-96.0294400	US	KS	0	0	Corning	Corning
+	1	Cottonwood Falls	38.3722400	-96.5427800	US	KS	0	0	Cottonwood Falls	Cottonwood Falls
+	1	Council Grove	38.6611200	-96.4919500	US	KS	0	0	Council Grove	Council Grove
+	1	Countryside	39.0166700	-94.6544000	US	KS	0	0	Countryside	Countryside
+	1	Courtland	39.7814000	-97.8928200	US	KS	0	0	Courtland	Courtland
+	1	Coyville	37.6861500	-95.8974900	US	KS	0	0	Coyville	Coyville
+	1	Cuba	39.8027800	-97.4558700	US	KS	0	0	Cuba	Cuba
+	1	Cullison	37.6305700	-98.9053800	US	KS	0	0	Cullison	Cullison
+	1	Culver	38.9708400	-97.7589300	US	KS	0	0	Culver	Culver
+	1	Cunningham	37.6439100	-98.4311900	US	KS	0	0	Cunningham	Cunningham
+	1	Damar	39.3189000	-99.5826100	US	KS	0	0	Damar	Damar
+	1	Danville	37.2861300	-97.8920000	US	KS	0	0	Danville	Danville
+	1	De Soto	38.9791700	-94.9685800	US	KS	0	0	De Soto	De Soto
+	1	Dearing	37.0586900	-95.7133100	US	KS	0	0	Dearing	Dearing
+	1	Delia	39.2405500	-95.9669400	US	KS	0	0	Delia	Delia
+	1	Delphos	39.2738900	-97.7719800	US	KS	0	0	Delphos	Delphos
+	1	Denison	39.3916600	-95.6280400	US	KS	0	0	Denison	Денисон
+	1	Denton	39.7327800	-95.2694200	US	KS	0	0	Denton	Denton
+	1	Derby	37.5455700	-97.2689300	US	KS	0	0	Derby	Derby
+	1	Detroit	38.9350000	-97.1208500	US	KS	0	0	Detroit	Detroit
+	1	Dexter	37.1772500	-96.7144700	US	KS	0	0	Dexter	Dexter
+	1	Dorrance	38.8466800	-98.5895200	US	KS	0	0	Dorrance	Dorrance
+	1	Douglass	37.5194600	-97.0128100	US	KS	0	0	Douglass	Douglass
+	1	Downs	39.4986200	-98.5420100	US	KS	0	0	Downs	Downs
+	1	Dunlap	38.5764000	-96.3658300	US	KS	0	0	Dunlap	Dunlap
+	1	Durham	38.4861200	-97.2280800	US	KS	0	0	Durham	Дарем
+	1	Dwight	38.8444500	-96.5933400	US	KS	0	0	Dwight	Dwight
+	1	Earlton	37.5881100	-95.4691500	US	KS	0	0	Earlton	Earlton
+	1	Eastborough	37.6880700	-97.2636600	US	KS	0	0	Eastborough	Eastborough
+	1	Easton	39.3450000	-95.1158000	US	KS	0	0	Easton	Истон
+	1	Edgerton	38.7647300	-95.0080200	US	KS	0	0	Edgerton	Edgerton
+	1	Edmond	39.6272300	-99.8226200	US	KS	0	0	Edmond	Эдмон
+	1	Edna	37.0598000	-95.3594200	US	KS	0	0	Edna	Edna
+	1	Edwardsville	39.0611200	-94.8196800	US	KS	0	0	Edwardsville	Edwardsville
+	1	Effingham	39.5222200	-95.4008100	US	KS	0	0	Effingham	Effingham
+	1	El Dorado	37.8172400	-96.8622500	US	KS	0	0	El Dorado	El Dorado
+	1	Elbing	38.0527900	-97.1278100	US	KS	0	0	Elbing	Elbing
+	1	Elgin	37.0045000	-96.2766600	US	KS	0	0	Elgin	Elgin
+	1	Elk City	37.2892300	-95.9116500	US	KS	0	0	Elk City	Elk City
+	1	Elk Falls	37.3672600	-96.1886000	US	KS	0	0	Elk Falls	Elk Falls
+	1	Ellinwood	38.3555700	-98.5809100	US	KS	0	0	Ellinwood	Ellinwood
+	1	Ellis	38.9380700	-99.5606700	US	KS	0	0	Ellis	Ellis
+	1	Ellsworth	38.7305600	-98.2281100	US	KS	0	0	Ellsworth	Ellsworth
+	1	Elmdale	38.3736300	-96.6447300	US	KS	0	0	Elmdale	Elmdale
+	1	Elsmore	37.7944900	-95.1502600	US	KS	0	0	Elsmore	Elsmore
+	1	Elwood	39.7555500	-94.8724700	US	KS	0	0	Elwood	Elwood
+	1	Emmett	39.3072200	-96.0561000	US	KS	0	0	Emmett	Emmett
+	1	Emporia	38.4039000	-96.1816600	US	KS	0	0	Emporia	Emporia
+	1	Englewood	37.0383600	-99.9834700	US	KS	0	0	Englewood	Englewood
+	1	Enterprise	38.9027800	-97.1169600	US	KS	0	0	Enterprise	Enterprise
+	1	Erie	37.5681100	-95.2433100	US	KS	0	0	Erie	Эри
+	1	Esbon	39.8222300	-98.4358900	US	KS	0	0	Esbon	Esbon
+	1	Eskridge	38.8588900	-96.1091600	US	KS	0	0	Eskridge	Eskridge
+	1	Eureka	37.8239200	-96.2891700	US	KS	0	0	Eureka	Эврика
+	1	Eudora	38.9433400	-95.0985800	US	KS	0	0	Eudora	Eudora
+	1	Everest	39.6772200	-95.4247000	US	KS	0	0	Everest	Everest
+	1	Fairview	39.8411100	-95.7280400	US	KS	0	0	Fairview	Fairview
+	1	Fairway	39.0222300	-94.6319000	US	KS	0	0	Fairway	Fairway
+	1	Fall River	37.6078200	-96.0280400	US	KS	0	0	Fall River	Fall River
+	1	Falun	38.6711200	-97.7594900	US	KS	0	0	Falun	Falun
+	1	Florence	38.2444600	-96.9280800	US	KS	0	0	Florence	Флоренция
+	1	Fontana	38.4258500	-94.8382900	US	KS	0	0	Fontana	Фонтана
+	1	Ford	37.6361300	-99.7540200	US	KS	0	0	Ford	Ford
+	1	Formoso	39.7800100	-97.9922700	US	KS	0	0	Formoso	Formoso
+	1	Fort Dodge	37.7319600	-99.9354100	US	KS	0	0	Fort Dodge	Fort Dodge
+	1	Fort Scott	37.8397600	-94.7083000	US	KS	0	0	Fort Scott	Fort Scott
+	1	Frankfort	39.7055500	-96.4169600	US	KS	0	0	Frankfort	Франкфурт
+	1	Franklin	37.5264400	-94.7058000	US	KS	0	0	Franklin	Franklin
+	1	Frederick	38.5133400	-98.2683900	US	KS	0	0	Frederick	Фредерик
+	1	Fredonia	37.5339400	-95.8266500	US	KS	0	0	Fredonia	Fredonia
+	1	Freeport	37.1986300	-97.8570000	US	KS	0	0	Freeport	Freeport
+	1	Fulton	38.0100400	-94.7196800	US	KS	0	0	Fulton	Fulton
+	1	Galatia	38.6416800	-98.9587000	US	KS	0	0	Galatia	Galatia
+	1	Galena	37.0759000	-94.6396700	US	KS	0	0	Galena	Galena
+	1	Galesburg	37.4736700	-95.3585900	US	KS	0	0	Galesburg	Galesburg
+	1	Galva	38.3819500	-97.5375400	US	KS	0	0	Galva	Galva
+	1	Frontenac	37.4556000	-94.6891300	US	KS	0	0	Frontenac	Frontenac
+	1	Gardner	38.8108400	-94.9271900	US	KS	0	0	Gardner	Гарднер
+	1	Garden Plain	37.6583500	-97.6836600	US	KS	0	0	Garden Plain	Garden Plain
+	1	Garnett	38.2805800	-95.2419200	US	KS	0	0	Garnett	Garnett
+	1	Gas	37.9236500	-95.3460900	US	KS	0	0	Gas	Gas
+	1	Gaylord	39.6439000	-98.8475800	US	KS	0	0	Gaylord	Gaylord
+	1	Garfield	38.0777900	-99.2448300	US	KS	0	0	Garfield	Garfield
+	1	Geuda Springs	37.1141900	-97.1492100	US	KS	0	0	Geuda Springs	Geuda Springs
+	1	Geneseo	38.5161200	-98.1567200	US	KS	0	0	Geneseo	Geneseo
+	1	Girard	37.5111600	-94.8380200	US	KS	0	0	Girard	Girard
+	1	Glade	39.6847300	-99.3098200	US	KS	0	0	Glade	Glade
+	1	Glasco	39.3566700	-97.8411500	US	KS	0	0	Glasco	Glasco
+	1	Glen Elder	39.4986200	-98.3086700	US	KS	0	0	Glen Elder	Glen Elder
+	1	Goddard	37.6597400	-97.5753300	US	KS	0	0	Goddard	Goddard
+	1	Goessel	38.2464000	-97.3489200	US	KS	0	0	Goessel	Goessel
+	1	Goff	39.6638900	-95.9322200	US	KS	0	0	Goff	Goff
+	1	Gorham	38.8816800	-99.0231500	US	KS	0	0	Gorham	Горхэм
+	1	Grandview Plaza	39.0291600	-96.7891700	US	KS	0	0	Grandview Plaza	Grandview Plaza
+	1	Grantville	39.0833300	-95.5613700	US	KS	0	0	Grantville	Grantville
+	1	Great Bend	38.3644600	-98.7648100	US	KS	0	0	Great Bend	Great Bend
+	1	Green	39.4277800	-97.0019600	US	KS	0	0	Green	Green
+	1	Greeley	38.3666900	-95.1269200	US	KS	0	0	Greeley	Greeley
+	1	Greenleaf	39.7283400	-96.9761300	US	KS	0	0	Greenleaf	Greenleaf
+	1	Greensburg	37.6028000	-99.2926100	US	KS	0	0	Greensburg	Greensburg
+	1	Grenola	37.3486400	-96.4505600	US	KS	0	0	Grenola	Grenola
+	1	Gridley	38.0978000	-95.8836000	US	KS	0	0	Gridley	Gridley
+	1	Gypsum	38.7055600	-97.4280900	US	KS	0	0	Gypsum	Gypsum
+	1	Haddam	39.8569500	-97.3017000	US	KS	0	0	Haddam	Haddam
+	1	Halstead	38.0014000	-97.5086500	US	KS	0	0	Halstead	Halstead
+	1	Hamilton	37.9794700	-96.1641600	US	KS	0	0	Hamilton	Гамильтон
+	1	Hamlin	39.9161100	-95.6280400	US	KS	0	0	Hamlin	Hamlin
+	1	Hanover	39.8938900	-96.8794700	US	KS	0	0	Hanover	Hanover
+	1	Hanston	38.1219600	-99.7129000	US	KS	0	0	Hanston	Hanston
+	1	Hardtner	37.0139200	-98.6495300	US	KS	0	0	Hardtner	Hardtner
+	1	Harper	37.2866900	-98.0258900	US	KS	0	0	Harper	Harper
+	1	Harris	38.3194600	-95.4363700	US	KS	0	0	Harris	Harris
+	1	Hartford	38.3083500	-95.9558200	US	KS	0	0	Hartford	Хартфорд
+	1	Harveyville	38.7900100	-95.9616600	US	KS	0	0	Harveyville	Harveyville
+	1	Haven	37.8989000	-97.7828300	US	KS	0	0	Haven	Haven
+	1	Havensville	39.5111100	-96.0780500	US	KS	0	0	Havensville	Havensville
+	1	Haviland	37.6194600	-99.1065000	US	KS	0	0	Haviland	Haviland
+	1	Havana	37.0917300	-95.9419300	US	KS	0	0	Havana	Havana
+	1	Hays	38.8791800	-99.3267700	US	KS	0	0	Hays	Hays
+	1	Haysville	37.5644600	-97.3522700	US	KS	0	0	Haysville	Haysville
+	1	Hazelton	37.0903000	-98.3984100	US	KS	0	0	Hazelton	Hazelton
+	1	Hepler	37.6611600	-94.9683000	US	KS	0	0	Hepler	Hepler
+	1	Herington	38.6711200	-96.9425100	US	KS	0	0	Herington	Herington
+	1	Hesston	38.1383400	-97.4314300	US	KS	0	0	Hesston	Hesston
+	1	Hiawatha	39.8525000	-95.5358200	US	KS	0	0	Hiawatha	Hiawatha
+	1	Highland	39.8597200	-95.2697000	US	KS	0	0	Highland	Highland
+	1	Highland	39.2138900	-94.8308000	US	KS	0	0	Highland	Highland
+	1	Hill City	39.3647300	-99.8420600	US	KS	0	0	Hill City	Hill City
+	1	Hillsboro	38.3519600	-97.2044700	US	KS	0	0	Hillsboro	Хиллсборо
+	1	Hillsdale	38.6597300	-94.8502400	US	KS	0	0	Hillsdale	Hillsdale
+	1	Hoisington	38.5180700	-98.7781400	US	KS	0	0	Hoisington	Hoisington
+	1	Hollenberg	39.9805600	-96.9922500	US	KS	0	0	Hollenberg	Hollenberg
+	1	Holton	39.4652700	-95.7363700	US	KS	0	0	Holton	Holton
+	1	Holyrood	38.5869500	-98.4111800	US	KS	0	0	Holyrood	Holyrood
+	1	Home	39.8416700	-96.5197400	US	KS	0	0	Home	Home
+	1	Hope	38.6902800	-97.0766800	US	KS	0	0	Hope	Hope
+	1	Horton	39.6605600	-95.5263700	US	KS	0	0	Horton	Horton
+	1	Howard	37.4703100	-96.2636100	US	KS	0	0	Howard	Howard
+	1	Hoyt	39.2477700	-95.7063700	US	KS	0	0	Hoyt	Hoyt
+	1	Hudson	38.1055700	-98.6600800	US	KS	0	0	Hudson	Гудзон
+	1	Humboldt	37.8106000	-95.4369300	US	KS	0	0	Humboldt	Humboldt
+	1	Hunter	39.2341800	-98.3972800	US	KS	0	0	Hunter	Hunter
+	1	Hunnewell	37.0050300	-97.4047700	US	KS	0	0	Hunnewell	Hunnewell
+	1	Huron	39.6383300	-95.3516400	US	KS	0	0	Huron	Huron
+	1	Hutchinson	38.0608400	-97.9297700	US	KS	0	0	Hutchinson	Хатчинсон
+	1	Independence	37.2242400	-95.7083100	US	KS	0	0	Independence	Independence
+	1	Inman	38.2319500	-97.7733800	US	KS	0	0	Inman	Inman
+	1	Iola	37.9244800	-95.3999800	US	KS	0	0	Iola	Iola
+	1	Isabel	37.4666900	-98.5503600	US	KS	0	0	Isabel	Isabel
+	1	Iuka	37.7291800	-98.7350900	US	KS	0	0	Iuka	Iuka
+	1	Jamestown	39.5994500	-97.8611500	US	KS	0	0	Jamestown	Jamestown
+	1	Jewell	39.6714000	-98.1536600	US	KS	0	0	Jewell	Jewell
+	1	Jetmore	38.0844600	-99.8934600	US	KS	0	0	Jetmore	Jetmore
+	1	Junction City	39.0286100	-96.8314000	US	KS	0	0	Junction City	Junction City
+	1	Kanopolis	38.7111200	-98.1572800	US	KS	0	0	Kanopolis	Kanopolis
+	1	Kansas City	39.1141700	-94.6274600	US	KS	0	0	Kansas City	Канзас-Сити
+	1	Kechi	37.7958500	-97.2794900	US	KS	0	0	Kechi	Kechi
+	1	Kensington	39.7669600	-99.0317500	US	KS	0	0	Kensington	Kensington
+	1	Kincaid	38.0842000	-95.1535900	US	KS	0	0	Kincaid	Kincaid
+	1	Kingman	37.6458500	-98.1136700	US	KS	0	0	Kingman	Кингмен
+	1	Kinsley	37.9230700	-99.4098400	US	KS	0	0	Kinsley	Kinsley
+	1	Kiowa	37.0172500	-98.4853500	US	KS	0	0	Kiowa	Kiowa
+	1	Kipp	38.7838900	-97.4544700	US	KS	0	0	Kipp	Kipp
+	1	Kirwin	39.6730700	-99.1223100	US	KS	0	0	Kirwin	Kirwin
+	1	La Crosse	38.5314000	-99.3087200	US	KS	0	0	La Crosse	Ла-Кросс
+	1	La Cygne	38.3500200	-94.7613500	US	KS	0	0	La Cygne	La Cygne
+	1	La Harpe	37.9169800	-95.2991500	US	KS	0	0	La Harpe	La Harpe
+	1	Labette	37.2306200	-95.1835800	US	KS	0	0	Labette	Labette
+	1	Lake Quivira	39.0402800	-94.7766300	US	KS	0	0	Lake Quivira	Lake Quivira
+	1	Lancaster	39.5727800	-95.3027500	US	KS	0	0	Lancaster	Ланкастер
+	1	Lane	38.4397400	-95.0821900	US	KS	0	0	Lane	Lane
+	1	Langdon	37.8539000	-98.3245100	US	KS	0	0	Langdon	Langdon
+	1	Lansing	39.2486100	-94.9002400	US	KS	0	0	Lansing	Лансинг
+	1	Larned	38.1805700	-99.0987100	US	KS	0	0	Larned	Larned
+	1	Latham	37.5361300	-96.6419700	US	KS	0	0	Latham	Latham
+	1	Latimer	38.7388900	-96.8455700	US	KS	0	0	Latimer	Latimer
+	1	Lawrence	38.9716700	-95.2352500	US	KS	0	0	Lawrence	Лоуренс
+	1	LeRoy	38.0839200	-95.6344300	US	KS	0	0	LeRoy	LeRoy
+	1	Leavenworth	39.3111100	-94.9224600	US	KS	0	0	Leavenworth	Ливенворс
+	1	Leawood	38.9666700	-94.6169000	US	KS	0	0	Leawood	Leawood
+	1	Lebo	38.4166800	-95.8530400	US	KS	0	0	Lebo	Lebo
+	1	Lecompton	39.0444400	-95.3947000	US	KS	0	0	Lecompton	Lecompton
+	1	Lehigh	38.3727900	-97.3030900	US	KS	0	0	Lehigh	Lehigh
+	1	Lenexa	38.9536200	-94.7335700	US	KS	0	0	Lenexa	Lenexa
+	1	Leon	37.6903000	-96.7822500	US	KS	0	0	Leon	Leon
+	1	Leona	39.7872200	-95.3216400	US	KS	0	0	Leona	Leona
+	1	Leonardville	39.3644400	-96.8589000	US	KS	0	0	Leonardville	Leonardville
+	1	Lebanon	39.8097300	-98.5556200	US	KS	0	0	Lebanon	Lebanon
+	1	Lewis	37.9361300	-99.2526100	US	KS	0	0	Lewis	Lewis
+	1	Liberty	37.1556300	-95.5947000	US	KS	0	0	Liberty	Liberty
+	1	Liebenthal	38.6550100	-99.3192700	US	KS	0	0	Liebenthal	Liebenthal
+	1	Lincoln	39.0408400	-98.1447700	US	KS	0	0	Lincoln	Линкольн
+	1	Lincolnville	38.4933500	-96.9600200	US	KS	0	0	Lincolnville	Lincolnville
+	1	Lindsborg	38.5736200	-97.6744800	US	KS	0	0	Lindsborg	Lindsborg
+	1	Linn	39.6800000	-97.0841900	US	KS	0	0	Linn	Linn
+	1	Linn Valley	38.3775200	-94.7094000	US	KS	0	0	Linn Valley	Linn Valley
+	1	Linwood	39.0013900	-95.0391400	US	KS	0	0	Linwood	Linwood
+	1	Little River	38.3980700	-98.0120000	US	KS	0	0	Little River	Little River
+	1	Logan	39.6616700	-99.5703900	US	KS	0	0	Logan	Logan
+	1	Lone Elm	38.0800300	-95.2433100	US	KS	0	0	Lone Elm	Lone Elm
+	1	Long Island	39.9494500	-99.5359400	US	KS	0	0	Long Island	Long Island
+	1	Longford	39.1700000	-97.3314100	US	KS	0	0	Longford	Longford
+	1	Longton	37.3778200	-96.0808200	US	KS	0	0	Longton	Longton
+	1	Lorraine	38.5689000	-98.3167300	US	KS	0	0	Lorraine	Lorraine
+	1	Lost Springs	38.5661200	-96.9664000	US	KS	0	0	Lost Springs	Lost Springs
+	1	Louisburg	38.6194600	-94.6807900	US	KS	0	0	Louisburg	Louisburg
+	1	Louisville	39.2502700	-96.3147200	US	KS	0	0	Louisville	Луисвил
+	1	Lowell	37.0486700	-94.7016200	US	KS	0	0	Lowell	Lowell
+	1	Lucas	39.0561200	-98.5364600	US	KS	0	0	Lucas	Lucas
+	1	Luray	39.1105700	-98.6889600	US	KS	0	0	Luray	Luray
+	1	Lyndon	38.6100100	-95.6844300	US	KS	0	0	Lyndon	Lyndon
+	1	Lyons	38.3450100	-98.2017300	US	KS	0	0	Lyons	Lyons
+	1	Macksville	37.9591800	-98.9687100	US	KS	0	0	Macksville	Macksville
+	1	Madison	38.1355800	-96.1358300	US	KS	0	0	Madison	Мадисон
+	1	Mahaska	39.9875000	-97.3542100	US	KS	0	0	Mahaska	Mahaska
+	1	Maize	37.7791800	-97.4672700	US	KS	0	0	Maize	Maize
+	1	Manchester	39.0947200	-97.3247500	US	KS	0	0	Manchester	Манчестер
+	1	Manhattan	39.1836100	-96.5716700	US	KS	0	0	Manhattan	Манхэттен
+	1	Mankato	39.7872300	-98.2100500	US	KS	0	0	Mankato	Mankato
+	1	Maple Hill	39.0847200	-96.0280500	US	KS	0	0	Maple Hill	Maple Hill
+	1	Mapleton	38.0150300	-94.8835800	US	KS	0	0	Mapleton	Mapleton
+	1	Marion	38.3483500	-97.0172500	US	KS	0	0	Marion	Мэрион
+	1	Marquette	38.5555600	-97.8336600	US	KS	0	0	Marquette	Маркетт
+	1	Marysville	39.8411100	-96.6472400	US	KS	0	0	Marysville	Marysville
+	1	Matfield Green	38.1591800	-96.5605700	US	KS	0	0	Matfield Green	Matfield Green
+	1	Mayetta	39.3388900	-95.7224800	US	KS	0	0	Mayetta	Mayetta
+	1	Mayfield	37.2583500	-97.5447700	US	KS	0	0	Mayfield	Mayfield
+	1	McCracken	38.5805700	-99.5712200	US	KS	0	0	McCracken	McCracken
+	1	McCune	37.3547800	-95.0166300	US	KS	0	0	McCune	McCune
+	1	McFarland	39.0527800	-96.2377700	US	KS	0	0	McFarland	McFarland
+	1	McLouth	39.1958300	-95.2083000	US	KS	0	0	McLouth	McLouth
+	1	McPherson	38.3708400	-97.6642100	US	KS	0	0	McPherson	McPherson
+	1	Medicine Lodge	37.2811300	-98.5803600	US	KS	0	0	Medicine Lodge	Medicine Lodge
+	1	Melvern	38.5069600	-95.6377600	US	KS	0	0	Melvern	Melvern
+	1	Meriden	39.1888900	-95.5697000	US	KS	0	0	Meriden	Meriden
+	1	Merriam	39.0236200	-94.6935700	US	KS	0	0	Merriam	Merriam
+	1	Milan	37.2597400	-97.6739400	US	KS	0	0	Milan	Milan
+	1	Mildred	38.0236400	-95.1710900	US	KS	0	0	Mildred	Mildred
+	1	Milford	39.1683300	-96.9125100	US	KS	0	0	Milford	Милфорд
+	1	Milton	37.4316900	-97.7714400	US	KS	0	0	Milton	Milton
+	1	Miltonvale	39.3483300	-97.4461400	US	KS	0	0	Miltonvale	Miltonvale
+	1	Minneapolis	39.1219400	-97.7067000	US	KS	0	0	Minneapolis	Миннеаполис
+	1	Mission	39.0277800	-94.6557900	US	KS	0	0	Mission	Миссия
+	1	Mission Hills	39.0177800	-94.6169000	US	KS	0	0	Mission Hills	Mission Hills
+	1	Mission Woods	39.0350100	-94.6085700	US	KS	0	0	Mission Woods	Mission Woods
+	1	Moline	37.3603100	-96.3038900	US	KS	0	0	Moline	Молин
+	1	Moran	37.9161500	-95.1702500	US	KS	0	0	Moran	Moran
+	1	Morganville	39.4663900	-97.2019700	US	KS	0	0	Morganville	Morganville
+	1	Morrill	39.9283300	-95.6919300	US	KS	0	0	Morrill	Morrill
+	1	Morrowville	39.8444500	-97.1717000	US	KS	0	0	Morrowville	Morrowville
+	1	Mound City	38.1428100	-94.8135700	US	KS	0	0	Mound City	Mound City
+	1	Mound Valley	37.2053500	-95.4049700	US	KS	0	0	Mound Valley	Mound Valley
+	1	Moundridge	38.2030700	-97.5192100	US	KS	0	0	Moundridge	Moundridge
+	1	Mount Hope	37.8686200	-97.6650500	US	KS	0	0	Mount Hope	Mount Hope
+	1	Mulberry	37.5569900	-94.6219000	US	KS	0	0	Mulberry	Mulberry
+	1	Mullinville	37.5861300	-99.4756700	US	KS	0	0	Mullinville	Mullinville
+	1	Mulvane	37.4744600	-97.2439300	US	KS	0	0	Mulvane	Mulvane
+	1	Munden	39.9138900	-97.5381000	US	KS	0	0	Munden	Munden
+	1	Munjor	38.8111200	-99.2648200	US	KS	0	0	Munjor	Munjor
+	1	Muscotah	39.5527800	-95.5216500	US	KS	0	0	Muscotah	Muscotah
+	1	Narka	39.9605600	-97.4258700	US	KS	0	0	Narka	Narka
+	1	Nashville	37.4416900	-98.4225800	US	KS	0	0	Nashville	Нашвилл
+	1	Natoma	39.1908400	-99.0287000	US	KS	0	0	Natoma	Natoma
+	1	Neodesha	37.4183900	-95.6802600	US	KS	0	0	Neodesha	Neodesha
+	1	Neosho Falls	38.0055900	-95.5572100	US	KS	0	0	Neosho Falls	Neosho Falls
+	1	Neosho Rapids	38.3694600	-95.9919400	US	KS	0	0	Neosho Rapids	Neosho Rapids
+	1	Ness City	38.4527900	-99.9065100	US	KS	0	0	Ness City	Ness City
+	1	New Albany	37.5683800	-95.9377600	US	KS	0	0	New Albany	Нью-Албани
+	1	New Cambria	38.8791700	-97.5058600	US	KS	0	0	New Cambria	New Cambria
+	1	New Strawn	38.2625200	-95.7419300	US	KS	0	0	New Strawn	New Strawn
+	1	Newton	38.0466800	-97.3450400	US	KS	0	0	Newton	Ньютон
+	1	Netawaka	39.6027700	-95.7183200	US	KS	0	0	Netawaka	Netawaka
+	1	Nickerson	38.1472300	-98.0836700	US	KS	0	0	Nickerson	Nickerson
+	1	Niotaze	37.0736800	-96.0135900	US	KS	0	0	Niotaze	Niotaze
+	1	North Newton	38.0722300	-97.3455900	US	KS	0	0	North Newton	North Newton
+	1	Norton	39.8338900	-99.8915100	US	KS	0	0	Norton	Norton
+	1	Nortonville	39.4166600	-95.3335800	US	KS	0	0	Nortonville	Nortonville
+	1	Norwich	37.4572400	-97.8489400	US	KS	0	0	Norwich	Норидж
+	1	Oak Hill	39.2483300	-97.3414100	US	KS	0	0	Oak Hill	Oak Hill
+	1	Odin	38.5661200	-98.6086900	US	KS	0	0	Odin	Odin
+	1	Offerle	37.8908500	-99.5579000	US	KS	0	0	Offerle	Offerle
+	1	Ogden	39.1111100	-96.7061200	US	KS	0	0	Ogden	Огден
+	1	Oketo	39.9636100	-96.5997400	US	KS	0	0	Oketo	Oketo
+	1	Olathe	38.8814000	-94.8191300	US	KS	0	0	Olathe	Olathe
+	1	Olmitz	38.5166800	-98.9364800	US	KS	0	0	Olmitz	Olmitz
+	1	Olpe	38.2625200	-96.1669400	US	KS	0	0	Olpe	Olpe
+	1	Olsburg	39.4305500	-96.6155600	US	KS	0	0	Olsburg	Olsburg
+	1	Onaga	39.4888800	-96.1700000	US	KS	0	0	Onaga	Onaga
+	1	Oneida	39.8638900	-95.9391600	US	KS	0	0	Oneida	Oneida
+	1	Osage City	38.6339000	-95.8258200	US	KS	0	0	Osage City	Osage City
+	1	Osawatomie	38.4972400	-94.9505200	US	KS	0	0	Osawatomie	Osawatomie
+	1	Osborne	39.4391400	-98.6962400	US	KS	0	0	Osborne	Osborne
+	1	Oskaloosa	39.2152800	-95.3127500	US	KS	0	0	Oskaloosa	Oskaloosa
+	1	Oswego	37.1675700	-95.1099600	US	KS	0	0	Oswego	Oswego
+	1	Otis	38.5347300	-99.0531500	US	KS	0	0	Otis	Otis
+	1	Ottawa	38.6155700	-95.2677500	US	KS	0	0	Ottawa	Ottawa
+	1	Overbrook	38.7805600	-95.5572000	US	KS	0	0	Overbrook	Overbrook
+	1	Overland Park	38.9822300	-94.6707900	US	KS	0	0	Overland Park	Overland Park
+	1	Oxford	37.2741900	-97.1689300	US	KS	0	0	Oxford	Оксфорд
+	1	Ozawkie	39.2333300	-95.4669200	US	KS	0	0	Ozawkie	Ozawkie
+	1	Palco	39.2522300	-99.5628900	US	KS	0	0	Palco	Palco
+	1	Palmer	39.6319500	-97.1403000	US	KS	0	0	Palmer	Palmer
+	1	Paradise	39.1136200	-98.9184200	US	KS	0	0	Paradise	Paradise
+	1	Paola	38.5722400	-94.8791300	US	KS	0	0	Paola	Paola
+	1	Park City	37.8000100	-97.3183800	US	KS	0	0	Park City	Park City
+	1	Parker	38.3283500	-94.9919100	US	KS	0	0	Parker	Паркер
+	1	Parkerfield	37.0750300	-96.9992000	US	KS	0	0	Parkerfield	Parkerfield
+	1	Parsons	37.3403400	-95.2610800	US	KS	0	0	Parsons	Parsons
+	1	Partridge	37.9672300	-98.0925600	US	KS	0	0	Partridge	Partridge
+	1	Parkerville	38.7638900	-96.6614000	US	KS	0	0	Parkerville	Parkerville
+	1	Paxico	39.0694400	-96.1663800	US	KS	0	0	Paxico	Paxico
+	1	Peabody	38.1694600	-97.1067000	US	KS	0	0	Peabody	Пибоди
+	1	Pawnee Rock	38.2652900	-98.9809300	US	KS	0	0	Pawnee Rock	Pawnee Rock
+	1	Penalosa	37.7166800	-98.3197900	US	KS	0	0	Penalosa	Penalosa
+	1	Perry	39.0758300	-95.3933100	US	KS	0	0	Perry	Perry
+	1	Peru	37.0886700	-96.0947100	US	KS	0	0	Peru	Peru
+	1	Phillipsburg	39.7561200	-99.3239900	US	KS	0	0	Phillipsburg	Phillipsburg
+	1	Piqua	37.9228100	-95.5352600	US	KS	0	0	Piqua	Piqua
+	1	Pittsburg	37.4108800	-94.7049600	US	KS	0	0	Pittsburg	Питсбург
+	1	Plainville	39.2347300	-99.2981600	US	KS	0	0	Plainville	Плейнвилль
+	1	Pleasanton	38.1778100	-94.7113500	US	KS	0	0	Pleasanton	Плезантън
+	1	Plevna	37.9722400	-98.3086800	US	KS	0	0	Plevna	Plevna
+	1	Pomona	38.6083400	-95.4516500	US	KS	0	0	Pomona	Помона
+	1	Pomona	38.5958400	-95.4535900	US	KS	0	0	Pomona	Помона
+	1	Portis	39.5636200	-98.6934100	US	KS	0	0	Portis	Portis
+	1	Potwin	37.9389100	-97.0197600	US	KS	0	0	Potwin	Potwin
+	1	Powhattan	39.7616700	-95.6299800	US	KS	0	0	Powhattan	Powhattan
+	1	Prairie Village	38.9916700	-94.6335700	US	KS	0	0	Prairie Village	Prairie Village
+	1	Prescott	38.0636400	-94.6955100	US	KS	0	0	Prescott	Prescott
+	1	Pratt	37.6439100	-98.7375900	US	KS	0	0	Pratt	Pratt
+	1	Preston	37.7589100	-98.5531400	US	KS	0	0	Preston	Preston
+	1	Pretty Prairie	37.7800100	-98.0197800	US	KS	0	0	Pretty Prairie	Pretty Prairie
+	1	Princeton	38.4889000	-95.2752500	US	KS	0	0	Princeton	Принстон
+	1	Protection	37.2014100	-99.4840100	US	KS	0	0	Protection	Protection
+	1	Quenemo	38.5797300	-95.5269300	US	KS	0	0	Quenemo	Quenemo
+	1	Radium	38.1741800	-98.8934300	US	KS	0	0	Radium	Radium
+	1	Ramona	38.5972300	-97.0619600	US	KS	0	0	Ramona	Ramona
+	1	Randall	39.6425100	-98.0447700	US	KS	0	0	Randall	Randall
+	1	Randolph	39.4305500	-96.7600100	US	KS	0	0	Randolph	Рандольф
+	1	Ransom	38.6361300	-99.9337300	US	KS	0	0	Ransom	Ransom
+	1	Rantoul	38.5486200	-95.1002500	US	KS	0	0	Rantoul	Rantoul
+	1	Raymond	38.2769600	-98.4159000	US	KS	0	0	Raymond	Raymond
+	1	Reading	38.5194600	-95.9586000	US	KS	0	0	Reading	Рединг
+	1	Redfield	37.8367100	-94.8810800	US	KS	0	0	Redfield	Redfield
+	1	Republic	39.9236200	-97.8217100	US	KS	0	0	Republic	Republic
+	1	Reserve	39.9772200	-95.5619300	US	KS	0	0	Reserve	Reserve
+	1	Richmond	38.4028000	-95.2538600	US	KS	0	0	Richmond	Ричмонд
+	1	Riley	39.2988900	-96.8308400	US	KS	0	0	Riley	Riley
+	1	Riverton	37.0750600	-94.7046700	US	KS	0	0	Riverton	Riverton
+	1	Robinson	39.8166700	-95.4105300	US	KS	0	0	Robinson	Robinson
+	1	Roeland Park	39.0375100	-94.6321800	US	KS	0	0	Roeland Park	Roeland Park
+	1	Rosalia	37.8153000	-96.6197400	US	KS	0	0	Rosalia	Rosalia
+	1	Rose Hill	37.5583500	-97.1350400	US	KS	0	0	Rose Hill	Rose Hill
+	1	Roseland	37.2811700	-94.8505200	US	KS	0	0	Roseland	Roseland
+	1	Rossville	39.1361100	-95.9516600	US	KS	0	0	Rossville	Rossville
+	1	Roxbury	38.5508400	-97.4303100	US	KS	0	0	Roxbury	Roxbury
+	1	Rozel	38.1958500	-99.4031700	US	KS	0	0	Rozel	Rozel
+	1	Rush Center	38.4652900	-99.3101100	US	KS	0	0	Rush Center	Rush Center
+	1	Russell	38.8952700	-98.8610300	US	KS	0	0	Russell	Russell
+	1	Sabetha	39.9022200	-95.8008200	US	KS	0	0	Sabetha	Sabetha
+	1	Saint George	39.1911100	-96.4202800	US	KS	0	0	Saint George	Святой Георгий
+	1	Saint John	38.0022400	-98.7600900	US	KS	0	0	Saint John	Saint John
+	1	Saint Marys	39.1941600	-96.0711000	US	KS	0	0	Saint Marys	Saint Marys
+	1	Saint Marys	37.7066800	-97.6400500	US	KS	0	0	Saint Marys	Saint Marys
+	1	Saint Paul	37.5189400	-95.1733100	US	KS	0	0	Saint Paul	Saint Paul
+	1	Salina	38.8402800	-97.6114200	US	KS	0	0	Salina	Салина
+	1	Savonburg	37.7494900	-95.1441400	US	KS	0	0	Savonburg	Savonburg
+	1	Sawyer	37.4972400	-98.6823100	US	KS	0	0	Sawyer	Sawyer
+	1	Scammon	37.2775600	-94.8249600	US	KS	0	0	Scammon	Scammon
+	1	Scandia	39.7944500	-97.7836500	US	KS	0	0	Scandia	Scandia
+	1	Schoenchen	38.7133500	-99.3323300	US	KS	0	0	Schoenchen	Schoenchen
+	1	Scottsville	39.5436200	-97.9531000	US	KS	0	0	Scottsville	Scottsville
+	1	Scranton	38.7816700	-95.7386000	US	KS	0	0	Scranton	Скрентон
+	1	Sedan	37.1267200	-96.1869400	US	KS	0	0	Sedan	Sedan
+	1	Sedgwick	37.9166800	-97.4225400	US	KS	0	0	Sedgwick	Sedgwick
+	1	Seneca	39.8341600	-96.0641700	US	KS	0	0	Seneca	Seneca
+	1	Severy	37.6222500	-96.2280500	US	KS	0	0	Severy	Severy
+	1	Seward	38.1777900	-98.7948100	US	KS	0	0	Seward	Seward
+	1	Sharon	37.2486300	-98.4206300	US	KS	0	0	Sharon	Шарон
+	1	Shawnee	39.0416700	-94.7202400	US	KS	0	0	Shawnee	Shawnee
+	1	Silver Lake	39.1041700	-95.8586000	US	KS	0	0	Silver Lake	Silver Lake
+	1	Simpson	39.3852800	-97.9314300	US	KS	0	0	Simpson	Simpson
+	1	Smith Center	39.7791800	-98.7850700	US	KS	0	0	Smith Center	Smith Center
+	1	Smolan	38.7386200	-97.6844800	US	KS	0	0	Smolan	Smolan
+	1	Soldier	39.5361100	-95.9641600	US	KS	0	0	Soldier	Soldier
+	1	Solomon	38.9194400	-97.3711400	US	KS	0	0	Solomon	Solomon
+	1	South Hutchinson	38.0280700	-97.9403300	US	KS	0	0	South Hutchinson	South Hutchinson
+	1	South Haven	37.0519700	-97.4053200	US	KS	0	0	South Haven	South Haven
+	1	Spearville	37.8500200	-99.7567900	US	KS	0	0	Spearville	Spearville
+	1	Speed	39.6772300	-99.4209300	US	KS	0	0	Speed	Speed
+	1	Spivey	37.4458500	-98.1634000	US	KS	0	0	Spivey	Spivey
+	1	Spring Hill	38.7430600	-94.8255200	US	KS	0	0	Spring Hill	Спринг-Хилл
+	1	Stafford	37.9622400	-98.6006400	US	KS	0	0	Stafford	Stafford
+	1	Stark	37.6900500	-95.1430300	US	KS	0	0	Stark	Stark
+	1	Sterling	38.2100100	-98.2070100	US	KS	0	0	Sterling	Стерлинг
+	1	Strong City	38.3972400	-96.5369500	US	KS	0	0	Strong City	Strong City
+	1	Summerfield	39.9972200	-96.3502900	US	KS	0	0	Summerfield	Summerfield
+	1	Sun City	37.3786300	-98.9159300	US	KS	0	0	Sun City	Sun City
+	1	Susank	38.6408400	-98.7739700	US	KS	0	0	Susank	Susank
+	1	Sylvan Grove	39.0094500	-98.3942300	US	KS	0	0	Sylvan Grove	Sylvan Grove
+	1	Sylvia	37.9577900	-98.4081300	US	KS	0	0	Sylvia	Sylvia
+	1	Talmage	39.0250000	-97.2605800	US	KS	0	0	Talmage	Talmage
+	1	Tampa	38.5472300	-97.1530800	US	KS	0	0	Tampa	Тампа
+	1	Tescott	39.0080600	-97.8756000	US	KS	0	0	Tescott	Tescott
+	1	Thayer	37.4931100	-95.4702600	US	KS	0	0	Thayer	Thayer
+	1	Timken	38.4736200	-99.1781600	US	KS	0	0	Timken	Timken
+	1	Tipton	39.3430700	-98.4709000	US	KS	0	0	Tipton	Tipton
+	1	Tonganoxie	39.1097200	-95.0877500	US	KS	0	0	Tonganoxie	Tonganoxie
+	1	Toronto	37.7989300	-95.9491600	US	KS	0	0	Toronto	Toronto
+	1	Towanda	37.7975200	-96.9997600	US	KS	0	0	Towanda	Towanda
+	1	Topeka	39.0483300	-95.6780400	US	KS	0	0	Topeka	Топика
+	1	Treece (historical)	37.0009000	-94.8432800	US	KS	0	0	Treece (historical)	Treece (historical)
+	1	Troy	39.7830500	-95.0899700	US	KS	0	0	Troy	Троя
+	1	Turon	37.8072400	-98.4267400	US	KS	0	0	Turon	Turon
+	1	Tyro	37.0378500	-95.8213700	US	KS	0	0	Tyro	Tyro
+	1	Udall	37.3875200	-97.1142100	US	KS	0	0	Udall	Udall
+	1	Uniontown	37.8472600	-94.9752500	US	KS	0	0	Uniontown	Uniontown
+	1	Valley Center	37.8347300	-97.3733800	US	KS	0	0	Valley Center	Valley Center
+	1	Valley Falls	39.3433300	-95.4602500	US	KS	0	0	Valley Falls	Valley Falls
+	1	Vassar	38.6472300	-95.6224800	US	KS	0	0	Vassar	Vassar
+	1	Vermillion	39.7194400	-96.2658400	US	KS	0	0	Vermillion	Vermillion
+	1	Victoria	38.8527900	-99.1476000	US	KS	0	0	Victoria	Виктория
+	1	Vining	39.5669400	-97.2953100	US	KS	0	0	Vining	Vining
+	1	Viola	37.4830700	-97.6439400	US	KS	0	0	Viola	Viola
+	1	Virgil	37.9808600	-96.0102700	US	KS	0	0	Virgil	Virgil
+	1	WaKeeney	39.0250100	-99.8795700	US	KS	0	0	WaKeeney	WaKeeney
+	1	Wakarusa	38.8858400	-95.6958200	US	KS	0	0	Wakarusa	Wakarusa
+	1	Wakefield	39.2133300	-97.0055700	US	KS	0	0	Wakefield	Wakefield
+	1	Waldo	39.1183400	-98.7981400	US	KS	0	0	Waldo	Waldo
+	1	Waldron	37.0022500	-98.1825700	US	KS	0	0	Waldron	Waldron
+	1	Walnut	37.6014400	-95.0780300	US	KS	0	0	Walnut	Walnut
+	1	Walton	38.1177900	-97.2567000	US	KS	0	0	Walton	Walton
+	1	Wamego	39.2019400	-96.3050000	US	KS	0	0	Wamego	Wamego
+	1	Washington	39.8180600	-97.0508600	US	KS	0	0	Washington	Вашингтон
+	1	Waterville	39.6911100	-96.7475200	US	KS	0	0	Waterville	Waterville
+	1	Wathena	39.7591600	-94.9496900	US	KS	0	0	Wathena	Wathena
+	1	Waverly	38.3939100	-95.6030400	US	KS	0	0	Waverly	Waverly
+	1	Webber	39.9350100	-98.0350400	US	KS	0	0	Webber	Webber
+	1	Weir	37.3100500	-94.7719000	US	KS	0	0	Weir	Weir
+	1	Welda	38.1694700	-95.2947000	US	KS	0	0	Welda	Welda
+	1	Wellington	37.2653000	-97.3717100	US	KS	0	0	Wellington	Веллингтон
+	1	Wellsville	38.7183400	-95.0816400	US	KS	0	0	Wellsville	Wellsville
+	1	West Mineral	37.2842200	-94.9230200	US	KS	0	0	West Mineral	West Mineral
+	1	Westmoreland	39.3938900	-96.4136100	US	KS	0	0	Westmoreland	Westmoreland
+	1	Westphalia	38.1819700	-95.4902600	US	KS	0	0	Westphalia	Westphalia
+	1	Westwood	39.0405600	-94.6169000	US	KS	0	0	Westwood	Westwood
+	1	Westwood Hills	39.0388900	-94.6099600	US	KS	0	0	Westwood Hills	Westwood Hills
+	1	Wetmore	39.6333300	-95.8113800	US	KS	0	0	Wetmore	Wetmore
+	1	Wheaton	39.5022200	-96.3208400	US	KS	0	0	Wheaton	Уитон
+	1	White City	38.7955600	-96.7358400	US	KS	0	0	White City	White City
+	1	White Cloud	39.9763900	-95.2969200	US	KS	0	0	White Cloud	White Cloud
+	1	Whitewater	37.9647400	-97.1475300	US	KS	0	0	Whitewater	Whitewater
+	1	Whiting	39.5897200	-95.6127600	US	KS	0	0	Whiting	Whiting
+	1	Wichita	37.6922400	-97.3375400	US	KS	0	0	Wichita	Уичито
+	1	Willard	39.0933300	-95.9419300	US	KS	0	0	Willard	Willard
+	1	Williamsburg	38.4805700	-95.4669200	US	KS	0	0	Williamsburg	Williamsburg
+	1	Willis	39.7250000	-95.5058100	US	KS	0	0	Willis	Willis
+	1	Willowbrook	38.1019600	-97.9920000	US	KS	0	0	Willowbrook	Willowbrook
+	1	Wilmore	37.3358600	-99.2101100	US	KS	0	0	Wilmore	Wilmore
+	1	Wilroads Gardens	37.7241900	-99.9331900	US	KS	0	0	Wilroads Gardens	Wilroads Gardens
+	1	Wilsey	38.6361200	-96.6752900	US	KS	0	0	Wilsey	Wilsey
+	1	Wilson	38.8250100	-98.4753400	US	KS	0	0	Wilson	Уилсон
+	1	Winchester	39.3222200	-95.2669200	US	KS	0	0	Winchester	Winchester
+	1	Windom	38.3839000	-97.9100500	US	KS	0	0	Windom	Windom
+	1	Winfield	37.2397500	-96.9955900	US	KS	0	0	Winfield	Winfield
+	1	Woodbine	38.7961200	-96.9586200	US	KS	0	0	Woodbine	Woodbine
+	1	Woodston	39.4552900	-99.0956500	US	KS	0	0	Woodston	Woodston
+	1	Wright	37.7805800	-99.8920800	US	KS	0	0	Wright	Wright
+	1	Yates Center	37.8811500	-95.7333200	US	KS	0	0	Yates Center	Yates Center
+	1	Yoder	37.9402900	-97.8683800	US	KS	0	0	Yoder	Yoder
+	1	Zenda	37.4422400	-98.2820200	US	KS	0	0	Zenda	Zenda
+	1	Zurich	39.2344500	-99.4381600	US	KS	0	0	Zurich	Zurich
+	1	Olivet	38.4805700	-95.7516500	US	KS	0	0	Olivet	Olivet
+	1	Dighton	38.4819600	-100.4670800	US	KS	0	0	Dighton	Dighton
+	1	Atwood	39.8066700	-101.0421000	US	KS	0	0	Atwood	Atwood
+	1	Bird City	39.7508300	-101.5329400	US	KS	0	0	Bird City	Bird City
+	1	Brewster	39.3666700	-101.3768300	US	KS	0	0	Brewster	Брюстер
+	1	Clayton	39.7375000	-100.1776400	US	KS	0	0	Clayton	Clayton
+	1	Colby	39.3958400	-101.0523800	US	KS	0	0	Colby	Colby
+	1	Collyer	39.0355600	-100.1179100	US	KS	0	0	Collyer	Collyer
+	1	Coolidge	38.0418000	-102.0102900	US	KS	0	0	Coolidge	Coolidge
+	1	Copeland	37.5419700	-100.6296000	US	KS	0	0	Copeland	Copeland
+	1	Deerfield	37.9797400	-101.1332200	US	KS	0	0	Deerfield	Deerfield
+	1	Dodge City	37.7528000	-100.0170800	US	KS	0	0	Dodge City	Додж-сити
+	1	Dresden	39.6241700	-100.4223600	US	KS	0	0	Dresden	Dresden
+	1	Elkhart	37.0080800	-101.8901700	US	KS	0	0	Elkhart	Элкхарт
+	1	Ensign	37.6528000	-100.2337500	US	KS	0	0	Ensign	Ensign
+	1	Fowler	37.3855800	-100.1957000	US	KS	0	0	Fowler	Fowler
+	1	Garden City	37.9716900	-100.8726600	US	KS	0	0	Garden City	Garden City
+	1	Gem	39.4277800	-100.8976500	US	KS	0	0	Gem	Gem
+	1	Goodland	39.3508300	-101.7101700	US	KS	0	0	Goodland	Goodland
+	1	Gove	38.9577900	-100.4887500	US	KS	0	0	Gove	Gove
+	1	Grainfield	39.1136200	-100.4651400	US	KS	0	0	Grainfield	Grainfield
+	1	Grinnell	39.1272300	-100.6290300	US	KS	0	0	Grinnell	Grinnell
+	1	Healy	38.6000200	-100.6170900	US	KS	0	0	Healy	Healy
+	1	Herndon	39.9097300	-100.7851500	US	KS	0	0	Herndon	Херндон
+	1	Holcomb	37.9861400	-100.9893300	US	KS	0	0	Holcomb	Holcomb
+	1	Horace	38.4764000	-101.7907300	US	KS	0	0	Horace	Horace
+	1	Hoxie	39.3575000	-100.4418100	US	KS	0	0	Hoxie	Hoxie
+	1	Hugoton	37.1753000	-101.3496000	US	KS	0	0	Hugoton	Hugoton
+	1	Ingalls	37.8278000	-100.4545900	US	KS	0	0	Ingalls	Ingalls
+	1	Jennings	39.6794500	-100.2934700	US	KS	0	0	Jennings	Jennings
+	1	Johnson	37.5705700	-101.7510000	US	KS	0	0	Johnson	Johnson
+	1	Kanorado	39.3330500	-102.0379600	US	KS	0	0	Kanorado	Kanorado
+	1	Kismet	37.2055800	-100.7021000	US	KS	0	0	Kismet	Kismet
+	1	Lakin	37.9405800	-101.2548900	US	KS	0	0	Lakin	Lakin
+	1	Lenora	39.6105600	-100.0026300	US	KS	0	0	Lenora	Lenora
+	1	Leoti	38.4797400	-101.3587700	US	KS	0	0	Leoti	Leoti
+	1	Levant	39.3855600	-101.1948800	US	KS	0	0	Levant	Levant
+	1	Liberal	37.0430800	-100.9210000	US	KS	0	0	Liberal	Либеральная
+	1	Manter	37.5230700	-101.8849000	US	KS	0	0	Manter	Manter
+	1	Marienthal	38.4875200	-101.2129300	US	KS	0	0	Marienthal	Marienthal
+	1	McDonald	39.7858300	-101.3757200	US	KS	0	0	McDonald	McDonald
+	1	Meade	37.2855800	-100.3401500	US	KS	0	0	Meade	Meade
+	1	Menlo	39.3569500	-100.7226500	US	KS	0	0	Menlo	Menlo
+	1	Minneola	37.4433600	-100.0151400	US	KS	0	0	Minneola	Minneola
+	1	Morland	39.3494500	-100.0756900	US	KS	0	0	Morland	Morland
+	1	Moscow	37.3236300	-101.2057200	US	KS	0	0	Moscow	Город Москва
+	1	Norcatur	39.8369500	-100.1879100	US	KS	0	0	Norcatur	Norcatur
+	1	Oakley	39.1333400	-100.8637600	US	KS	0	0	Oakley	Oakley
+	1	Oberlin	39.8183400	-100.5282000	US	KS	0	0	Oberlin	Oberlin
+	1	Park	39.1125100	-100.3587500	US	KS	0	0	Park	Park
+	1	Plains	37.2603000	-100.5926500	US	KS	0	0	Plains	Plains
+	1	Quinter	39.0694500	-100.2323600	US	KS	0	0	Quinter	Quinter
+	1	Richfield	37.2661300	-101.7823900	US	KS	0	0	Richfield	Richfield
+	1	Rexford	39.4716700	-100.7434800	US	KS	0	0	Rexford	Rexford
+	1	Russell Springs	38.9133400	-101.1815500	US	KS	0	0	Russell Springs	Russell Springs
+	1	Saint Francis	39.7722200	-101.7999000	US	KS	0	0	Saint Francis	Saint Francis
+	1	Satanta	37.4372500	-100.9721100	US	KS	0	0	Satanta	Satanta
+	1	Selden	39.5408400	-100.5676400	US	KS	0	0	Selden	Селден
+	1	Scott City	38.4825200	-100.9070900	US	KS	0	0	Scott City	Scott City
+	1	Sharon Springs	38.8977900	-101.7521200	US	KS	0	0	Sharon Springs	Sharon Springs
+	1	Syracuse	37.9807100	-101.7543000	US	KS	0	0	Syracuse	Syracuse
+	1	Sublette	37.4816900	-100.8437700	US	KS	0	0	Sublette	Sublette
+	1	Tribune	38.4697400	-101.7526700	US	KS	0	0	Tribune	Tribune
+	1	Utica	38.6439000	-100.1698500	US	KS	0	0	Utica	Utica
+	1	Ulysses	37.5814100	-101.3551700	US	KS	0	0	Ulysses	Ulysses
+	1	Wallace	38.9114000	-101.5915600	US	KS	0	0	Wallace	Wallace
+	1	Weskan	38.8666700	-101.9643400	US	KS	0	0	Weskan	Weskan
+	1	Winona	39.0633400	-101.2443300	US	KS	0	0	Winona	Вайнона
+	1	Cimarron	37.8066900	-100.3482000	US	KS	0	0	Cimarron	Cimarron
+	1	Montezuma	37.5958600	-100.4432000	US	KS	0	0	Montezuma	Montezuma
+	1	Rolla	37.1200300	-101.6321100	US	KS	0	0	Rolla	Rolla
+	1	Fort Riley North	39.1108100	-96.8139200	US	KS	0	0	Fort Riley North	Fort Riley North
+	1	Kickapoo Site 1	39.7144500	-95.6484300	US	KS	0	0	Kickapoo Site 1	Kickapoo Site 1
+	1	Kickapoo Site 2	39.7029400	-95.6495300	US	KS	0	0	Kickapoo Site 2	Kickapoo Site 2
+	1	Kickapoo Site 5	39.6734800	-95.6842000	US	KS	0	0	Kickapoo Site 5	Kickapoo Site 5
+	1	Kickapoo Site 6	39.6917500	-95.6904900	US	KS	0	0	Kickapoo Site 6	Kickapoo Site 6
+	1	Kickapoo Site 7	39.6895300	-95.6713300	US	KS	0	0	Kickapoo Site 7	Kickapoo Site 7
+	1	Kickapoo Tribal Center	39.6722400	-95.6452800	US	KS	0	0	Kickapoo Tribal Center	Kickapoo Tribal Center
+	1	McConnell AFB	37.6300700	-97.2586900	US	KS	0	0	McConnell AFB	McConnell AFB
+	1	New Century, KS	38.8225300	-94.8997100	US	KS	0	0	New Century, KS	New Century, KS

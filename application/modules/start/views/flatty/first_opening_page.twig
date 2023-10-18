@@ -1,0 +1,271 @@
+<style type="text/css">
+    .fist-opening__btn a{
+        font-size: initial;
+        margin-left: 20px;
+    } 
+    .theme-image-block div {
+        display: block !important;
+    }
+    .fist-opening {
+        margin-top: 0 !important;
+    }
+    @media (max-width: 480px) {
+        .fist-opening__btn a {
+            display: block;
+            margin-top: 20px;
+            margin-left: 15px;
+        } 
+        .fist-opening__theme-img {  
+            min-width: unset !important; 
+        }
+    }
+    .fist-opening__edit-theme:hover {
+        cursor: pointer;
+    }
+    .btn-primary.set-design {
+        margin-left: 15px; 
+    }
+    .panel-group .panel {
+        margin-top: 15px;
+    }
+   
+    @media (min-width: 768px) {
+        .theme-image-block img {
+            margin-left: 0;
+        }
+    }
+    .fist-opening__theme-img {
+        padding: 15px;
+        max-height: 198px;
+        min-width: 260px;
+        margin: 6px auto !important;
+        cursor: pointer;
+        background: white;
+    }
+    .fist-opening__skip {
+        text-align: center;
+        margin-bottom: 50px;
+    }
+    @media (max-width: 1580px) and (min-width: 1366px){
+        .fist-opening__theme-img {
+            height: 190px !important; 
+        }
+    }
+    .fist-opening__theme-img.select {
+        border: 4px solid #ee2c55 !important;
+    }
+    @media (max-width: 1365px) and (min-width: 992px) {
+        .fist-opening__theme-img {
+            height: 138px !important;
+            min-width: 182px !important; 
+        }   
+    }
+    .fist-opening__icon-block {
+        float: left;
+        text-align: center;
+        margin-right: 10px;
+    }
+    @media (max-width: 889px) and (min-width: 480px) {
+        .fist-opening__theme-img {
+            height: 190px !important;
+        } 
+    }  
+    .fist-opening__btn.btn-no-mrg a{
+        margin: 0px;
+    }
+    .fist-opening__icon {
+        height: 30px;
+        width: auto;
+    }
+    .fist-opening__btn {
+        margin-top: 20px;
+    }
+    .panel-body .fist-opening__btn.btn-no-mrg {
+        margin-top: 20px;
+        margin-bottom: 40px;
+    }
+    .panel-body .fist-opening__description {
+        font-size: 9px;
+    }
+</style>
+{% if not is_pjax %}
+    <!DOCTYPE html>
+    <html DIR="{{ _LANG.rtl }}" lang="{{ _LANG.code }}" xmlns="https://www.w3.org/1999/xhtml" />
+    <head>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+            <meta name="viewport" content="width=device-width, initial-scale=1">
+                <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+                    {% helper seo.seo_tags('robots') %}
+                    <base href="{{ site_root }}" />        
+                    {% helper start.favicon({'type': 'user'}) %}
+                    <link href='https://fonts.googleapis.com/css?family=Open+Sans&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
+                        {#<link rel="stylesheet" href="{{ site_root }}uploads/themes-fixed/pleasure/styles/font-awesome.css" type="text/css" />#}
+                        <link rel="stylesheet" href="{{ site_root }}uploads/themes-fixed/pleasure/styles/bootstrap-{{ _LANG.rtl }}.css" type="text/css" />
+                        {% helper theme.include_css('style', 'screen') %}
+                        {% helper theme.css(load_type) %}
+                        <link rel="stylesheet" href="{{ site_root }}uploads/themes-fixed/pleasure/styles/style-{{ _LANG.rtl }}.css" type="text/css" />
+                    {% endif %}
+                    {% helper seo.seo_tags('title') %}
+                    {% helper seo.seo_tags('description|keyword|canonical|og_title|og_type|og_url|og_image|og_site_name|og_description') %}
+
+                    <script>
+                        var site_rtl_settings = '{{ _LANG.rtl }}';
+                        var site_root = '{{ site_root }}';
+                        var is_pjax = parseInt('{{ is_pjax }}');
+                        var js_events
+                        = {% helper json.json_encode(js_events) %};
+                                var id_user = {% if user_session_data.user_id %}{{ user_session_data.user_id }}{% else %}0{% endif %};
+                    </script>
+
+                    {% if not is_pjax %}
+                        <script>
+                            var site_url = '{{ site_url }}';
+                            var img_folder = '{{ img_folder }}';
+                            var site_error_position = 'center';
+                            var use_pjax = 0;
+                            var pjax_container = '#pjaxcontainer';
+                        </script>
+                        {% helper utils.jscript('', 'jquery.js', '', 'sync') %}
+                        {% helper utils.jscript('', 'functions.js', '', 'sync' ) %}
+                        {% helper utils.jscript('', 'nprogress/nprogress.min.js', '', 'sync') %}
+                        {% helper utils.jscript('', 'errors.js', '', 'sync') %}
+                        {% helper utils.jscript('', 'loading_content.js', '', 'sync') %}
+
+                        {% helper seo_advanced.seo_traker('top') %}
+                        {% helper start.analytics() %}
+                        </head>
+                        <body class="index-pleasure">
+                            {% helper start.demoPanel({type: 'user', place: 'top'}) %}
+                            <div id="pjaxcontainer" class="hp100">
+                            {% endif %}
+
+                            <div class="col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2 fist-opening">
+                                <div class="fist-opening__skip_top">
+                                    <span data-action="skip_settings" class="fist-opening__link">
+                                        {% helper lang.l('field_fo_link_skip', 'start') %}
+                                    </span>
+                                </div>
+                                <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+                                    <div class="panel panel-default">
+                                        <div class="panel-heading" role="tab" id="headingOne">
+                                            <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                                <h4 class="panel-title">
+                                                    1 {% helper lang.l('field_fo_title_design', 'start') %}
+                                                </h4>
+                                            </a>
+                                        </div>
+                                        <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+                                            <div class="panel-body">{% helper themes.preview() %}</div>
+                                        </div>
+                                    </div>
+                                    <div class="panel panel-default">
+                                        <div class="panel-heading" role="tab" id="headingTwo">
+                                            <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                                <h4 class="panel-title">
+                                                    2 {% helper lang.l('field_fo_title_brand', 'start') %}
+                                                </h4>
+                                            </a>
+                                        </div>
+                                        <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+                                            <div class="panel-body">
+                                                <div class="form-group">
+                                                    <label for="brand" class="col-xs-12 tali">{% helper lang.l('field_fo_label_brand', 'start') %}</label>
+                                                    <div class="col-xs-12">
+                                                        <input name="brand" id="brand" class="form-control" value="{{ logo_settings.text_logo }}" type="text" placeholder="{% helper lang.l('field_fo_placeholder_brand', 'start') %}">
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <div class="col-xs-12">
+                                                        <div class="fist-opening__btn">
+                                                            <button class="btn btn-primary" data-action="set-brand">{% helper lang.l('field_fo_btn_save', 'start') %}</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="panel panel-default">
+                                        <div class="panel-heading" role="tab" id="headingThree">
+                                            <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                                <h4 class="panel-title">
+                                                    3 {% helper lang.l('field_fo_title_settings', 'start') %}
+                                                </h4>
+                                            </a>
+                                        </div>
+                                        <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+                                            <div class="panel-body">
+                                                <div class="col-xs-12 col-md-6">
+                                                    <div class="fist-opening__icon-block">
+                                                        <img class="fist-opening__icon" src="{{ site_root }}application/views/flatty/img/icons/ic-rocket.png">
+                                                            <div class="fist-opening__description">{% helper lang.l('field_fo_label_settings_memberships', 'start') %}</div>
+                                                    </div>
+                                                    <div class="clearfix"></div>
+                                                    <div class="fist-opening__btn btn-no-mrg">
+                                                        <a  href="{{ site_url }}start/first_opening/edit_memberships" target="_blank"  data-action="edit-memberships" class="btn btn-primary">
+                                                            {% helper lang.l('field_fo_link_edit_memberships', 'start') %}
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                                <div class="col-xs-12 col-md-6">
+                                                    <div>
+                                                        <span class="fist-opening__icon-block">
+                                                            <img class="fist-opening__icon" src="{{ site_root }}application/views/flatty/img/icons/ic-stealth.png">
+                                                                <div class="fist-opening__description">{% helper lang.l('field_fo_label_settings_stealth', 'start') %}</div>
+                                                        </span>
+                                                        <span class="fist-opening__icon-block">
+                                                            <img class="fist-opening__icon" src="{{ site_root }}application/views/flatty/img/icons/ic-highlight.png">
+                                                                <div class="fist-opening__description">{% helper lang.l('field_fo_label_settings_highlight', 'start') %}</div>
+                                                        </span>
+                                                        <span class="fist-opening__icon-block">
+                                                            <img class="fist-opening__icon" src="{{ site_root }}application/views/flatty/img/icons/ic-liftup.png">
+                                                                <div class="fist-opening__description">{% helper lang.l('field_fo_label_settings_lift_up', 'start') %}</div>
+                                                        </span>
+                                                    </div>
+                                                    <div class="clearfix"></div>
+                                                    <div class="fist-opening__btn  btn-no-mrg">
+                                                        <a href="{{ site_url }}start/first_opening/edit_services" target="_blank"  data-action="edit-services" class="btn btn-primary">
+                                                            {% helper lang.l('field_fo_link_edit_services', 'start') %}
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                                <div class="clearfix"></div>
+                                                <div class="col-xs-12">
+                                                    <a href=" https://www.datingpro.com/blog/how-to-earn-money-with-your-online-dating-site" 
+                                                    onclick=" sendAnalytics('how-to-earn-money', 'onboarding', 'money'); " target="_blank" class="fist-opening__link mt20">{% helper lang.l('field_fo_link_dating_blog', 'start') %}</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="fist-opening__skip">
+                                    <span data-action="skip_settings" class="fist-opening__link">
+                                        {% helper lang.l('field_fo_link_skip', 'start') %}
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+
+                        {% if not is_pjax %}
+                            {% helper start.intercom() %}
+                            {% helper start.amplitude() %}     
+                            <script>
+                                $(function () {
+                                    $('[href*="/styles/style-ltr.css"]').remove();
+                                    loadingExternalScripts('//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js');
+                                    loadScripts(
+                                            "{% helper utils.jscript('start', 'FirstOpening.js', 'path') %}",
+                                            function () {
+                                                first_opening = new FirstOpening({
+                                                    siteUrl: '{{ site_url }}',
+                                                    themes: {{ themes_list|json_encode() }},
+                                                    theme_id: {{ theme_id }}
+                                                });
+                                            },
+                                            ['first_opening'],
+                                            {async: false}
+                                    );
+                                });
+                            </script>
+                        </body>
+                        </html>
+                    {% endif %}

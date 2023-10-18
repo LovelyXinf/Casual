@@ -1,0 +1,6 @@
+<span>
+    {% helper lang.l('field_balance', 'operators') %}:
+    <a href="{{ site_url }}operator/start/statistics">
+        <strong class="js-curr-balance" data-account="{{ h_cb_data.operator.account }}">{% helper start.currency_format_output({'value': h_cb_data.operator.account, 'no_tags': true, 'not_virtual': true}) %}</strong>
+    </a>
+</span>

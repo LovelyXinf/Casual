@@ -1,0 +1,8 @@
+<div class="lang-block-header" data-bind="langheader"></div>
+<ul>
+    {% for language in languages %}
+        <li {% if loop.index == 1 %}class="lbi-selected"{% endif %} role="presentation" data-code="{{ language }}" 
+            data-id="{{ loop.index }}" data-bind="lang{{ loop.index }}">
+        </li>
+    {% endfor %}
+</ul>

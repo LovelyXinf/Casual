@@ -1,0 +1,65 @@
+{% set rand = random(1000) %}
+
+<input type="hidden" name="{{ h_os_data.var_name }}">
+<div id="user_select_{{ rand }}" class="user-select">
+    <span id="user_text_{{ rand }}">
+        {% for item in h_os_data.selected %}
+            {{ item.nickname }} ({{ item.output_name }}){% if h_os_data.max_select != 1 %}<br>{% endif %}
+            <input type="hidden" name="{{ h_os_data.var_name }}{% if h_os_data.max_select != 1 %}[]{% endif %}" value="{{ item.id }}">
+        {% endfor %}
+    </span>
+    <a href="#" id="user_link_{{ rand }}">
+        {% helper lang.l('link_manage_users', 'users') %}
+    </a>
+    {% if h_os_data.max_select > 1 %}
+        <i>({% helper lang.l('max_user_select', 'users') %}: {{ h_os_data.max_select }})</i>
+    {% endif %}<br>
+    <div class="clearfix"></div>
+</div>
+
+<script type="text/javascript">
+    $(function () {
+        loadScripts(
+            "{% helper utils.jscript('operators', '../views/gentelella/js/OperatorSelect.js', 'path') %}",
+            function () {
+                new operatorSelect({
+                    siteUrl: '{{ site_url }}',
+                    selectedItems: [{{ h_os_data.selected_str }}],
+                    elementsDOM: {
+                        mainId: 'user_select_{{ rand }}',
+                        spanId: 'user_text_{{ rand }}',
+                        manageLinkId: 'user_link_{{ rand }}',
+                        itemsId: 'user_select_items{{ rand }}',
+                        selectedItemsId: 'user_selected_items{{ rand }}',
+                        searchId: 'user_search{{ rand }}',
+                        userPageId: 'user_page{{ rand }}',
+                        closeId: 'user_close_link{{ rand }}',
+                    },
+                    varName: '{{ h_os_data.var_name }}',
+                    max: '{{ h_os_data.max_select }}',
+                    rand: '{{ rand }}',
+                    checkboxClass: 'flat',
+                    reloadSelectedCallback: function () {
+                        $('input.flat').iCheck({
+                            checkboxClass: 'icheckbox_flat-green',
+                            radioClass: 'iradio_flat-green'
+                        }).on('ifClicked', function (event) {
+                            $(this).trigger('click');
+                        }).on('ifChanged', function (event) {
+                            $(this).trigger('change');
+                        }).on('ifChecked', function () {
+                            $(this).attr('checked', 'checked');
+                        }).on('ifUnchecked', function () {
+                            $(this).removeAttr('checked');
+                        }).on('ifDisabled', function () {
+                            $(this).attr('disabled', 'disabled');
+                        }).on('ifEnabled', function () {
+                            $(this).removeAttr('disabled');
+                        });
+                    }
+                });
+            },
+            ''
+        );
+    });
+</script>

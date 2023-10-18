@@ -1,0 +1,75 @@
+{% include '@app/header.twig' %}
+
+<div class="col-md-12 col-sm-12 col-xs-12">
+    <div class="x_panel">
+        <div class="x_content">
+            <div id="actions">
+                <div class="btn-group">
+                    <a href="{{ site_url }}admin/start/domains_edit" class="btn btn-primary">
+                        {% helper lang.l('link_add_domain', 'start') %}
+                    </a>
+                </div>
+            </div>
+            <table id="datatable" class="table table-striped responsive-utilities jambo_table">
+                <thead>
+                    <tr class="headings">
+                        <th class="column-title" data-field="domain" data-action="sorting">{% helper lang.l('field_domain', 'start') %}</th>
+                        {# <th class="column-title" data-field="token" data-action="sorting">{% helper lang.l('field_token', 'start') %}</th> #}
+                        <th class="column-title" data-field="date_added" data-action="sorting">{% helper lang.l('field_date_added', 'start') %}</th>
+                        <th class="column-title">&nbsp;</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for domain in domains %}
+                        <tr class="even pointer">
+                            <td>
+                                {{ domain.domain }}
+                            </td>
+                            {# <td>
+                                {{ domain.token }}
+                            </td> #}
+                            <td>
+                                {{ domain.date_added }}
+                            </td>
+                            <td class="icons">
+                                <div class="btn-group">
+                                    <button type="button"
+                                        class="btn btn-primary" title="{% helper lang.l('link_edit_domain', 'start') %}"
+                                        onclick = "document.location.href='{{ site_url }}admin/start/domains_edit/{{ domain.id }}'">
+                                            {% helper lang.l('link_edit_domain','start') %}
+                                    </button>
+                                    <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown"
+                                            aria-haspopup="true" aria-expanded="false">
+                                        <span class="caret"></span>
+                                        <span class="sr-only">Toggle Dropdown</span>
+                                    </button>
+                                    <ul class="dropdown-menu">
+                                        <li>
+                                            <a href="{{ site_url }}admin/start/domains_edit/{{ domain.id }}">
+                                                {% helper lang.l('link_edit_domain','start') %}
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="{{ site_url }}admin/start/domains_delete/{{ domain.id }}" onclick="javascript:if(!confirm('{% helper lang.l('note_delete_domain', 'start') %}')) return false;">
+                                                {% helper lang.l('link_delete_domain','start') %}
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </td>
+                        </tr>
+                    {% else %}
+                        <tr>
+                            <td colspan="3" style="text-align:center;">
+                                {% helper lang.l('no_domains', 'start') %}
+                            </td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        {% include "@app/pagination.twig" %}
+    </div>
+</div>
+
+{% include '@app/footer.twig' %}

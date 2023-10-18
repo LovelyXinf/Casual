@@ -1,0 +1,12 @@
+<h1>{% helper lang.l('admin_header_install_regions_list', 'countries') %}</h1>
+<div class="regions_install">
+    {% for item in list %}
+        <div class="regions_install__name" id="item_{{ item.country_code }}_{{ item.code }}"> 
+            <input type="checkbox" class="grouping flat region-js" data-country="{{ item.country_code }}" value="{{ item.code }}" name="region[]" data="table_records">
+            {{item.name}} ({{item.code}})
+        </div>
+    {% endfor %}
+    <div class="mt20">
+        <input type="checkbox" class="flat" data-action="check-all" id="check-all"> {% helper lang.l('select_all', 'start') %}
+    </div>
+</div>

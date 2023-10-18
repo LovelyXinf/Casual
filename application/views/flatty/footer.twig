@@ -1,0 +1,94 @@
+                        </div>
+                    </div>
+                </div>
+            {% if footer_type is empty or footer_type != 'index' %}
+                {# {% helper im.imMobileBlock() %} #}
+                {% helper shoutbox.shoutboxMobileBlock() %}
+                {% helper cookie_policy.cookie_policy_block() %}
+                <div class="logo-mobile-version"></div>
+            {% endif %}
+            </div>
+        </div>
+        {% helper users.isTerms() %}
+        {% if (footer_type is empty or footer_type != 'index') and page_type != 'like_me' %}
+        <footer>
+            <div class="container-fluid" id="footer_banner">
+                <div class="row">
+                    <div class="col-xs-12 col-md-12">
+                        <ul class="footer-banners">
+                            {% helper banners.show_banner_place('bottom-banner') %}
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="container-fluid" id="footer_languages">
+                <div class="row">
+                    <div class="col-md-12">
+                        <ul class="footer-languages">
+                            {% helper languages.lang_row_select() %}
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-menu">
+                <div class="container-fluid" id="footer_menu">
+                    <div class="row">
+                        {% helper menu.get_menu('user_footer_menu') %}
+                        <div class="col-sm-12 col-md-4 mobile_app_links">
+                            {% helper mobile.mobile_app_links() %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-info">
+                <div class="container-fluid" id="footer_info">
+                    <div class="row">
+                        {% helper mobile.mobileVersion() %}
+                        <div class="col-sm-6 col-md-6">
+                            <div class="copyright">
+                                {%if DEMO_MODE %}{{ demo_copyright }}{% else %}{% helper start.getCopyright('internal') %}{% endif %}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        {% endif %}
+        
+        <script>
+            $('body').removeClass('index-page site-page')
+                     .addClass('{% if header_type == 'index' %}index-page{% else %}site-page{% endif %} mod-inner');
+            {% if page_type != 'like_me'  %}
+                 $('body').removeClass('mod-likeme mod-likeme-matches').addClass('{{ body_class }}');
+            {% else %}
+                $('body').removeClass('index-page site-page').addClass('mod-likeme mod-likeme-matches');
+            {% endif %}
+        </script>
+        
+        {% helper start.new_features() %}
+{% if not is_pjax %}
+        </div>
+
+        {% helper languages.lang_editor() %}
+        {% helper seo_advanced.seo_traker('footer') %}
+        {# {% helper start.demo_panel({type: 'user', place: 'bottom'}) %} #}
+        {% helper start.intercom() %}     
+        {#
+        <script>
+             $(function () {
+                loadingCSS('{{ site_root }}application/js/emoji-picker/css/emoji.css');
+                loadingExternalScripts('//twemoji.maxcdn.com/twemoji.min.js');
+            });
+        </script>
+        #}
+	</body>
+{% endif %}
+
+<script>
+    $(function() {
+        $('body').removeClass('mod-magazine');
+        $('body').addClass('{{ body_class }}');
+    });
+</script>
+
+</html>

@@ -1,0 +1,131 @@
+                            </div>
+                        </div>
+                    </div>
+                {#</div>#}
+                <footer {% if login_page %}class="footer-loginpage"{% endif %}>
+                    {% if DEMO_MODE %}
+                        {{ demo_copyright }}
+                    {% else %}
+                        {% helper start.getCopyright('operator') %}
+                    {% endif %}
+                </footer>
+            </div>
+    </div>
+    {% helper languages.lang_editor() %}
+    <div id="custom_notifications" class="custom-notifications dsp_none">
+        <ul class="list-unstyled notifications clearfix" data-tabbed_notifications="notif-group">
+        </ul>
+        <div class="clearfix"></div>
+        <div id="notif-group" class="tabbed_notifications"></div>
+    </div>
+
+    <script type="text/javascript" src="{{ site_root }}application/views/gentelella_operator/js/bootstrap.min.js"></script>
+
+    <!-- icheck -->
+    <script type="text/javascript" src="{{ site_root }}application/views/gentelella_operator/js/icheck/icheck.min.js"></script>
+    <!-- daterangepicker -->
+
+    <script type="text/javascript" src="{{ site_root }}application/views/gentelella_operator/js/moment.min.js"></script>
+    <script type="text/javascript" src="{{ site_root }}application/views/gentelella_operator/js/moment-with-locales.js"></script>
+    <script type="text/javascript" src="{{ site_root }}application/views/gentelella_operator/js/datepicker/daterangepicker.js"></script>
+
+    <script type="text/javascript" src="{{ site_root }}application/views/gentelella_operator/js/custom.js"></script>
+
+    <!-- PNotify -->
+    {# <script type="text/javascript" src="{{ site_root }}application/views/gentelella_operator/js/notify/pnotify.core.js"></script>
+    <script type="text/javascript" src="{{ site_root }}application/views/gentelella_operator/js/notify/pnotify.buttons.js"></script>
+    <script type="text/javascript" src="{{ site_root }}application/views/gentelella_operator/js/notify/pnotify.nonblock.js"></script> #}
+    <script type="text/javascript" src="{{ site_root }}application/views/gentelella_operator/js/pnotify/pnotify.js"></script>
+    <script type="text/javascript" src="{{ site_root }}application/views/gentelella_operator/js/pnotify/pnotify.animate.js"></script>
+    <script type="text/javascript" src="{{ site_root }}application/views/gentelella_operator/js/pnotify/pnotify.buttons.js"></script>
+    <script type="text/javascript" src="{{ site_root }}application/views/gentelella_operator/js/pnotify/pnotify.history.js"></script>
+    <script type="text/javascript" src="{{ site_root }}application/views/gentelella_operator/js/pnotify/pnotify.nonblock.js"></script>
+    <script type="text/javascript" src="{{ site_root }}application/views/gentelella_operator/js/pnotify/pnotify.confirm.js"></script>
+    <script type="text/javascript" src="{{ site_root }}application/views/gentelella_operator/js/errors.js"></script>
+
+    <!-- flot js -->
+    <!--[if lte IE 8]><script type="text/javascript" src="{{ site_root }}application/views/gentelella_operator/js/excanvas.min.js"></script><![endif]-->
+    <script type="text/javascript" src="{{ site_root }}application/views/gentelella_operator/js/flot/jquery.flot.js"></script>
+    <script type="text/javascript" src="{{ site_root }}application/views/gentelella_operator/js/flot/jquery.flot.pie.js"></script>
+    <script type="text/javascript" src="{{ site_root }}application/views/gentelella_operator/js/flot/jquery.flot.orderBars.js"></script>
+    <script type="text/javascript" src="{{ site_root }}application/views/gentelella_operator/js/flot/jquery.flot.time.min.js"></script>
+    <script type="text/javascript" src="{{ site_root }}application/views/gentelella_operator/js/flot/date.js"></script>
+    <script type="text/javascript" src="{{ site_root }}application/views/gentelella_operator/js/flot/jquery.flot.spline.js"></script>
+    <script type="text/javascript" src="{{ site_root }}application/views/gentelella_operator/js/flot/jquery.flot.stack.js"></script>
+    <script type="text/javascript" src="{{ site_root }}application/views/gentelella_operator/js/flot/curvedLines.js"></script>
+    <script type="text/javascript" src="{{ site_root }}application/views/gentelella_operator/js/flot/jquery.flot.resize.js"></script>
+    <!-- Datatables -->
+    <script type="text/javascript" src="{{ site_root }}application/views/gentelella_operator/js/datatables/js/jquery.dataTables.js"></script>
+    <script type="text/javascript" src="{{ site_root }}application/views/gentelella_operator/js/datatables/plugins/natural.js"></script>
+    <script>
+        $(document).ready(function () {
+            PNotify.prototype.options.buttons.labels.stick = '{% helper lang.l('notify_stick', 'start', null, 'js') %}';
+            PNotify.prototype.options.delay = 5000;
+        });
+    </script>
+
+    <!-- skycons -->
+    <script src="{{ site_root }}application/views/gentelella_operator/js/skycons/skycons.js"></script>
+    <script>
+        var icons = new Skycons({
+                "color": "#73879C"
+            }),
+            list = [
+                "clear-day", "clear-night", "partly-cloudy-day",
+                "partly-cloudy-night", "cloudy", "rain", "sleet", "snow", "wind",
+                "fog"
+            ],
+            i;
+
+        for (i = list.length; i--;)
+            icons.set(list[i], list[i]);
+
+        icons.play();
+    </script>
+
+    <!-- /footer content -->
+
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('#check-all').each(function(index, item) {
+                $(item).bind('click', function() {
+                    if ($(this).is(':checked')) {
+                        $('.grouping').iCheck('check');
+                    } else {
+                        $('.grouping').iCheck('uncheck');
+                    }
+                });
+            });
+        });
+
+
+        $(function () {
+            var menus = $('.right_col').find('.dropdown-menu');
+            menus.map(function(key, menu){
+                if($(menu).children('li').length <= 1) {
+                    $(menu).prev('.dropdown-toggle').hide();
+                    $(menu).parent('.btn-group').removeClass('btn-group');
+                }
+            });
+
+            $('img').mousedown(function (e) {
+                e.preventDefault()
+            });
+            $(document).on('contextmenu', function (e) {
+                let clickedTag = (e==null) ? event.srcElement.tagName : e.target.tagName;
+                if (clickedTag == 'IMG') {
+                    return false;
+                }
+            });
+            $(document).on('dragstart', function(e) {
+                if (e.target.nodeName.toUpperCase() == 'IMG') {
+                    return false;
+                }
+            });
+        });
+    </script>
+
+    {% helper chatbox.initializeOperatorChat() %}
+</body>
+</html>

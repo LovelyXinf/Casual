@@ -1,0 +1,10 @@
+<div class="ga-marketing-block">
+    <div class="header">{% helper lang.l('field_google_header', 'intercom') %}</div>
+    <div class="buttons-block">
+        <a target="_blank" href="{{ data.btn.order }}" onclick = "{% helper start.setAnalytics('google_analytics', 'btn_google_analytics') %}" class="btn btn-default btn-lg sel">{% helper lang.l('btn_order', 'intercom') %}</a>
+        <a target="_blank" href="{{ data.btn.find_more }}" onclick = "{% helper start.setAnalytics('google_analytics', 'btn_google_analytics') %}" class="btn btn-default btn-lg">{% helper lang.l('btn_find_more', 'intercom') %}</a>
+    </div>
+    <div class="analytics-block" id ="analytics-block">
+        <img src="{{ site_root }}{{ img_folder }}google-analytics.png" alt="google-analytics">
+    </div>
+</div>

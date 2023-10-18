@@ -1,0 +1,7 @@
+<div class="col-md-4 col-sm-{{ col_sm }} col-xs-6 tile_stats_count">
+    <span class="count_top text-overflow">{% helper lang.l('field_statistics_msgs', 'mailbox') %}</span>
+    <div class="count">{{ sent_data.now }}</div>
+    <span class="count_bottom">
+        <i class="{% if sent_data.per > 0 %}green{% elseif sent_data.per < 0 %}red{% endif %}">
+            {{ sent_data.per }}% </i> {% helper lang.l('from_from_yesterday', 'mailbox') %}</span>
+</div>

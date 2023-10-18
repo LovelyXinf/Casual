@@ -1,0 +1,345 @@
+{% include "@app/header.twig" %}
+
+<style>
+    .c-dashboard-time { margin: 2rem 0; }
+    #rt_operators .tr-empty { text-align: center; }
+    #rt_queue .tr-empty { text-align: center; }
+</style>
+
+<div class="col-xs-12">
+    {# <h1>Dashboard</h1> #}
+
+    <div class="c-dashboard-time">
+        <span>{% helper lang.l('field_server_time', 'start') %}:</span>
+        <strong id="dashboard_date">{{ server_time|date('H:i:s') }}</strong>
+    </div>
+
+    <h2 style="margin-top:3rem;">{% helper lang.l('title_currently_logged_operators', 'start') %}</h2>
+    <table id="rt_operators" class="table table-striped responsive-utilities jambo_table">
+        <thead>
+            <tr class="headings">
+                <th class="column-title">
+                    {% helper lang.l('field_dashboard_operator', 'start') %}
+                </th>
+                <th class="column-title">
+                    {% helper lang.l('field_dashboard_messages', 'start') %}
+                </th>
+                <th class="column-title">
+                    {% helper lang.l('field_dashboard_note_edits', 'start') %}
+                </th>
+                <th class="column-title">
+                    {% helper lang.l('field_dashboard_average_time', 'start') %}
+                </th>
+                <th class="column-title">
+                    {% helper lang.l('field_dashboard_login_time', 'start') %}
+                </th>
+                <th class="column-title">
+                    {% helper lang.l('field_dashboard_last_message', 'start') %}
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for item in data.operators %}
+                <tr class="js-tr-operators">
+                    <td>
+                        <a href="{{ site_url }}admin/operators/edit/{{ item.id }}">
+                            {{ item.name }}
+                        </a>
+                    </td>
+                    <td>
+                        {{ item.messages }}
+                    </td>
+                    <td>
+                        {{ item.notes }}
+                    </td>
+                    <td>
+                        {{ item.average_time }}
+                    </td>
+                    <td>
+                        {{ item.login_date }}
+                    </td>
+                    <td>
+                        {{ item.last_message_date }}
+                    </td>
+                </tr>
+            {% else %}
+                <tr class="js-tr-operators tr-empty">
+                    <td colspan="6">
+                        {% helper lang.l('dashboard_no_operators', 'start') %}
+                    </td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <h2 style="margin-top:4rem;">{% helper lang.l('title_unanswered_messages', 'start') %} (<span id="queue_count">{{ data.queue|length }}</span>)</h2>
+    <table id="rt_queue" class="table table-striped responsive-utilities jambo_table">
+        <thead>
+            <tr class="headings">
+                <th class="column-title">
+                    {% helper lang.l('field_dashboard_client_id', 'start') %}
+                </th>
+                <th class="column-title">
+                    {% helper lang.l('field_dashboard_operator', 'start') %}
+                </th>
+                <th class="column-title">
+                    {% helper lang.l('field_dashboard_date', 'start') %}
+                </th>
+                <th class="column-title">
+                    {% helper lang.l('field_dashboard_keyword', 'start') %}
+                </th>
+                <th class="column-title">
+                    {% helper lang.l('field_dashboard_message_client', 'start') %}
+                </th>
+                <th class="column-title">
+                    {% helper lang.l('field_dashboard_actions', 'start') %}
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for item in data.queue %}
+                <tr class="js-tr-queue">
+                    <td>
+                        {{ item.contact_name }}<br/>
+                        ({{ item.contact_status }}, {{ item.contact_account }})
+                    </td>
+                    <td>
+                        {% if item.operator_id %}
+                            <a href="{{ site_url }}admin/operators/edit/{{ item.operator_id }}">
+                                {{ item.operator_name }}
+                            </a>
+                            {% if item.is_current %}
+                                <br/>({% helper lang.l('dashboard_is_answering_now', 'start') %})
+                            {% endif %}
+                        {% else %}
+                            <em>{% helper lang.l('dashboard_unassigned', 'start') %}</em>
+                        {% endif %}
+                    </td>
+                    <td>
+                        {{ item.date_added }}
+                        {% if item.time_ago %}
+                        <br/>( {{ item.time_ago }})
+                        {% endif %}
+                    </td>
+                    <td>
+                        {{ item.domain }}
+                        <br/>{{ item.user_name }}
+                    </td>
+                    <td>
+                        {{ item.message }}
+                    </td>
+                    <td>
+                        <button type="button" class="btn btn-primary" data-action="transfer_form" data-user-id="{{ item.user_id }}" data-contact-id="{{ item.contact_id }}">
+                            {% helper lang.l('dashboard_transfer_chat', 'start') %}
+                        </button>
+                    </td>
+                </tr>
+            {% else %}
+                <tr class="js-tr-queue tr-empty">
+                    <td colspan="6">
+                        {% helper lang.l('dashboard_no_messages', 'start') %}
+                    </td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+
+<script>
+    let _toRefreshDashboardData = null;
+    const DASHBOARD_UPDATE_INTERVAL = 5000;
+    const TRANSFER_MODAL = new loadingContent({
+        loadBlockTopType: 'center',
+        loadBlockWidth: '50%',
+        closeBtnPadding: 12,
+        blockBody: true,
+        showAfterImagesLoad: false,
+        footerButtons: `<button type="button" class="btn btn-primary" data-action="transfer_chat">{% helper lang.l('dashboard_transfer_chat', 'start', '', 'js') %}</button>`,
+    });
+
+    const refreshDashboardData = function () {
+        if (_toRefreshDashboardData) {
+            clearTimeout(_toRefreshDashboardData);
+        }
+
+        $.ajax({
+            type: "GET",
+            url: site_url + "admin/start/ajax_dashboard_data",
+            dataType: "json",
+            cache: false,
+            backend: 1,
+            success: function (response) {
+                if (response.message != '') {
+                    error_object.show_error_block(response.message, (response.status == 1 ? 'success' : 'error'));
+                }
+
+                if (response.status == 1) {
+                    // operators
+                    let $operatorsTable = $('#rt_operators');
+                    let operators = response.data.operators || [];
+
+                    $operatorsTable.find(`tr.js-tr-operators`).remove();
+                    let operatorsHtml = '';
+                    if (operators.length) {
+                        for (item of operators) {
+                            operatorsHtml += `
+                                <tr class="js-tr-operators">
+                                    <td><a href="${site_url}admin/operators/edit/${item.id}">${item.name}</a></td>
+                                    <td>${item.messages}</td>
+                                    <td>${item.notes}</td>
+                                    <td>${item.average_time}</td>
+                                    <td>${item.login_date}</td>
+                                    <td>${item.last_message_date}</td>
+                                </tr>
+                            `;
+                        }
+                    } else {
+                        operatorsHtml = `
+                            <tr class="js-tr-operators tr-empty">
+                                <td colspan="6">
+                                    {% helper lang.l('dashboard_no_operators', 'start', '', 'js') %}
+                                </td>
+                            </tr>
+                        `;
+                    }
+
+                    $operatorsTable.find('tbody').html(operatorsHtml);
+
+                    // queue
+                    let $queueTable = $('#rt_queue');
+                    let queue = response.data.queue || [];
+
+                    $queueTable.find(`tr.js-tr-queue`).remove();
+                    let queueHtml = '';
+                    $('#queue_count').html(queue.length);
+                    if (queue.length) {
+                        for (item of queue) {
+                            let isCurrent = '';
+                            if (item.is_current) {
+                                isCurrent = `<br/>({% helper lang.l('dashboard_is_answering_now', 'start', '', 'js') %})`;
+                            }
+
+                            let operatorStr = '';
+                            if (item.operator_id) {
+                                operatorStr = `<a href="${site_url}admin/operators/edit/${item.operator_id}">${item.operator_name}</a>${isCurrent}`;
+                            } else {
+                                operatorStr = `<em>{% helper lang.l('dashboard_unassigned', 'start', '', 'js') %}</em>`;
+                            }
+                            let timeAgo = '';
+                            if (item.time_ago) {
+                                timeAgo = `<br/>( ${item.time_ago})`;
+                            }
+                            queueHtml += `
+                                <tr class="js-tr-queue">
+                                    <td>${item.contact_name}<br/>(${item.contact_status}, ${item.contact_account})</td>
+                                    <td>${operatorStr}</td>
+                                    <td>${item.date_added}${timeAgo}</td>
+                                    <td>${item.domain}<br/>${item.user_name}</td>
+                                    <td>${item.message}</td>
+                                    <td><button type="button" class="btn btn-primary" data-action="transfer_form" data-user-id="${item.user_id}" data-contact-id="${item.contact_id}">{% helper lang.l('dashboard_transfer_chat', 'start', '', 'js') %}</button></td>
+                                </tr>
+                            `;
+                        }
+                    } else {
+                        queueHtml = `
+                            <tr class="js-tr-queue tr-empty">
+                                <td colspan="6">
+                                    {% helper lang.l('dashboard_no_messages', 'start', '', 'js') %}
+                                </td>
+                            </tr>
+                        `;
+                    }
+
+                    $queueTable.find('tbody').html(queueHtml);
+                }
+
+                _toRefreshDashboardData = setTimeout(() => {
+                    refreshDashboardData();
+                }, DASHBOARD_UPDATE_INTERVAL);
+            },
+            error: function () {},
+        });
+    };
+
+    $(function () {
+        let countDownDateServer = new Date('{{ server_time }}').getTime();
+        let countDownDateClient = new Date().getTime();
+        let delta = countDownDateServer - countDownDateClient;
+
+        const countDownFunc = setInterval(() => {
+            let now = new Date().getTime() + delta;
+            $('#dashboard_date').html(new Date(now).toLocaleTimeString());
+        }, 1000);
+
+        _toRefreshDashboardData = setTimeout(() => {
+            refreshDashboardData();
+        }, DASHBOARD_UPDATE_INTERVAL);
+
+        $('#rt_queue').on('click', '[data-action="transfer_form"]', function (e) {
+            e.preventDefault();
+
+            let userId = $(this).data('user-id') || 0;
+            let contactId = $(this).data('contact-id') || 0;
+
+            $.ajax({
+                url: site_url + 'admin/chatbox/ajax_get_transfer_form',
+                type: 'POST',
+                data: {
+                    user_id: userId,
+                    contact_id: contactId,
+                },
+                dataType: 'json',
+                success: function (response) {
+                    if (response.message != '') {
+                        error_object.show_error_block(response.message, (response.status === 1 ? 'success' : 'error'));
+                    }
+
+                    if (response.status === 1) {
+                        TRANSFER_MODAL.show_load_block(response.content);
+                    }
+                },
+                error: function () {},
+            });
+
+            return false;
+        });
+
+        $(document).on('click', '[data-action="transfer_chat"]', function (e) {
+            e.preventDefault();
+
+            let $form = $(this).closest('.modal-content').find('form');
+
+            let userId = $form.find('input[name=user_id]').val() || 0;
+            let contactId = $form.find('input[name=contact_id]').val() || 0;
+            let operatorId = $form.find('input[name=operator_id]:checked').val() || 0;
+
+            if (userId && contactId && operatorId) {
+                $.ajax({
+                    url: site_url + 'admin/chatbox/ajax_transfer_chat',
+                    type: 'POST',
+                    data: {
+                        user_id: userId,
+                        contact_id: contactId,
+                        operator_id: operatorId,
+                    },
+                    dataType: 'json',
+                    success: function (response) {
+                        if (response.message != '') {
+                            error_object.show_error_block(response.message, (response.status === 1 ? 'success' : 'error'));
+                        }
+
+                        if (response.status === 1) {
+                            TRANSFER_MODAL.hide_load_block();
+                            refreshDashboardData();
+                        }
+                    },
+                    error: function () {},
+                });
+            }
+
+            return false;
+        });
+    });
+</script>
+
+{% include "@app/footer.twig" %}

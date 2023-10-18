@@ -1,0 +1,167 @@
+<div class="chatbox-notes">
+    <div class="chatbox-notes__header">
+        <h2>{% helper lang.l('header_internal_notes', 'chatbox') %}</h2>
+    </div>
+    <div class="chatbox-notes__body">
+        {% helper categories = lang.ld('note_categories', 'chatbox') %}
+
+        <div class="chatbox-notes__mobile-tabs">
+            <ul class="nav nav-tabs bar_tabs" data-action="notes-mobile-tabs">
+                <li class="nav-item active" data-type="user">
+                    <a href="javascript:;" class="nav-link">
+                        {% helper lang.l('text_you', 'chatbox') %}
+                    </a>
+                </li>
+                <li class="nav-item" data-type="contact">
+                    <a href="javascript:;" class="nav-link">
+                        {% if contact.user_type == 'female' %}
+                            {% helper lang.l('text_her', 'chatbox') %}
+                        {% elseif contact.user_type == 'male' %}
+                            {% helper lang.l('text_him', 'chatbox') %}
+                        {% endif %}
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+        <div class="chatbox-notes__user cn-xs-active">
+            <div class="chatbox-notes__user-header">
+                {% helper lang.l('text_you', 'chatbox') %}
+            </div>
+
+            <div class="chatbox-notes__add" style="display:none;">
+                <form onsubmit="javascript:return false;" method="POST" data-user-id="{{ user_id }}" data-contact-id="{{ contact_id }}">
+                    <select name="category_gid" class="form-control mb10">
+                        {% for gid,name in categories.option %}
+                            <option value="{{ gid }}">{{ name }}</option>
+                        {% endfor %}
+                    </select>
+                    <textarea name="message" class="form-control" placeholder="{% helper lang.l('placeholder_add_note', 'chatbox', '', 'button') %}"></textarea>
+                    <div>
+                        <button type="button" class="btn btn-primary mt10" data-click="add_note" data-type="user" style="min-width:150px;">
+                            {% helper lang.l('btn_add', 'start') %}
+                        </button>
+                        <button type="button" class="btn btn-cancel mt10" data-action="notes_content" data-type="user">
+                            {% helper lang.l('btn_cancel', 'start') %}
+                        </button>
+                    </div>
+                </form>
+            </div>
+            <div class="chatbox-notes__content">
+                <div class="chatbox-notes__add-button">
+                    <button type="button" class="btn btn-primary" data-action="notes_add_form" data-type="user">
+                        <i class="fa fa-plus"></i>
+                        {% helper lang.l('link_add_note', 'chatbox') %}
+                    </button>
+                </div>
+                <div class="chatbox-notes__filter">
+                    <div class="input-group">
+                        <select name="category_gid" class="form-control" id="chb_notes_{{ user_id }}_{{ contact_id }}_category_user">
+                            <option value="">
+                                {% helper lang.l('field_note_categories_all', 'chatbox') %}
+                            </option>
+                            {% for gid,name in categories.option %}
+                                <option value="{{ gid }}">{{ name }}</option>
+                            {% endfor %}
+                        </select>
+                        <span class="input-group-btn">
+                            <button type="button" class="btn btn-success" data-action="notes-filter" data-type="user">
+                                {% helper lang.l('btn_filter', 'start') %}
+                            </button>
+                        </span>
+                    </div>
+                </div>
+                <div class="chatbox-notes__list">
+                    <ul id="chb_notes_{{ user_id }}_{{ contact_id }}_user">
+                        {% if notes_user %}
+                            {% include "notes.twig" with {'notes': notes_user} %}
+                        {% endif %}
+                        <li class="chatbox-notes__empty" {% if notes_user %}style="display:none;"{% endif %}>
+                            {% helper lang.l('no_notes', 'chatbox') %}
+                        </li>
+                        <li class="chatbox-notes__more" {% if not load_more_user %}style="display:none;"{% endif %}>
+                            <button type="button" class="btn btn-default" data-click="load_more_notes" data-type="user">
+                                {% helper lang.l('btn_load_more', 'chatbox') %}
+                            </button>
+                        </li>
+                        <li class="chatbox-notes__loader" style="display:none;">
+                            <i class="fa fa-spinner fa-pulse fa-3x fa-fw"></i>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="chatbox-notes__contact">
+            <div class="chatbox-notes__contact-header">
+                {% if contact.user_type == 'female' %}
+                    {% helper lang.l('text_her', 'chatbox') %}
+                {% elseif contact.user_type == 'male' %}
+                    {% helper lang.l('text_him', 'chatbox') %}
+                {% endif %}
+            </div>
+
+            <div class="chatbox-notes__add" style="display:none;">
+                <form onsubmit="javascript:return false;" method="POST" data-user-id="{{ user_id }}" data-contact-id="{{ contact_id }}">
+                    <select name="category_gid" class="form-control mb10">
+                        {% for gid,name in categories.option %}
+                            <option value="{{ gid }}">{{ name }}</option>
+                        {% endfor %}
+                    </select>
+                    <textarea name="message" class="form-control" placeholder="{% helper lang.l('placeholder_add_note', 'chatbox', '', 'button') %}"></textarea>
+                    <div>
+                        <button type="button" class="btn btn-primary mt10" data-click="add_note" data-type="contact" style="min-width:150px;">
+                            {% helper lang.l('btn_add', 'start') %}
+                        </button>
+                        <button type="button" class="btn btn-cancel mt10" data-action="notes_content" data-type="contact">
+                            {% helper lang.l('btn_cancel', 'start') %}
+                        </button>
+                    </div>
+                </form>
+            </div>
+            <div class="chatbox-notes__content">
+                <div class="chatbox-notes__add-button">
+                    <button type="button" class="btn btn-primary" data-action="notes_add_form" data-type="contact">
+                        <i class="fa fa-plus"></i>
+                        {% helper lang.l('link_add_note', 'chatbox') %}
+                    </button>
+                </div>
+                <div class="chatbox-notes__filter">
+                    <div class="input-group">
+                        <select name="category_gid" class="form-control" id="chb_notes_{{ user_id }}_{{ contact_id }}_category_contact">
+                            <option value="">
+                                {% helper lang.l('field_note_categories_all', 'chatbox') %}
+                            </option>
+                            {% for gid,name in categories.option %}
+                                <option value="{{ gid }}">{{ name }}</option>
+                            {% endfor %}
+                        </select>
+                        <span class="input-group-btn">
+                            <button type="button" class="btn btn-success" data-action="notes-filter" data-type="contact">
+                                {% helper lang.l('btn_filter', 'start') %}
+                            </button>
+                        </span>
+                    </div>
+                </div>
+                <div class="chatbox-notes__list">
+                    <ul id="chb_notes_{{ user_id }}_{{ contact_id }}_contact">
+                        {% if notes_contact %}
+                            {% include "notes.twig" with {'notes': notes_contact} %}
+                        {% endif %}
+                        <li class="chatbox-notes__empty" {% if notes_contact %}style="display:none;"{% endif %}>
+                            {% helper lang.l('no_notes', 'chatbox') %}
+                        </li>
+                        <li class="chatbox-notes__more" {% if not load_more_contact %}style="display:none;"{% endif %}>
+                            <button type="button" class="btn btn-default" data-click="load_more_notes" data-type="contact">
+                                {% helper lang.l('btn_load_more', 'chatbox') %}
+                            </button>
+                        </li>
+                        <li class="chatbox-notes__loader" style="display:none;">
+                            <i class="fa fa-spinner fa-pulse fa-3x fa-fw"></i>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

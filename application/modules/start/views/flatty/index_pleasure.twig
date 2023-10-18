@@ -1,0 +1,186 @@
+{% if not is_pjax %}
+    <!DOCTYPE html>
+    <html DIR="{{ _LANG.rtl }}" lang="{{ _LANG.code }}" xmlns="https://www.w3.org/1999/xhtml" />
+    <head>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        {% helper seo.seo_tags('robots') %}
+        <base href="{{ site_root }}" />        
+        {% helper start.favicon({'type': 'user'}) %}
+        <link href='https://fonts.googleapis.com/css?family=Open+Sans&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="{{ site_root }}uploads/themes-fixed/pleasure/styles/bootstrap-{{ _LANG.rtl }}.css">
+        <link rel="stylesheet" href="{{ site_root }}uploads/themes-fixed/pleasure/styles/style-{{ _LANG.rtl }}.css">
+{% endif %}
+        {% helper seo.seo_tags('title') %}
+         {% helper seo.seo_tags('description|keyword|canonical|og_title|og_type|og_url|og_image|og_site_name|og_description') %}
+
+        <script>
+            var site_rtl_settings = '{{ _LANG.rtl }}';
+            var site_root = '{{ site_root }}';
+            var is_pjax = parseInt('{{ is_pjax }}');
+                    var js_events = {% helper json.json_encode(js_events) %};
+                    var id_user = {% if user_session_data.user_id %}{{ user_session_data.user_id }}{% else %}0{% endif %};
+        </script>
+
+{% if not is_pjax %}
+        <script>
+            var site_url = '{{ site_url }}';
+            var img_folder = '{{ img_folder }}';
+            var base_url = '{{ base_url }}';
+            var site_error_position = 'center';
+            var use_pjax = 0;
+            var theme = '{{ theme }}';
+            var pjax_container = '#pjaxcontainer';
+        </script>
+        {% helper utils.jscript('', 'jquery.js', '', 'sync') %}
+        {% helper utils.jscript('', 'functions.js', '', 'sync' ) %}
+        {% helper utils.jscript('', 'nprogress/nprogress.min.js', '', 'sync') %}
+        {% helper utils.jscript('', 'errors.js', '', 'sync') %}
+        {% helper utils.jscript('', 'twig.js/twig.js') %}
+        <script src="{{ site_root }}application/views/flatty/js/loading_content.js"></script>
+        
+        {% helper seo_advanced.seo_traker('top') %}
+        {% helper start.analytics() %}
+        <script>
+            loadingCSS('{{ site_root }}application/views/flatty/css/font-awesome.min.css');
+            loadingCSS('{{ site_root }}application/views/flatty/css/fontawesome-5.0.11/css/fontawesome-all.min.css');
+            loadingExternalScripts('//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js');
+        </script>
+        {% helper theme.include_css('style', 'screen') %}
+         {% helper theme.css(load_type) %}
+        </head>
+                                        <body class="index-pleasure">
+
+                                            {% helper start.demo_panel({type: 'user', place: 'top'}) %}
+                                            <div id="pjaxcontainer" class="hp100">
+                                            {% endif %}
+                                            <div id="error_block" class="hide">{% for item in _PREDEFINED.error %}{% if item.text %}{{ item.text }}<br>{% endif %}{% endfor %}</div>
+                                            <div id="info_block" class="hide">{% for item in _PREDEFINED.info %}{% if item.text %}{{ item.text }}<br>{% endif %}{% endfor %}</div>
+                                            <div id="success_block" class="hide">{% for item in _PREDEFINED.success %}{% if item.text %}{{ item.text }}<br>{% endif %}{% endfor %}</div>
+
+                                            <div class="b-header">
+                                                <div class="container">
+                                                    <div class="row">
+                                                        <div class="b-header__topline">
+                                                            <div class="col-sm-6">
+                                                                <div class="b-header__logo">
+                                                                    {# TODO ANALYTIC_DEMO_VERSION experiment #}
+                                                                    <a href="{{ site_url }}start/index/page">
+                                                                        {% helper start.logo({type: 'user', settings: logo_settings}) %}
+                                                                    </a>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-sm-6">
+                                                                <div class="b-header__topnav">
+                                                                    <a onclick="{% helper start.setAnalytics('index', 'btn_sign_in') %}"  
+                                                                        href="{% helper seo.seolink('users', 'login_form') %}" data-bind="login">
+                                                                         {% helper lang.l('btn_login', 'start') %}</a>
+                                                                    {% helper users.users_lang_select({type: 'menu', template: 'summer'}) %}
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row th-set__index_promo_text_main">
+                                                        {% helper users.usersRegistration({'page': 1, 'is_registration': is_registration}) %}
+                                                    </div>
+                                                </div>
+                                            </div><!-- b-header -->
+
+                                            <div class="b-afterheader th-set__index_promo_text_on_bg th-set__main_bg">
+                                                <div class="container">
+                                                    <div class="row">
+                                                        <div class="col-sm-8 col-sm-offset-2">
+                                                            <p>{% helper lang.l('text_promo_description', 'start') %}</p>
+                                                            <p class="b-afterheader__apps">
+                                                                {% helper mobile.mobileAppLinks({'viewtype': 'ghostWhite'}) %}
+                                                            </p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div><!-- b-afterheader -->
+
+                                            <div class="b-features">
+                                                <div class="container">
+                                                    <div class="row">
+                                                        <div class="col-sm-4">
+                                                            <div class="b-features__item">
+                                                                <div class="b-features__image"><img src="{{ site_root }}uploads/themes-fixed/pleasure/images/b-features_likeme.png" alt=""></div>
+                                                                <h3 class="b-features__title">{% helper lang.l('features_likeme', 'start') %}</h3>
+                                                                <p>{% helper lang.l('features_likeme_txt', 'start') %}</p>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-sm-4">
+                                                            <div class="b-features__item">
+                                                                <div class="b-features__image"><img src="{{ site_root }}uploads/themes-fixed/pleasure/images/b-features_nearest.png" alt=""></div>
+                                                                <h3 class="b-features__title">{% helper lang.l('features_nearest', 'start') %}</h3>
+                                                                <p>{% helper lang.l('features_nearest_txt', 'start') %}</p>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-sm-4">
+                                                            <div class="b-features__item">
+                                                                <div class="b-features__image"><img src="{{ site_root }}uploads/themes-fixed/pleasure/images/b-features_chats.png" alt=""></div>
+                                                                <h3 class="b-features__title">{% helper lang.l('features_chats', 'start') %}</h3>
+                                                                <p>{% helper lang.l('features_chats_txt', 'start') %}</p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div><!-- b-features -->
+
+                                            <div class="b-mobile">
+                                                <div class="container">
+                                                    <div class="row">
+                                                        <div class="col-sm-4">
+                                                            <div class="b-mobile__img">
+                                                                <img class="img-responsive" src="{{ site_root }}uploads/themes-fixed/pleasure/images/b-mobile.jpg" alt="">
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-sm-8">
+                                                            <div class="b-mobile__text">
+                                                                <h2>{% helper lang.l('mobile_app_title', 'start') %}</h2>
+                                                                <p>{% helper lang.l('mobile_app_txt', 'start') %}</p>
+                                                                <p class="b-afterheader__apps">
+                                                                    {% helper mobile.mobileAppLinks({'viewtype': 'ghostBlack'}) %}
+                                                                </p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div><!-- b-mobile -->
+
+                                            <!-- b-registration -->
+
+                                            <div class="b-footer th-set__index_footer_bg">
+                                                <div class="container">
+                                                    <div class="row">
+                                                        <div class="col-sm-3">
+                                                            <a href="{{ mobile_url }}" class="btn_tnl" data-bind="mobile">
+                                                                {% helper lang.l('mobile_version', 'mobile') %}
+                                                            </a>
+                                                        </div>
+                                                        <div class="col-sm-9">
+                                                            <div class="b-footer__copy">
+                                                                {%if DEMO_MODE %}{{ demo_copyright }}{% else %}{% helper start.getCopyright('index_page') %}{% endif %}
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div><!-- b-footer -->
+
+                                            {% helper users.users_lang_select({type: 'menu', template: 'sidebox'}) %}
+                                        </div>
+                                        <!-- pjaxcontainer -->
+                                        <script src="{{ site_root }}uploads/themes-fixed/pleasure/js/controls.js"></script>    
+                                        {% helper utils.jscript('', 'pginfo.js') %}
+                                        {% helper utils.jscript('', 'alerts.js') %}                                    
+                                        {% helper cookie_policy.cookie_policy_block() %}
+                                        {% helper languages.lang_editor() %}
+                                        {% helper seo_advanced.seo_traker('footer') %}
+                                        {% helper start.intercom() %}
+                                        {% helper start.amplitude() %}
+                                        {% helper start.new_features() %}
+                                        {% helper mobile.appTopBanner() %}
+                                    </body>
+
+                                    </html>

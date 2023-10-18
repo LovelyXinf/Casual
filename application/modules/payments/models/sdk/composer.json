@@ -1,0 +1,6 @@
+{
+    "name": "renatgab",
+    "require": {
+        "paypal/rest-api-sdk-php": "^1.14"
+    }
+}

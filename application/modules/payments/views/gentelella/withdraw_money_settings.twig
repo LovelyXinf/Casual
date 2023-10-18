@@ -1,0 +1,62 @@
+{% include '@app/header.twig' %}
+
+<div class="col-xs-12">
+    <div class="x_panel">
+        <div class="x_content">
+            <form method="post" name="save_form" enctype="multipart/form-data" class="form-horizontal">
+                <div class="row form-group">
+                    <label class="control-label col-md-4 col-xs-12 col-sm-5">
+                        {% helper lang.l('field_min_withdraw_money_amount', 'operators') %}
+                        ({% helper start.currency_format_output({'no_tags': true, 'not_virtual': true})%}):
+                    </label>
+                    <div class="col-md-8 col-xs-12 col-sm-7">
+                        <input type="number" min="0" step="0.01" name="min_withdraw_money_amount" class="form-control" value="{{ settings.min_withdraw_money_amount }}" />
+                    </div>
+                </div>
+                <div class="row form-group">
+                    <label class="control-label col-md-4 col-xs-12 col-sm-5">
+                        {% helper lang.l('field_withdraw_money_notif_email', 'operators') %}:
+                    </label>
+                    <div class="col-md-8 col-xs-12 col-sm-7">
+                        <input type="email" name="withdraw_money_notif_email" class="form-control" value="{{ settings.withdraw_money_notif_email }}" />
+                    </div>
+                </div>
+                <div class="row form-group">
+                    <label class="control-label col-md-4 col-xs-12 col-sm-5">
+                        {% helper lang.l('field_withdraw_money_paypal_app_client_id', 'payments') %}:
+                    </label>
+                    <div class="col-md-8 col-xs-12 col-sm-7">
+                        <input type="text" name="withdraw_money_paypal_app_client_id" class="form-control" value="{{ settings.withdraw_money_paypal_app_client_id }}" />
+                    </div>
+                </div>
+                <div class="row form-group">
+                    <label class="control-label col-md-4 col-xs-12 col-sm-5">
+                        {% helper lang.l('field_withdraw_money_paypal_app_secret', 'payments') %}:
+                    </label>
+                    <div class="col-md-8 col-xs-12 col-sm-7">
+                        <input type="text" name="withdraw_money_paypal_app_secret" class="form-control" value="{{ settings.withdraw_money_paypal_app_secret }}" />
+                    </div>
+                </div>
+                <div class="row form-group">
+                    <label class="col-md-4 col-xs-12 col-sm-5">
+                        {% helper lang.l('field_withdraw_money_paypal_test_mode', 'payments') %}:
+                    </label>
+                    <div class="col-md-8 col-xs-12 col-sm-7">
+                        <input type="checkbox" name="withdraw_money_paypal_test_mode" class="flat" value="1" {% if settings.withdraw_money_paypal_test_mode %}checked{% endif %} />
+                    </div>
+                </div>
+                <div class="ln_solid"></div>
+                <div class="row form-group">
+                    <div class="col-md-offset-4 col-md-5 col-sm-offset-5 col-sm-5">
+                        <input class="btn btn-success" type="submit" name="btn_save" value="{% helper lang.l('btn_save', 'start', '', 'button') %}">
+                        <a class="btn btn-default" href="{{ site_url }}admin/payments/withdraw_money_list">
+                            {% helper lang.l('btn_cancel', 'start') %}
+                        </a>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+{% include '@app/footer.twig' %}

@@ -1,0 +1,31 @@
+{% if promo.page == 'login' %}
+    <div class="landing__demo-block">
+        <div class="demo-banner"><img  class="img-responsive" src="{{ site_root }}{{ img_folder }}btnBuy-pair.png"></div>
+        <div class="demo-description mt20">
+            <div>Full control over your website from design to tariffs and member data</div>
+            <div>Works on any device with internet</div>
+            <div>Dating site with members</div>
+        </div>
+        <div class="demo-link">
+            <a target="_blank" class="btn btn-ghost" href="https://marketplace.datingpro.com/information/pricing/">
+                Buy ready-made dating site with mobile apps
+            </a>
+        </div>
+    </div>
+{% elseif promo.page == 'index' %}
+    <div class="x_panel">
+        <div class="index__demo-block">
+        <div class="col-xs-12 col-sm-12 col-md-3">
+            <img class="img-responsive" src="{{ site_root }}{{ img_folder }}btnBuy-pair.png">
+        </div>
+        <div class="col-xs-12 col-sm-12 col-md-9 demo-description">
+            <div>Full control over your website from design to tariffs and member data</div>
+            <div>Works on any device with internet</div>
+            <div>Dating site with members</div>
+            <div class="demo-link">
+                <a target="_blank" href="https://marketplace.datingpro.com/information/pricing/">Buy ready-made dating site with mobile apps</a>
+            </div>
+        </div>
+        </div>
+    </div>
+{% endif %}

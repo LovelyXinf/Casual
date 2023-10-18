@@ -1,0 +1,26 @@
+<?php
+$_permissions['admin_mobile']['index'] = "3";
+$_permissions['admin_mobile']['appLinks'] = "3";
+$_permissions['admin_mobile']['billingSettings'] = "3";
+$_permissions['admin_mobile']['productList'] = "3";
+$_permissions['admin_mobile']['productEdit'] = "3";
+$_permissions['admin_mobile']['productDelete'] = "3";
+$_permissions['admin_mobile']['fcmSettings'] = "3";
+$_permissions['admin_mobile']['subscription_list'] = "3";
+$_permissions['admin_mobile']['subscription_edit'] = "3";
+$_permissions['admin_mobile']['subscription_delete'] = "3";
+$_permissions['admin_mobile']['service_list'] = "3";
+$_permissions['admin_mobile']['service_edit'] = "3";
+$_permissions['admin_mobile']['service_delete'] = "3";
+$_permissions['api_mobile']['change_lang'] = '1';
+$_permissions['api_mobile']['init'] = '1';
+$_permissions['api_mobile']['verifyPurchase'] = '2';
+$_permissions['api_mobile']['productList'] = '2';
+$_permissions['api_mobile']['setFcmRegistrationToken'] = '2';
+$_permissions['api_mobile']['deleteFcmRegistrationToken'] = '1';
+$_permissions['api_mobile']["getPushNotifications"] = '2';
+$_permissions['api_mobile']["setPushNotifications"] = '2';
+$_permissions['mobile']['oauthCallback'] = '1';
+$_permissions['mobile']['oauthLogin'] = '1';
+$_permissions['mobile']['setFcmRegistrationToken'] = '2';
+$_permissions['mobile']['deleteFcmRegistrationToken'] = '2';

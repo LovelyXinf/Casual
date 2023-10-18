@@ -1,0 +1,16 @@
+{% for user in users %}
+    <li class="chatbox-users__user" data-id="{{ user.id }}" id="chb_user_{{ user.id }}">
+        <div class="chatbox-users__photo">
+            <img src="{{ user.media.user_logo.thumbs.small }}" />
+        </div>
+        <div class="chatbox-users__content">
+            <div class="chatbox-users__cinner">
+                <div class="chatbox-users__new_msg">{% if user.count_new > 0 %}<span>{{ user.count_new }}</span>{% endif %}</div>
+                <div class="chatbox-users__username">
+                    {% if user.online_status %}<span class="chatbox-users__online"></span>{% endif %}
+                    {{ user.output_name }}{% if user.age %}, {{ user.age }}{% endif %}
+                </div>
+            </div>
+        </div>
+    </li>
+{% endfor %}

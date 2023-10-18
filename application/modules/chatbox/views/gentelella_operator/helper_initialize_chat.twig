@@ -1,0 +1,58 @@
+<link rel="stylesheet" href="{{ site_root }}application/js/slick/slick.css">
+<link rel="stylesheet" href="{{ site_root }}application/js/slick/slick-theme.css">
+
+{% helper utils.jscript('', 'alerts.js') %}
+{% helper utils.jscript('', 'bootstrap-switch/dist/js/bootstrap-switch.min.js') %}
+{% helper utils.jscript('', 'jquery-slimscroll.js') %}
+{% helper utils.jscript('', 'emoji-picker/js/config.js') %}
+{% helper utils.jscript('', 'emoji-picker/js/util.js') %}
+{% helper utils.jscript('', 'emoji-picker/js/jquery.emojiarea.js') %}
+{% helper utils.jscript('', 'emoji-picker/js/emoji-picker.js') %}
+{% helper utils.jscript('users', 'users-select.js') %}
+{% helper utils.jscript('', 'slick/slick.min.js') %}
+{% helper utils.jscript('chatbox', '../views/gentelella_operator/js/OperatorChatbox.js') %}
+<script type="text/javascript">
+    var alerts;
+    $(function() {
+        alerts = new Alerts({
+            alertOkName: "{% helper lang.l('btn_ok', 'start', '', 'js') %}",
+            alertCancelName: "{% helper lang.l('btn_cancel', 'start', '', 'js') %}"
+        });
+        window.chatbox = new OperatorChatbox({
+            siteUrl: site_url,
+            lTime: {{ l_time }},
+            image_lng: "{% helper lang.l('text_image', 'chatbox') %}",
+            langs: {
+                noticeClearHistory: "{% helper lang.l('notice_clear_history', 'chatbox', '', 'js') %}",
+                noticeDeleteMessage: "{% helper lang.l('notice_delete_message', 'chatbox', '', 'js') %}",
+                successMessageSent: "{% helper lang.l('success_message_sent', 'chatbox', '', 'js') %}",
+                btnAccept: "{% helper lang.l('btn_accept', 'chatbox', '', 'js') %}",
+                btnDecline: "{% helper lang.l('btn_decline', 'chatbox', '', 'js') %}",
+                btnTransferChat: "{% helper lang.l('btn_transfer_chat', 'chatbox', '', 'js') %}",
+                btnClose: "{% helper lang.l('btn_close', 'start', '', 'js') %}",
+                messagesInQueue: "{% helper lang.l('field_messages_in_queue', 'chatbox', '', 'js') %}",
+                btnSave: "{% helper lang.l('btn_save', 'start', '', 'js') %}",
+                btnCancel: "{% helper lang.l('btn_cancel', 'start', '', 'js') %}",
+            },
+            emojiPicker: new EmojiPicker({
+                emojiable_selector: '[data-emojiable=true]',
+                assetsPath : '{{ site_root }}application/js/emoji-picker/img',
+                popupButtonClasses: 'fa fa-smile-o',
+                emoji_menu_class : 'left',
+                iconSize   : 20,
+                norealTime : false,
+                slimScroll : {
+                    on            : true,
+                    height        : '190px',
+                    railVisible   : true,
+                    alwaysVisible : true,
+                    size          : '5px'
+                },
+                hideAfterSelect   : false
+            }),
+            minChars: {% if min_chars %}{{ min_chars }}{% else %}0{% endif %},
+            maxChars: {% if max_chars %}{{ max_chars }}{% else %}0{% endif %},
+            timeToAnswer: {% if time_to_answer %}{{ time_to_answer }}{% else %}0{% endif %},
+        });
+    });
+</script>

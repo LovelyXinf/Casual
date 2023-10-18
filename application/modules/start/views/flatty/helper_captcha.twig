@@ -1,0 +1,26 @@
+{% if captcha.captcha_type == 'default' %}
+    <label for="captcha">
+        {% helper lang.l('field_captcha', 'users') %}:
+    </label>
+    <div class="input-group">
+        <span class="input-group-addon">
+            {{ captcha.captcha_image }}
+        </span>
+            <input id="g-recaptcha-response" type="text" name="{{ captcha.input_name }}" class="captcha form-control input-lg" value="" maxlength="{{ captcha.captcha_word_length }}" />
+    </div>
+{% elseif captcha.captcha_type == 'google' %}
+    <script src='https://www.google.com/recaptcha/api.js'></script>
+    <div class="g-recaptcha" data-sitekey="{{ captcha.site_key }}"></div>
+    {% if is_pjax %}
+        <script type="text/javascript">
+            $(function () {
+                loadScripts(
+                    "https://www.google.com/recaptcha/api.js",
+                    function(){
+                        grecaptcha.reset();
+                    }                
+                );
+            });
+        </script>
+    {% endif %}
+{% endif %}

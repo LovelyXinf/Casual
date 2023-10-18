@@ -1,0 +1,35 @@
+{% include '@app/header.twig' %}
+
+<div class="c-homepage">
+    <div class="c-homepage__left">
+        <div class="x_panel">
+            <div>
+                {% helper lang.l('field_messages_in_queue', 'chatbox') %}:
+            </div>
+            <div class="c-homepage__queue js-messages-in-queue">{% helper chatbox.geOperatorsQueueCount() %}</div>
+            <div>
+                <a href="{{ site_url }}operator/chatbox/" class="btn btn-primary">
+                    {% helper lang.l('btn_start_reply', 'operators') %}
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="c-homepage__right">
+        <div class="x_panel">
+            <div>
+                {% helper lang.l('field_welcome', 'operators') %},
+                {{ operator.name }}
+            </div>
+            <div>
+                {% helper lang.l('field_operator_message_cost', 'operators') %}:
+                <strong>{% helper start.currency_format_output({'value': operator.message_cost,'no_tags': true, 'not_virtual': true})%}</strong>
+            </div>
+            <div>
+                {% helper lang.l('field_messages_answered', 'operators') %}:
+                <strong>{{ answered_count }}</strong>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% include '@app/footer.twig' %}

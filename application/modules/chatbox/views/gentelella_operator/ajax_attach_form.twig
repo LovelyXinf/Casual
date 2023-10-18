@@ -1,0 +1,75 @@
+<div class="chatbox-amedia">
+    <h1>{% helper lang.l('header_select_images', 'chatbox') %}</h1>
+    <div class="chatbox-amedia__list clearfix">
+        <ul id="chb_amedia_list" class="clearfix">
+            {% include 'block_media_list.twig' with {'items': amedia.items } %}
+        </ul>
+    </div>
+    {% if amedia.show_more %}
+        <div class="chatbox-amedia__more">
+            <button type="button" class="btn btn-primary" data-click="show_more_amedia">
+                {% helper lang.l('show_more', 'start') %}
+            </button>
+        </div>
+    {% endif %}
+    {% if amedia.items|length %}
+        <div class="chatbox-amedia__submit">
+            <button type="button" class="btn btn-red" data-click="hide_attach_form">
+                {% helper lang.l('btn_ok', 'start') %}
+                <span id="chb_amedia_count">(0)</span>
+            </button>
+        </div>
+    {% endif %}
+</div>
+
+<script>
+    $(function () {
+        if (typeof window.chatbox != 'undefined' && window.chatbox.properties.attachedMediaIds.length) {
+            $('#chb_amedia_list li').each(function () {
+                if (window.chatbox.properties.attachedMediaIds.indexOf(parseInt($(this).data('id'))) !== -1) {
+                    $(this).addClass('selected');
+                }
+            });
+        }
+
+        $('#chb_amedia_list').off('click', '[data-click=add_amedia]').on('click', '[data-click=add_amedia]', function () {
+            let mediaId  = $(this).data('id') || 0;
+            let thumbSrc = $(this).data('src') || '';
+
+            if (typeof window.chatbox != 'undefined') {
+                if ($(this).hasClass('selected')) {
+                    window.chatbox.deleteAttachMedia(mediaId);
+                    $(this).removeClass('selected');
+                } else {
+                    if (window.chatbox.properties.maxAttachedMedia
+                        && window.chatbox.properties.attachedMediaIds.length >= window.chatbox.properties.maxAttachedMedia
+                    ) {
+                        return false;
+                    }
+
+                    $(this).addClass('selected');
+                    window.chatbox.addAttachMedia(mediaId, thumbSrc);
+                }
+
+                $('#chb_amedia_count').html('(' + window.chatbox.properties.attachedMediaIds.length + ')');
+            }
+            return false;
+        });
+
+        $('[data-click=show_more_amedia]').off('click').click(function (e) {
+            e.preventDefault();
+            if (typeof window.chatbox != 'undefined') {
+                window.chatbox.getNextAttachMediaList();
+            }
+            return false;
+        });
+
+        $('[data-click=hide_attach_form]').off('click').click(function (e) {
+            e.preventDefault();
+            if (typeof window.chatbox != 'undefined') {
+                window.chatbox.properties.modal.hide_load_block();
+            }
+            return false;
+        });
+    });
+</script>

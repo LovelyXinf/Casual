@@ -1,0 +1,22 @@
+{% for note in notes %}
+    <li class="chatbox-notes__list-item" id="chb_note_{{ note.id }}" data-id="{{ note.id }}" title="{{ note.category_str|e }}: {{ note.date_added|e }}">
+        {# <label>
+            {% if note.operator_id %}
+                {% set user_name = note.operator.output_name %}
+            {% else %}
+                {% set user_name = 'Admin' %}
+            {% endif %}
+            {% helper lang.l('header_user_has_left_note', 'chatbox', '', '', {'user': user_name, 'date': note.date_added}) %}
+        </label> #}
+        <div class="chatbox-notes__list-category">
+            {{ note.category_str }}
+        </div>
+        <div class="chatbox-notes__list-date">
+            {% helper date_format.tpl_date_format(note.date_added, date_format_st.date_time_literal) %}
+        </div>
+        <div class="chatbox-notes__list-message" {# data-editable="true"  #}data-id="{{ note.id }}" {# title="{% helper lang.l('title_click_to_edit', 'chatbox', '', 'button') %}" #}>{{ note.message|nl2br }}</div>
+        <span class="chatbox-notes__list-delete" data-click="delete_note" data-id="{{ note.id }}">
+            <i class="fa fa-times"></i>
+        </span>
+    </li>
+{% endfor %}

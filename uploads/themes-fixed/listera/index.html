@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta content="PG Dating Pro | Online dating and personals. Welcome to Dating Pro Professional service for Online Dating and Networking. Thousands of members join our community from all over the world." name="Description">
+    <meta content="dating, dating site" name="Keywords">
+	<!-- path settings -->
+	<base href="[site_url][site_path]"></base>
+    <script>
+        var siteUrl = '[site_url]';
+    </script>
+
+    <title>Index page</title>
+    <link type="text/css" rel="stylesheet" href="styles/bootstrap.min.css" media="all"> 
+	<link type="text/css" rel="stylesheet" href="styles/font-awesome.css" media="all">
+    <link type="text/css" rel="stylesheet" href="styles/style.css" media="all">
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script src="js/twig.js/twig.js"></script>
+    <script src="js/pgapi/pgapi.js"></script>
+    
+    <script>
+        var langs = ["en", "ru"];
+    </script>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+</head>
+<body>
+	<br>
+    <header class="container">
+		<section>
+            <div class="col-md-10 slogan" data-bind="slogan"></div>
+            <div class="col-md-2 text-right social">
+                <i class="fa fa-vk fa-lg"></i>
+                <i class="fa fa-facebook fa-lg"></i>
+                <i class="fa fa-google fa-lg"></i>
+                <i class="fa fa-twitter fa-lg"></i>
+            </div>
+        </section>
+        
+        <section class="text-center logo">
+            <div class="center-block pt20">
+            <div class="d1">
+				<img src="images/logo.png">
+			</div>
+			<div class="d2">
+				<span data-bind="logo" class="logo_title"></span>
+			</div>
+			<div class="clear"></div>
+			</div>
+
+        </section>
+		<section>
+			<nav class="navbar navbar-collapse text-center pt20">
+				<ul class="nav navbar-nav navbar-center">
+					<li>
+						<a href="../../../users/registration" data-bind="header_home" class="active"></a>
+					</li>
+					<li>
+						<a href="../../../content/view/about_us" data-bind="header_about_us"></a>
+					</li>
+					<li>
+						<a href="../../../contact_us" data-bind="header_contacts"></a>
+					</li>
+					<li>
+						<a href="../../../users/login_form" data-bind="header_login"></a>
+					</li>
+					<!-- languages block -->
+					<li id="languages">
+						<script>
+							twig({
+								id: "languages",
+								href: "templates/languages.twig",
+								async: false
+							});
+							
+							var languagesHTML = twig({ref: "languages"}).render({'languages': langs});
+							document.getElementById("languages").innerHTML = languagesHTML;
+						</script>
+					</li>
+					<!-- languages block -->
+				</ul>
+			</nav>
+		</section>	
+	</header>
+    
+    <main class="container">
+    <hr>
+    
+        <section>
+            <img src="images/teaser.jpg" alt="teaser" class="img-responsive">
+        </section>
+        
+        <section class="pd20">
+			<div class="text-center">
+				<div class="headline_hr"></div>
+				<span data-bind="headline" class="headline_title">
+				</span>
+			</div>
+            <div style="max-width: 70%;margin: 15px auto;">
+				<p class="text-center" data-bind="headline_text"></p>
+            </div>
+        </section>
+        
+        <section class="row text-center descr">
+            <div class="col-md-3">
+				<div class="fa-bg-circle">
+                <i class="fa fa-venus-mars fa-lg"></i>
+                </div>
+                <h2>46% / 54%<br><span data-bind="reason1"></span></h2>
+                <p data-bind="reason1_text"></p>
+            </div>
+            <div class="col-md-3">
+				<div class="fa-bg-circle">
+                <i class="fa fa-users fa-lg"></i>
+                </div>
+                <h2>15.000<br><span data-bind="reason2"></span></h2>
+                <p data-bind="reason2_text"></p>
+            </div>
+            <div class="col-md-3">
+				<div class="fa-bg-circle">
+                    <i class="fa fa-fighter-jet fa-lg"></i>
+                </div>
+                <h2 data-bind="reason3"></h2>
+                <p data-bind="reason3_text"></p>
+            </div>
+            <div class="col-md-3">
+				<div class="fa-bg-circle">
+                <i class="fa fa-user-secret fa-lg"></i>
+                </div>
+                <h2 data-bind="reason4"></h2>
+                <p data-bind="reason4_text"></p>
+            </div>
+        </section>
+        
+        <section class="container-fluid">
+            <aside class="col-md-6 mobile-block">
+                <img src="images/iphone.jpg" alt="" class="img-responsive">
+            </aside>
+            <div class="col-md-6">
+                <div class="page-header">
+                    <h1 data-bind="mobile_apps"></h1>
+                </div>
+                <p data-bind="mobile_apps_text" class="mobile-text"></p>
+                <p>
+                    <img src="images/android.png" alt="">
+                    <img src="images/ios.png" alt="">
+                </p>
+            </div>
+        </section>
+    
+        <section class="well">
+            <p data-bind="signin_text" class="text-center"></p>
+            <ul class="nav text-center">
+                <li class="pt20"><a href="../../../users/registration" data-bind="signup" class="signup"></a></li>
+                <li class="pt20"><a href="../../../users/login_form" data-bind="signin" class="signin"></a></li>
+            </ul>
+        </section>
+    </main>
+    <footer class="container">
+		<hr class="hr-bottom">
+        <section class="col-md-10">
+            <ul>
+                <li class="col-md-3">
+                    <p data-bind="footer_help"></p> 
+                    <ul>
+                        <li>
+                            <a href="../../../tickets/index/" data-bind="footer_contact_us"></a>
+                        </li>
+                        <li>
+                            <a href="../../../site_map/index/" data-bind="footer_site_map"></a>
+                        </li>	
+                    </ul>
+                </li>
+                <li class="col-md-3">
+                    <p data-bind="footer_about"></p>
+                    <ul>
+                        <li>
+                            <a href="../../../content/view/about_us" data-bind="footer_about_us"></a>
+                        </li>
+                        <li>
+                            <a href="../../../news/index" data-bind="footer_news"></a>
+                        </li>	
+                    </ul>
+                </li>
+                <li class="col-md-3">
+                    <p data-bind="footer_privacy_policy"></p>
+                    <ul>
+                        <li>
+                            <a href="../../../content/view/privacy_and_security" data-bind="footer_privacy"></a>
+                        </li>
+                        <li>
+                            <a href="../../../content/view/legal_terms" data-bind="footer_terms_of_use"></a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="col-md-3">
+                    <p data-bind="footer_links"></p>
+                </li>
+            </ul>
+        </section>
+        <section class="col-md-2 text-right social">
+            <i class="fa fa-vk fa-lg"></i>
+            <i class="fa fa-facebook fa-lg"></i>
+            <i class="fa fa-google fa-lg"></i>
+            <i class="fa fa-twitter fa-lg"></i>
+        </section>
+        <section id="copyright" class="col-md-12 copyright">
+		&copy; 2010 - 2015 <a href="http://www.pilotgroup.net">PilotGroup.NET</a> Powered by <a href="http://www.datingpro.com/">PG Dating Pro</a>
+        </section>
+    </footer>
+    <script src="js/bootstrap/bootstrap.min.js"></script>
+    <script> 
+        var globalize = {};
+         
+        for (var i in langs) {
+            globalize[langs[i]] = {};
+        }
+        
+        $.when.apply($, $.map(langs, function(lang){
+            return $.get( "langs/" + lang + ".json" );
+        })).then(function() {
+            if (langs.length > 1) {
+                [].slice.apply(arguments, [0]).map(function(result, index) {
+                    globalize[langs[index]].messages = result[0];
+                }); 
+            } else {
+                globalize[langs[0]].messages = arguments[0];
+            }
+        }).then(function() {
+            $('[data-bind]').each(function () {
+                $(this).html(globalize["en"].messages[$(this).data("bind")]);
+            });
+        });     
+        
+        $('#language-menu .dropdown-menu li').click(function(){
+            var lang_id = $(this).data('id')
+            var lang_code = $(this).data('code')
+            
+            $('[data-bind]').each(function () {
+                $(this).html(globalize[lang_code].messages[$(this).data("bind")]);
+            });
+            
+            $('#current_language').html($(this).html());
+            
+            $.get(siteUrl + 'users/change_language/' + lang_id);
+        });
+        
+        if ('object' !== typeof window.JSON) {
+            var script = document.createElement('script');
+            script.src = '//cdnjs.cloudflare.com/ajax/libs/json3/3.3.2/json3.min.js';
+            document.body.appendChild(script);
+        }
+    </script>
+</body>
+</html>

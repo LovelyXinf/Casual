@@ -1,0 +1,35 @@
+{% include '@app/header.twig' %}
+
+<div class="col-xs-12">
+    <div class="x_panel">
+        <div class="" role="tabpanel" data-example-id="togglable-tabs">
+            <ul id="myTab" class="nav nav-tabs bar_tabs" role="tablist">
+                <li class="{% if section == 'timing' %}active{% endif %}">
+                    <a href="{{ site_url }}admin/operators/statistics/{{ operator_id }}/timing">
+                        {% helper lang.l('filter_chat_timing', 'operators') %}
+                    </a>
+                </li>
+                <li class="{% if section == 'messages' %}active{% endif %}">
+                    <a href="{{ site_url }}admin/operators/statistics/{{ operator_id }}/messages">
+                        {% helper lang.l('filter_messages', 'operators') %}
+                    </a>
+                </li>
+                <li class="{% if section == 'earning' %}active{% endif %}">
+                    <a href="{{ site_url }}admin/operators/statistics/{{ operator_id }}/earning">
+                        {% helper lang.l('filter_earning', 'operators') %}
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+        {% if section == 'timing' %}
+            {% include "timing.twig" %}
+        {% elseif section == 'messages' %}
+            {% include "messages.twig" %}
+        {% elseif section == 'earning' %}
+            {% include "earning.twig" %}
+        {% endif %}
+    </div>
+</div>
+
+{% include '@app/footer.twig' %}

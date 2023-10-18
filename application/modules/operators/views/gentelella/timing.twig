@@ -1,0 +1,165 @@
+<div class="x_panel">
+    <div class="x_title">
+        <h2>{% helper lang.l('header_filters', 'start') %}</h2>
+        <ul class="nav navbar-right panel_toolbox">
+            <li class="pull-right">
+                <a class="collapse-link"><i class="fa fa-chevron-down cursor-pointer"></i></a>
+            </li>
+        </ul>
+        <div class="clearfix"></div>
+    </div>
+    <div class="x_content hide">
+        <form method="post" enctype="multipart/form-data" data-parsley-validate
+            class="form-horizontal form-label-left">
+            <div class="form-group">
+                <label class="col-md-3 col-sm-3 col-xs-12 control-label">
+                    {% helper lang.l('field_statistics_date', 'operators') %}:</label>
+                <div class="col-md-4 col-sm-4 col-xs-12">
+                    {% helper start.getCalendarInput('date_from', search_params.date.from, {id: 'date_from', noSetCurrentDate: 1, year_range: {min: year_range.min, max: year_range.max}}) %}
+                </div>
+                <div class="col-md-1 col-sm-1 col-xs-1 text-center">
+                    <label class="control-label" for="date_to">&nbsp;{% helper lang.l('to', 'users') %}&nbsp;</label>
+                </div>
+                <div class="col-md-4 col-sm-4 col-xs-12">
+                    {% helper start.getCalendarInput('date_to', search_params.date.to, {id: 'date_to', noSetCurrentDate: 1, year_range: {min: year_range.min, max: year_range.max}}) %}
+                </div>
+            </div>
+            {% if not operator_id %}
+                <div class="form-group">
+                    <label class="col-md-3 col-sm-3 col-xs-12">
+                        {% helper lang.l('field_statistics_operator', 'operators') %}:</label>
+                    <div class="col-xs-12 col-sm-9 col-md-9">
+                        {% helper operators.operatorSelect(search_params.operator_id, 0, 'operator_id') %}
+                    </div>
+                </div>
+            {% endif %}
+            <div class="ln_solid"></div>
+            <div class="form-group">
+                <div class="col-md-9 col-sm-9 col-xs-12 col-sm-offset-3">
+                    <input type="submit" class="btn btn-primary" value="{% helper lang.l('btn_search', 'start') %}" name="btn_search">
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+<div class="x_content">
+    <div class="mt10 mb20">
+        <div>
+            {% helper lang.l('field_total_messages_count', 'operators') %}:
+            <strong>{{ total_messages_count }}</strong>
+        </div>
+        <div>
+            {% helper lang.l('field_total_chat_time', 'operators') %}:
+            <strong>{{ total_chat_time }}</strong>
+        </div>
+    </div>
+    <table id="timing" class="table table-striped responsive-utilities jambo_table">
+        <thead>
+            <tr class="headings">
+                {% if not operator_id %}
+                    <th class="column-title">
+                        {% helper lang.l('field_statistics_operator', 'operators') %}
+                    </th>
+                {% endif %}
+                <th class="column-title">
+                    {% helper lang.l('field_statistics_date_start', 'operators') %}
+                </th>
+                <th class="column-title">
+                    {% helper lang.l('field_statistics_date_end', 'operators') %}
+                </th>
+                <th class="column-title">
+                    {% helper lang.l('field_statistics_message_count', 'operators') %}
+                </th>
+                <th class="column-title">
+                    {% helper lang.l('field_statistics_timing', 'operators') %}
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for item in timing_items %}
+                <tr>
+                    {% if not operator_id %}
+                        <td>
+                            <a href="{{ site_url }}admin/operators/edit/{{ item.operator_id }}">{{ item.operator.output_name }}</a>
+                        </td>
+                    {% endif %}
+                    <td>
+                        {{ item.date_start }}
+                    </td>
+                    <td>
+                        {% if item.is_live %}
+                            <span class="badge" style="background:#32b44a;">
+                                {% helper lang.l('text_on_live', 'operators') %}
+                            </span>
+                        {% else %}
+                            {{ item.date_end }}
+                        {% endif %}
+                    </td>
+                    <td>
+                        {{ item.messages_count }}
+                    </td>
+                    <td>{{ item.chat_time_str }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+        <tbody>
+    </table>
+</div>
+{% include "@app/pagination.twig" %}
+
+<!-- Datatables -->
+<script>
+    var asInitVals = new Array();
+    $(document).ready(function () {
+        var oTable = $('#timing').dataTable({
+            "oLanguage": {
+                "sSearch": "{% helper lang.l('search_all_column','start') %}:",
+                "sEmptyTable": "{% helper lang.l('no_items','operators') %}"
+            },
+            "columnDefs": [
+                {"type": 'natural-nohtml', "targets": 0}
+            ],
+            "aoColumnDefs": [
+                {
+                    'bSortable': false,
+                    {% if not operator_id %}
+                    'aTargets': [0,1,2,3,4]
+                    {% else %}
+                    'aTargets': [0,1,2,3]
+                    {% endif %}
+                } //disables sorting for column one
+            ],
+            'iDisplayLength': 10,
+            "bPaginate": false,
+            "bInfo": false,
+            "bFilter": false,
+            "dom": 'T<"clear"><"actions">lfrtip',
+        });
+        {% if not operator_id %}
+        oTable.fnSort([1, 'desc']);
+        {% else %}
+        oTable.fnSort([0, 'desc']);
+        {% endif %}
+
+        $("tfoot input").keyup(function () {
+            /* Filter on the column based on the index of this element's parent <th> */
+            oTable.fnFilter(this.value, $("tfoot th").index($(this).parent()));
+        });
+        $("tfoot input").each(function (i) {
+            asInitVals[i] = this.value;
+        });
+        $("tfoot input").focus(function () {
+            if (this.className == "search_init") {
+                this.className = "";
+                this.value = "";
+            }
+        });
+        $("tfoot input").blur(function (i) {
+            if (this.value == "") {
+                this.className = "search_init";
+                this.value = asInitVals[$("tfoot input").index(this)];
+            }
+        });
+    });
+</script>

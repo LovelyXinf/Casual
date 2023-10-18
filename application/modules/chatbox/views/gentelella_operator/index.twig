@@ -1,0 +1,60 @@
+{% include '@app/header.twig' %}
+
+<div class="col-md-12 col-sm-12 col-xs-12">
+    <div class="{# x_panel #}">
+        <div class="x_content">
+            <div class="chatbox clearfix" id="chatbox">
+                {# <div class="chatbox-users col-xs-12 col-sm-5 col-md-4 col-lg-3">
+                    <div class="chatbox-users__filter">
+                        <input class="form-control" type="text" placeholder="{% helper lang.l('search_placeholder', 'chatbox') %}" />
+                        <span class="chatbox-users__search-icon"><i class="fa fa-search"></i></span>
+                    </div>
+                    <div class="chatbox-users__list">
+                        <div class="empty" {% if users is not empty %}style="display:none;"{% endif %}>{% helper lang.l('empty_users_admin', 'chatbox') %}</div>
+                        <ul>
+                            {% include 'users.twig' %}
+                        </ul>
+                    </div>
+                </div> #}
+
+                <div class="chatbox-content col-xs-12 {# col-sm-7 col-md-8 col-lg-9 #}">
+                    <div class="chatbox-content__inner">
+                        <div class="chatbox-users-empty">{% helper lang.l('empty_users', 'chatbox') %}</div>
+
+                        <div class="chatbox-contacts" style="display:none;">
+                            <div class="chatbox-contacts__filter">
+                                <input class="form-control" type="text" placeholder="{% helper lang.l('search_placeholder', 'chatbox') %}" />
+                                <span class="chatbox-contacts__search-icon"><i class="fa fa-search"></i></span>
+                                {# <span class="chatbox-contacts__add-contact" data-click="add_contact" title="{% helper lang.l('link_add_new_contact', 'chatbox', '', 'button') %}"><i class="fa fa-plus"></i></span> #}
+                            </div>
+                            <div class="chatbox-contacts__list">
+                                <div class="chatbox-contacts__empty">{% helper lang.l('empty_contacts_operator', 'chatbox') %}{#  <span class="chatbox-content__add-contact" data-click="add_contact">{% helper lang.l('empty_contact_add_link', 'chatbox') %}</span> #}</div>
+                                <ul>
+                                    {% include 'contacts.twig' %}
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="chatbox-dialog" id="chb_dialog"></div>
+                    </div>
+                </div>
+                <div class="clr"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% if chat %}
+    <script>
+        $(function () {
+            setTimeout(function () {
+                if (typeof window.chatbox != 'undefined') {
+                    window.chatbox.properties.userId = {{ chat.user_id }};
+                    window.chatbox.startDialog({{ chat.contact_id }});
+                }
+            }, 100);
+        });
+    </script>
+{% endif %}
+
+{% include '@app/footer.twig' %}

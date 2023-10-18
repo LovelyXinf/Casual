@@ -1,0 +1,33 @@
+<?php
+
+$install_lang["account_funds_add_message"] = "Voeg geld toe aan account";
+$install_lang["account_funds_spend_message"] = "Schrijf geld af";
+$install_lang["add_funds"] = "Voeg geld aan account toe";
+$install_lang["add_funds_placeholder"] = "Type in the amount, e.g. 100";
+$install_lang["add_funds_tooltip"] = "Please type in the amount";
+$install_lang["added_by_admin"] = "Toegevoegd bij administrator";
+$install_lang["days_left"] = "Dagen";
+$install_lang["error_empty_amount"] = "Lege hoeveelheid";
+$install_lang["error_empty_billing_system_list"] = "Dienst is tijdelijk niet beschikbaar";
+$install_lang["error_empty_system_gid"] = "Lege betalings systeem gid";
+$install_lang["error_empty_users_list"] = "Lege gebruikers lijst";
+$install_lang["error_money_not_sufficient"] = "Niet genoeg geld op account";
+$install_lang["error_no_users_to_add_funds"] = "Selecteer gebruikers alstublieft";
+$install_lang["field_amount"] = "Hoeveelheid";
+$install_lang["field_billing"] = "Factuur type";
+$install_lang["field_choose_amount"] = "Please choose amount";
+$install_lang["field_enter_amount"] = "Vul bedrag in";
+$install_lang["field_on_account"] = "On account";
+$install_lang["field_operator"] = "Choose operator";
+$install_lang["field_usr_inf_description"] = "List of payments";
+$install_lang["field_usr_inf_link_your"] = "My payments";
+$install_lang["find_out_more"] = "Kom meer te weten";
+$install_lang["header_add_funds"] = "Voeg geld aan account toe";
+$install_lang["header_add_funds_selected"] = "Voer bedrag toe hieronder om geld toe te voegen aan geselecteerde geberuiker accounts.";
+$install_lang["header_main"] = "Payments history";
+$install_lang["link_add_funds"] = " +$ voeg geld toe";
+$install_lang["list_empty"] = "The list is empty";
+$install_lang["no_operators"] = "Empty operators list";
+$install_lang["on_account_header"] = "Jouw account";
+$install_lang["services"] = "Diensten";
+$install_lang["success_add_funds"] = "Account is sucesvol bijgewerkt";

@@ -1,0 +1,192 @@
+<style type="text/css">
+    .tours-item_block {
+        display: flow-root;
+        margin-bottom: 36px;
+    }
+    .mobile-menu-wrapper.slick-initialized.slick-slider {
+        display: none;
+    }
+    #static-alert-block {
+        display: none !important;
+    }
+    .fist-opening.tours {
+        margin-top: 20px;
+    }
+    .demo-panel__inner a.show-tours.tours,  a.show-tours-mobile.tours, .users-be-featured.tours, .user-carousel-line.tours, .bottom-btns.tours{
+        display: none !important;
+    }
+    #demo-panel .demo-panel__inner.tours {
+        top: 22px !important;
+    }
+    .tours-body a {
+        text-transform: uppercase;
+        width: 100%;
+        margin-bottom: 20px;
+    }
+    html.tours:before {
+        background: url({{site_url}}/uploads/tours/tours_background.jpg) no-repeat center center fixed;
+        bottom: 0;
+        content: "";
+        left: 0;
+        position: fixed;
+        right: 0;
+        top: 0;
+        filter: brightness(0.3) blur(6px);
+        background-size: cover;
+    }
+    .tours-body span {
+        font-size: 16px;
+        color: #5f5f5f;
+        font-weight: 600;
+    }
+    .tours-body p {
+        margin-top: 5px;
+        color: grey;
+    }
+    .tours-body p.time {
+        font-style: italic;
+    }
+    .panel-title.tours {
+        font-size: 20px;
+    }
+    .tours .fist-opening__skip_top {
+        margin: 10px 0px;
+    }
+    .tours .fist-opening__skip_top a, .tours .fist-opening__skip a {
+        color: white;
+    }
+
+    .tours-body.panel-body {
+        padding: 35px 0;
+    }
+</style>
+
+{% include '@app/header.twig' %}
+
+<div class="col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2 fist-opening tours">
+    <div class="fist-opening__skip_top">
+        <a href="{{ site_root }}" class="">
+            {% helper lang.l('field_fo_link_skip', 'start') %}
+        </a>
+    </div>
+    <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h1 class="panel-title tours">
+                    Save your time by using our ready demo tours ❤️
+                </h1>
+            </div>
+            <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+                <div class="tours-body panel-body">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="fist-opening__skip">
+        <a href="{{ site_root }}" class="">
+            {% helper lang.l('field_fo_link_skip', 'start') %}
+        </a>
+    </div>
+</div>
+</div>
+{% helper start.intercom() %}
+{% helper start.amplitude() %}
+<script>
+$(function() {
+    var tour_is_show = function() {
+        $.ajax({
+            method: "POST",
+            url: site_url + 'start/index/tours/1',
+            cache: false
+        });
+    }
+    
+    setTimeout(tour_is_show, 2000);
+    
+    $(window).click(function(e){
+        tour_is_show();
+    });
+
+    $('[href*="/styles/style-ltr.css"]').remove();
+    $('html').addClass('tours');
+    $('#demo-panel .demo-panel__inner').addClass('tours');
+    $('.demo-panel__inner a.show-tours,  a.show-tours-mobile, .users-be-featured, .user-carousel-line, .bottom-btns').addClass('tours');
+
+    $('.fist-opening__skip a, .fist-opening__skip_top a').click(function(){
+        $('html').removeClass('tours');
+        $('#demo-panel .demo-panel__inner').removeClass('tours');
+        $('.demo-panel__inner a.show-tours,  a.show-tours-mobile, .users-be-featured, .user-carousel-line, .bottom-btns').removeClass('tours');
+
+        $('.show-tours').css('display', 'block');
+        $('#demo-panel .demo-panel__inner').css('top', '12px')
+    });
+
+    $.ajax({
+        method: "GET",
+        url: "https://demo.datingpro.com/features/index.php/?tour",
+        cache: false,
+        crossDomain: true,
+        dataType: 'json',
+        success: function(data) {
+            if (data) {
+                $.each(data, function(index, value) {
+                    if (value.status == 1) {
+                        var content = '<div id="' + value.id + '" class="tours-item_block">' +
+                            '<div class="col-md-2"><span><img src="' + site_url + 'uploads/tours/' + value.icon_tag + '.svg" width="100"></span></div>' +
+                            '<div class="col-md-6"><span>' + value.header + '</span>' +
+                            '<p>' + value.description + ' short description</p>' +
+                            '<p class="time">Average call duration: ' + value.time + ' minutes.</p></div>';
+                        if (value.type == 'tour') {
+                            content += '<div class="col-md-4"><a class="btn btn-primary" data-tour-id="'+value.id+'" data-external-link="false" ';
+                            if (value.new_tab) {
+                                content += ' target="_blank" ';
+                            }
+                            content += 'data-user-type="' + value.user_type + '"  href="' + site_url + '?product_tour_id=' + value.id + '">start tour</a></div></div>';
+                        }
+                        if (value.type == 'link') {
+                            content += '<div class="col-md-4"><a class="btn btn-primary" data-external-link="true" target="_blank" href="' + value.link + '">start tour</a></div></div>';
+                        }
+                        $('.tours-body').append(content);
+                    }
+                });
+                $('.tours-item_block a').unbind('click').bind('click', function(e) {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    var tour_url = $(this).attr('href');
+                    var tour_id = $(this).data('tour-id');
+                    var is_external = $(this).data('external-link');
+                    var user_type_tour = $(this).data('user-type');
+                    
+                    if (user_type_tour == 'admin') {
+                       var id_user = 1;
+                    } 
+                    if (id_user && !is_external) {
+                        if (user_type_tour == 'admin') {
+                            var url = site_url + 'admin/ausers/logoff';     
+                        } else {
+                            var url = site_url + 'users/logout';     
+                        }     
+                        $.ajax({
+                            url: url,
+                            type: 'POST',
+                            success: function (data) {
+                                if (user_type_tour == 'admin') {
+                                    location.href = site_url + 'admin/ausers/login/?product_tour_id=' + tour_id;
+                                } else {
+                                    location.href = tour_url;
+                                }
+                            }
+                        });
+                    } else {
+                        if (is_external) {
+                             window.open(tour_url, '_blank');
+                        } else {
+                            location.href = tour_url;
+                        }
+                    }
+                });
+            }
+        }
+    });
+});
+</script>

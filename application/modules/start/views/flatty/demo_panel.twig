@@ -1,0 +1,479 @@
+{% if TRIAL_MODE %}
+    {% if place == 'top' %}
+        <script>
+            var isFramed = false; try{isFramed = window != window.top || document != top.document || self.location != top.location;} catch (e) {isFramed = true;}
+        </script>        
+        <style>
+            #demo-panel {
+                position: relative;
+                top: 0;
+                font-size: 14px;
+                min-height: 50px;
+                line-height: 50px;
+                background-color: #edeef1;
+                text-align: center;
+                z-index: 10000;
+            }
+
+            @media (min-width: 768px) {
+                #demo-panel {
+                    padding: 7px 15px;
+                }
+            }
+
+            #demo-panel .fa-lg {
+                font-size: 1.87em;
+            }
+
+            #demo-panel .navbar {
+                border: none;
+                display: none;
+                margin: 0;
+                position: relative;
+                left: 0;
+                right: 0;
+            }
+            #demo-panel .navbar-default {
+                background: transparent;
+            }
+
+            #demo-panel .navbar-nav > li {
+                background-color: #fff;
+                border-bottom: 1px solid #d3d3d3;
+                box-shadow: none;
+                margin: 0;
+            }
+            #demo-panel .navbar-default .navbar-nav > li > a {
+                line-height: 30px;
+            }
+            #demo-panel .navbar-nav > li.nav__btn_accent {
+                background: #4a89fd !important;
+                border-color: #4a89fd;
+                padding: 10px 20px;
+            }
+            #demo-panel .navbar-nav > li.nav__btn_accent a {
+                background: #fff;
+                border-radius: 2px;
+                color: #fff !important;
+                padding: 5px 10px;
+                text-transform: uppercase;
+                font-weight: bold;
+            }
+            #demo-panel .navbar-nav > li.nav__btn_accent a:hover {
+                background: #fff;
+                color: #4a89fd;
+            }
+            #demo-panel .navbar-default .navbar-nav > .open > a {
+                background-color: #fff;
+            }
+            #demo-panel .nav__btn:hover {
+                background: #f5f5f5;
+            }
+            #demo-panel .navbar-nav > li > .dropdown-menu {
+                font-size: .9em;
+                margin-top: 10px;
+                padding: 10px 0;
+            }
+            #demo-panel .navbar-nav > li > .dropdown-menu:before {
+                text-shadow: 0px -1px 1px rgba(0, 0, 0, 0.25);
+                color: #fff;
+                content: '\f0d8';
+                font-family: FontAwesome;
+                font-size: 30px;
+                line-height: 0;
+                position: absolute;
+                top: -6px;
+                right: 15px;
+            }
+            #demo-panel .nav > li > a {
+                padding: 10px;
+                margin-bottom: 0;
+            }
+            #demo-panel .navbar .navbar-nav {
+                display: inline-block;
+                float: none;
+                margin: 0;
+                vertical-align: top;
+                width: 100%;
+            }
+            #demo-panel .navbar .navbar-collapse {
+                text-align: center;
+            }
+
+            @media (min-width: 768px) {
+                #demo-panel .navbar {
+                    display: block;
+                    position: relative;
+                }
+                #demo-panel .navbar .navbar-nav {
+                    width: auto;
+                    visibility: visible !important;
+                }
+                #demo-panel .navbar-nav > li {
+                    border: 1px solid #d3d3d3;
+                    margin: 0 3px;
+                    padding: 0 8px;
+                }
+
+
+                #demo-panel .navbar-nav > li > .dropdown-menu {
+                    width: 485px;
+                }
+                #demo-panel .nav__btn {
+                    border-radius: 2px;
+                }
+
+                #demo-panel .navbar-nav > li.nav__btn_accent {
+                    background: #fff;
+                    padding: 0 8px;
+                }
+                #demo-panel .navbar-nav > li.nav__btn_accent:hover {
+                    background: #f5f5f5 !important;
+                }
+                #demo-panel .navbar-nav > li.nav__btn_accent a {
+                    background: transparent;
+                    border-radius: 2px;
+                    color: #4a89fd;
+                    padding: 10px;
+                    text-transform: uppercase;
+                    font-weight: bold;
+                }
+                #demo-panel .navbar-nav > li.nav__btn_accent a:hover {
+                    color: #4a89fd !important;
+                    background: transparent;
+                }
+            }
+
+            #demo-panel .dropdown {
+                width: auto;
+            }
+            #demo-panel .dropdown-menu > li:not(:last-child)  {
+                border-bottom: 1px solid #e7e7e7;
+                position:relative;
+            }
+
+            #demo-panel .dropdown-menu > li > a {
+                position: relative;
+                white-space: normal;
+            }
+
+            #demo-panel .dropdown-menu > li > a:not(.btn):after {
+                content: '\f054';
+                font-family: FontAwesome;
+                font-size: 10px;
+                margin-top: -7px;
+                position: absolute;
+                right: 25px;
+                top: 50%;
+            }
+            #demo-panel .dropdown-menu a:hover {
+                background-color: #4a89fd;
+                color: #fff;
+            }
+            #demo-panel .dropdown-menu > li .dropdown-menu__title {
+                font-size: 14px;
+                font-weight: bold;
+                line-height: 1.42857143;
+                margin: 10px 0 7px;
+            }
+            #demo-panel .dropdown-menu > li p {
+                padding: 10px 75px 10px 0;
+            }
+
+            #demo-panel .dropdown-menu > li > a.dropdown-menu__hoverplace {
+                padding-bottom: 50px;
+            }
+            #demo-panel .dropdown-menu__hoverbtns {
+                bottom: 20px;
+                left: 20px;
+                position: absolute;
+            }
+            #demo-panel .dropdown-menu__hoverbtns .btn {
+                transition: none;
+            }
+            #demo-panel .dropdown-menu__hoverbtns .btn:hover {
+                background: #4a89fd;
+                border-color: #4a89fd;
+            }
+
+            .btn-options {
+                background: #fff;
+                color: #111;
+                border-bottom: 1px #ddd solid;
+                display: inline-block;
+                font-weight: bold;
+                margin: 0 auto;
+                padding: 12px 20px;
+                text-align: center;
+                width: 100%;
+            }
+            .btn-options>div:first-child {
+                padding-left: 0;
+            }
+            .btn-options .fa-bars {
+                font-size: 30px;
+                color: #777;
+                padding-top: 5px;
+                padding-right: 5px;
+            }
+
+            @media (min-width: 768px) {
+                .btn-options {
+                    display: none;
+                }
+            }
+
+            @media screen and (min-width: 768px) {
+                .trial_mobile {
+                    display: none !important;
+                }
+            }
+
+            @media screen and (max-width: 767px) {
+                .trial_desktop {
+                    display: none !important;
+                }
+                #demo-panel>.row {
+                    background: #fff;
+                    margin-right: 0;
+                }
+                #demo-panel>.row > div{
+                    padding-right: 0px;
+                }
+                #demo-panel .navbar-nav > li.nav__btn_accent a {
+                    background: #4a89fd;
+                }
+
+                #demo-panel .navbar-nav > li.nav__btn_accent a:hover {
+                    background: #fff;
+                    color: #4a89fd !important;
+                }
+            }
+
+            .header-container-outer {
+                z-index: 10001;
+            }
+            .mod-cookie-policy i {
+                left: 10px !important;
+            }
+        </style>
+        <div id="demo-panel" style="display: none;">
+            <div class="row">
+                <div class="col-md-6 col-sm-7 col-xs-12 text-right">
+                    <button class="btn btn-options" style="text-align: left;" id="demo-btn-options" onclick="if ($('#demo-options').css('display') == 'none') {
+                    $('#demo-options').css('display', 'block');
+                } else {
+                    $('#demo-options').css('display', 'none');
+                }
+                return false;">
+                        <div class="col-xs-1"><i class="fa fa-bars" aria-hidden="true"></i></div>
+                        <div class="col-xs-11">
+                            DEMO OPTIONS<br>
+                            <span class="trial_mobile" style="display: inline-block; font-weight: normal; line-height: 1.2; font-size: 13px; vertical-align: middle;">
+                                {% if trial_expired > 1 %}Your demo will expire in {{ trial_expired }} days
+                                {% else %}Your personal demo expires today!
+                                {% endif %}
+                            </span>
+                        </div>
+                    </button>
+                    <nav class="navbar navbar-default" id="demo-options">
+                        <ul class="nav navbar-nav">
+                            <li class="nav__btn nav__btn_accent text-center" data-event="dp_top_panel_buy_now">
+                                <a href="https://marketplace.datingpro.com/information/pricing/" target="_blank" data-pjax="0">Buy now</a>
+                            </li>
+                            <li class="nav__btn text-center">
+                                <a id="btn-admin" href="{{ site_url}}admin/" data-pjax="0">Switch to admin mode</a>
+                                <a id="btn-user" class="hidden" href="{{ site_url}}" data-pjax="0">Switch to user mode</a>
+                            </li>
+                            <li class="dropdown nav__btn text-center" id="menu" style="position: relative !important; max-width: 100%; box-sizing: border-box;">
+                                <a href="#" data-pjax="0" data-event="dp_top_panel_more_button" class="data-dropdown-toggle" role="button" onclick="if ($(this).parent().hasClass('open')) {
+                          $(this).parent().removeClass('open')
+                      } else {
+                          $(this).parent().addClass('open')
+                      }
+                      return false;"><i class="fa fa-bars hidden-xs" aria-hidden="true"></i><span class="visible-xs"> Menu <span class="caret"></span></span></a>
+                                <ul class="dropdown-menu dropdown-menu_hor dropdown-menu-right">
+                                    <li class="dropdown-menu__item" data-event="dp_top_panel_pc">
+                                        <a class="dropdown-menu__link" href="https://www.datingpro.com/dating-software/" target="_blank" data-pjax="0">
+                                            <div class="dropdown-menu__title">Dating software</div>
+                                            <p>
+                                                Start your online business with the professional dating script by PG Dating Pro. Build an online dating space for any niche community.
+                                            </p>
+                                        </a>
+                                    </li>
+                                    <li class="dropdown-menu__item" data-event="dp_top_panel_mobile_web">
+                                        <a data-pjax="0" class="dropdown-menu__link dropdown-menu__hoverplace" href="https://www.datingpro.com/mobile-service/" target="_blank">
+                                            <div class="dropdown-menu__title">Mobile dating apps</div>
+                                            <p>
+                                                Launch your own dating app with signup, search, profiles, communication tools, photo and video galleries. Build an exciting platform for singles to meet!
+                                            </p>
+                                        </a>
+                                        <div class="dropdown-menu__hoverbtns">
+                                            <a data-pjax="0" data-event="dp_top_panel_mobile_apple" class="btn btn-default" href="https://itunes.apple.com/us/app/soulcompanion.net-mobile/id784390992" target="_blank">Apple <i class="fa fa-apple"></i></a>
+                                            <a data-pjax="0" data-event="dp_top_panel_mobile_android" class="btn btn-default" href="https://play.google.com/store/apps/details?id=pgdating.pilotgroup.datingpro" target="_blank">Android <i class="fa fa-android"></i></a>
+                                        </div>
+                                    </li>
+                                    <li class="dropdown-menu__item" data-event="dp_top_panel_templates">
+                                        <a data-pjax="0" class="dropdown-menu__link" href="https://www.datingpro.com/theme-store/" target="_blank">
+                                            <div class="dropdown-menu__title">Dating website templates</div>
+                                            <p>
+                                                Select a new design for your online dating site and apps, and give them a completely new look and feel. Create your own theme or order design template integration.
+                                            </p>
+                                        </a>
+                                    </li>
+                                    <li class="dropdown-menu__item" data-event="dp_top_panel_development">
+                                        <a data-pjax="0" class="dropdown-menu__link" href="https://www.datingpro.com/experts/" target="_blank">
+                                            <div class="dropdown-menu__title">Custom development</div>
+                                            <p>
+                                                The award-winning dating solution by PG Dating Pro will save you time and efforts. Order new design, new features, new dating apps — our team can do all of that, and more!
+                                            </p>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+                <div class="col-md-6 col-sm-5 col-xs-6 text-left">
+                    <span class="trial_desktop" style="display: inline-block; line-height: 1.2; vertical-align: middle;">
+                        {% if trial_expired > 1 %}Your personal demo will expire in {{ trial_expired }} days
+                        {% else %}Your personal demo expires today!
+                        {% endif %}
+                    </span>
+                </div>
+            </div>
+        </div>
+        <script>
+            if (!isFramed) {
+                $('#demo-panel').show();
+            }
+        </script>
+        {% helper start.demoPromoBlock({'page': 'all'}) %}
+    {% endif %}
+
+    {% if place == 'bottom' %}
+        <!-- Intercom -->
+        <script>
+            window.intercomSettings = {
+                app_id: "fslaoeto",
+                {% if user_id %}userid: "{{ user_id }}",{% endif %}
+                {% if user_email %}email: "{{ user_email }}",{% endif %}
+                {% if user_hash %}user_hash: "{{ user_hash }}",{% endif %}
+            };
+        </script>
+        <script>(function () {
+          var w = window;
+          var ic = w.Intercom;
+          loadScripts(
+            ["{% helper utils.jscript('start', 'TrialPanel.js', 'path') %}"],
+            function () {
+                trialPanel = new TrialPanel({
+                    siteUrl: site_url,
+                    side: 'user',
+                    cookiePath: '{{ cookie_site_path }}',
+                    cookieDomain: '{{ cookie_site_server }}'
+                });
+            },
+             ['trialPanel'],
+            {async: false}
+          );
+          if (!isFramed) {
+              if (typeof ic === "function") {
+                  ic('reattach_activator');ic('update', intercomSettings);
+              } else {
+                  var d = document;
+                  var i = function () {
+                      i.c(arguments)
+                  };
+                  i.q = [];
+                  i.c = function (args) {
+                      i.q.push(args)
+                  };
+                  w.Intercom = i;
+                  function l() {
+                      var s = d.createElement('script');
+                      s.type = 'text/javascript';
+                      s.async = true;
+                      s.src = 'https://widget.intercom.io/widget/fslaoeto';
+                      var x = d.getElementsByTagName('script')[0];
+                      x.parentNode.insertBefore(s, x);
+                  }
+                  if (w.attachEvent) {
+                      w.attachEvent('onload', l);
+                  } else {
+                      w.addEventListener('load', l, false);
+                  }
+              }
+          }})()</script>
+        <!-- END Intercom -->
+    {% endif %}
+{% endif %}
+
+{% if DEMO_MODE %}
+    {#% if place == 'top' %}
+
+        <script>
+                    (function (i, s, o, g, r, a, m) {
+                        i['GoogleAnalyticsObject'] = r;
+                        i[r] = i[r] || function () {
+                            (i[r].q = i[r].q || []).push(arguments)
+                        }, i[r].l = 1 * new Date();
+                        a = s.createElement(o), m = s.getElementsByTagName(o)[0];
+                        a.async = 1;
+                        a.src = g;
+                        m.parentNode.insertBefore(a, m)
+                    })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+            ga('create', 'UA-43414725-1', 'auto', {'allowLinker': true{% if demo_analytic_user_id %}, 'userId': '{{ demo_analytic_user_id }}'{% endif %}});
+            ga('require', 'displayfeatures');
+            ga('require', 'linker');
+            ga('linker:autoLink', [
+                'payproglobal.com', 'livechatinc.com', 'pilotgroup.zendesk.com',
+                'paypal.com', 'yandex.ru', 'webmoney.ru', 'qiwi.com', 'mopay.com',
+                'socialscript.ru', 'socialbiz.pro', 'datingpro.com', 'datingsoftware.ru',
+                'datingpro.fr', 'pgdatingsoftware.de', 'dating-soft.com', 'realtysoft.pro',
+                'pgrealestate.ru', 'realestatescript.de', 'realestatescript.es',
+                'emlakscripti.biz.tr', 'jobsoftpro.com', 'pgautopro.com', 'allsharevideo.com',
+                'elmspro.com', 'eventsoft.pro', 'pgeventsoft.ru', 'hotescort.pro',
+                'pghotescort.ru', 'newsletter.pro', 'pgwebportal.com', 'pilotgroup.net'
+            ]);
+            ga('send', 'pageview'{% if demo_version == '2' %}, {'dimension1': 'newdemo'}{% endif %});
+        </script>
+    {% endif %#}  
+
+    {% if place == 'bottom' %}
+        {# webvisor #}
+        <!-- Yandex.Metrika counter -->
+        <script type="text/javascript">
+            (function (d, w, c) {
+                (w[c] = w[c] || []).push(function() {
+                    try {
+                        w.yaCounter6359566 = new Ya.Metrika2({
+                            id:6359566,
+                            clickmap:true,
+                            trackLinks:true,
+                            accurateTrackBounce:true,
+                            webvisor:true,
+                            trackHash:true,
+                            ecommerce:"dataLayer"
+                        });
+                    } catch(e) { }
+                });
+
+                var n = d.getElementsByTagName("script")[0],
+                    s = d.createElement("script"),
+                    f = function () { n.parentNode.insertBefore(s, n); };
+                s.type = "text/javascript";
+                s.async = true;
+                s.src = "https://mc.yandex.ru/metrika/tag.js";
+
+                if (w.opera == "[object Opera]") {
+                    d.addEventListener("DOMContentLoaded", f, false);
+                } else { f(); }
+            })(document, window, "yandex_metrika_callbacks2");
+        </script>
+        <noscript><div><img src="https://mc.yandex.ru/watch/6359566" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+        <!-- /Yandex.Metrika counter -->
+    {% endif %}
+
+{% endif %}

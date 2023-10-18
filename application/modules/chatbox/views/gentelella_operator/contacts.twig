@@ -1,0 +1,22 @@
+{% for dialog in contacts %}
+    <li class="chatbox-contacts__user" data-contact-id="{{ dialog.contact.id }}" id="chb_contact_{{ dialog.contact.id }}" data-udate="{{ dialog.date_update }}" data-id="{{ dialog.id }}">
+        <div class="chatbox-contacts__photo">
+            <img src="{{ dialog.contact.media.user_logo.thumbs.small }}" />
+        </div>
+        <div class="chatbox-contacts__content">
+            <div class="chatbox-contacts__cinner">
+                <span class="chatbox-contacts__date">{% helper date_format.tpl_date_format(dialog.last_message.date_added, date_format_st.date_time_literal) %}</span>
+                <div class="chatbox-contacts__new_msg">{% if dialog.count_new > 0 %}<span>{{ dialog.count_new }}</span>{% endif %}</div>
+                <div class="chatbox-contacts__username">
+                    {% if dialog.contact.online_status %}<span class="chatbox-contacts__online"></span>{% endif %}
+                    {{ dialog.contact.output_name }}{% if dialog.contact.age %}, {{ dialog.contact.age }}{% endif %}
+                </div>
+                <div class="chatbox-contacts__message chatbox-contacts__message-{{ dialog.last_message.message_type }}">
+                    {% if dialog.last_message.dir == 'o' %}<span class="chatbox-contacts__your">{% helper lang.l('text_your', 'chatbox') %}: </span>{% endif %}
+                    {{ dialog.last_message.short_message }}
+                </div>
+                {# <i data-contact-id="{{ dialog.contact_id }}" title="{% helper lang.l('link_delete_dialog', 'chatbox') %}" class="fa fa-times chatbox-contacts__delele"></i> #}
+            </div>
+        </div>
+    </li>
+{% endfor %}

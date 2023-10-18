@@ -1,0 +1,12 @@
+{
+	"login" : "LOGIN",
+    "signup" : "SIGN UP",
+    "mobile" : "MOBILE VERSION",
+    "langcode" : "EN",
+    "langheader" : "Language",
+    "lang1" : "English",
+    "lang2" : "Russian",
+    "text1" : "Find your match",
+    "text2" : "Just create a simple profile, upload your photos, and soon you'll be communicating with all these incredible people. Online personals couldn't be easier!",
+    "signup2" : "Join us now"
+}

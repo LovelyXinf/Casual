@@ -1,0 +1,14 @@
+<script>
+    $(function () {
+        loadingExternalScripts('//datingpro.com/wp-content/themes/Avada/pilot/js/timeme.min.js');
+        loadingExternalScripts('//datingpro.com/wp-content/themes/Avada/pilot/js/page_time_tracker.js');
+        if (typeof pageTimeTracker === 'function' && typeof TimeMe === 'object') {
+            new pageTimeTracker({
+                url: 'https://marketplace.datingpro.com/', // адрес маркета для запросов по ajax
+                pageName: 'online-demo', // можно отслеживать несколько страниц
+                email: '{{ data_analytic.analytic_user_email }}', // мыло пользователя
+                newOnlineDemoSession: getCookie('new_online_demo_session'), // если первый раз зашел в демку
+            });
+        }
+    });
+</script>

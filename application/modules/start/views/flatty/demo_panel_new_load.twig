@@ -1,0 +1,17 @@
+<script>
+    var trial_expired_text = 'You have {{ trial_expired }} days left of your trial';    
+    var is_show_tours = {{ show_tours }};
+    var intercome_user_name = '{{ user_name }}';
+    var intercome_user_email = '{{ user_email }}';
+    var intercome_user_id = '{{ user_id }}';
+    var user_section_type = '{{ type }}'; 
+    var isFramed = false; try{isFramed = window != window.top || document != top.document || self.location != top.location;} catch (e) {isFramed = true;}
+    
+    var isDemo = {% if DEMO_MODE %}1{% else %}0{% endif %};
+</script>
+<link rel="stylesheet" href="{{ site_root }}application/views/flatty/css/font-awesome.min.css">
+<link rel="stylesheet" href="{{ site_root }}application/views/flatty/css/fontawesome-5.0.11/css/fontawesome-all.min.css"> 
+<link rel="stylesheet" href="https://demo.datingpro.com/features/demo_panel/style.min.css">
+<base href="{{ site_url }}">
+{{ demo_block }}
+

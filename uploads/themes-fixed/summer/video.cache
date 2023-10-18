@@ -1,0 +1,20 @@
+CACHE MANIFEST
+# Версия 1.0
+
+CACHE:
+index.html
+styles/bootstrap.css
+styles/style.css
+video/video.mp4 
+video/video.ogv
+video/video.webm
+video/firstFrame.jpg
+images/google-play-logo.png
+images/app-store-logo.png
+js/pgapi/pgapi.js
+js/controls.js
+js/twig.js/twig.js
+js/pgapi/pgapi.js
+http://fonts.googleapis.com/css?family=Open+Sans
+
+

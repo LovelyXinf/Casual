@@ -1,0 +1,128 @@
+{% include '@app/header.twig' %}
+
+<div class="col-xs-12">
+    <div class="x_panel">
+        <div class="x_panel">
+            <div class="x_title">
+                <h2>{% helper lang.l('header_filters', 'start') %}</h2>
+                <ul class="nav navbar-right panel_toolbox">
+                    <li class="pull-right">
+                        <a class="collapse-link"><i class="fa fa-chevron-down cursor-pointer"></i></a>
+                    </li>
+                </ul>
+                <div class="clearfix"></div>
+            </div>
+            <div class="x_content hide">
+                <form method="post" enctype="multipart/form-data" data-parsley-validate
+                    class="form-horizontal form-label-left">
+                    <div class="form-group">
+                        <label class="col-md-3 col-sm-3 col-xs-12 control-label">
+                            {% helper lang.l('field_statistics_date_added', 'operators') %}:</label>
+                        <div class="col-md-4 col-sm-4 col-xs-12">
+                            {% helper start.getCalendarInput('date_added_from', search_params.date_added.from, {id: 'date_added_from', noSetCurrentDate: 1, year_range: {min: year_range.min, max: year_range.max}}) %}
+                        </div>
+                        <div class="col-md-1 col-sm-1 col-xs-1 text-center">
+                            <label class="control-label" for="date_added_to">&nbsp;{% helper lang.l('to', 'users') %}&nbsp;</label>
+                        </div>
+                        <div class="col-md-4 col-sm-4 col-xs-12">
+                            {% helper start.getCalendarInput('date_added_to', search_params.date_added.to, {id: 'date_added_to', noSetCurrentDate: 1, year_range: {min: year_range.min, max: year_range.max}}) %}
+                        </div>
+                    </div>
+                    <div class="ln_solid"></div>
+                    <div class="form-group">
+                        <div class="col-md-9 col-sm-9 col-xs-12 col-sm-offset-3">
+                            <input type="submit" class="btn btn-primary" value="{% helper lang.l('btn_search', 'start') %}" name="btn_search">
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <div class="x_content">
+            <div class="mt10 mb20">
+                {% helper lang.l('field_total_earnings', 'operators') %}:
+                <strong>{% helper start.currency_format_output({'value': total_amount, 'no_tags': true, 'not_virtual': true}) %}</strong>
+            </div>
+            <table id="data" class="table table-striped responsive-utilities jambo_table">
+                <thead>
+                    <tr class="headings">
+                        <th class="column-title">
+                            {% helper lang.l('field_statistics_type', 'operators') %}
+                        </th>
+                        <th class="column-title" style="width:100px;">
+                            {% helper lang.l('field_statistics_amount', 'operators') %}
+                        </th>
+                        <th class="column-title" style="width:200px;">
+                            {% helper lang.l('field_statistics_date_added', 'operators') %}
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for item in statistics %}
+                        <tr>
+                            <td>
+                                {% helper lang.l('statistics_type_'~item.type, 'operators') %}
+                            </td>
+                            <td>
+                                +{% helper start.currency_format_output({'value': item.amount, 'no_tags': true, 'not_virtual': true}) %}
+                            </td>
+                            <td>{{ item.date_added }}</td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+                <tbody>
+            </table>
+        </div>
+        {% include "@app/pagination.twig" %}
+    </div>
+</div>
+
+<!-- Datatables -->
+<script>
+    var asInitVals = new Array();
+    $(document).ready(function () {
+        var oTable = $('#data').dataTable({
+            "oLanguage": {
+                "sSearch": "{% helper lang.l('search_all_column','start') %}:",
+                "sEmptyTable": "{% helper lang.l('no_items','start') %}"
+            },
+            "columnDefs": [
+                {"type": 'natural-nohtml', "targets": 0}
+            ],
+            "aoColumnDefs": [
+                {
+                    'bSortable': false,
+                    'aTargets': [0,1,2]
+                } //disables sorting for column one
+            ],
+            'iDisplayLength': 10,
+            "bPaginate": false,
+            "bInfo": false,
+            "bFilter": false,
+            "dom": 'T<"clear"><"actions">lfrtip',
+        });
+        oTable.fnSort([2, 'desc']);
+
+        $("tfoot input").keyup(function () {
+            /* Filter on the column based on the index of this element's parent <th> */
+            oTable.fnFilter(this.value, $("tfoot th").index($(this).parent()));
+        });
+        $("tfoot input").each(function (i) {
+            asInitVals[i] = this.value;
+        });
+        $("tfoot input").focus(function () {
+            if (this.className == "search_init") {
+                this.className = "";
+                this.value = "";
+            }
+        });
+        $("tfoot input").blur(function (i) {
+            if (this.value == "") {
+                this.className = "search_init";
+                this.value = asInitVals[$("tfoot input").index(this)];
+            }
+        });
+    });
+</script>
+
+{% include '@app/footer.twig' %}

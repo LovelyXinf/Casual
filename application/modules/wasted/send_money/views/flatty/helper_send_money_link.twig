@@ -1,0 +1,45 @@
+{# {% if view_type == 'btn' %}
+<a class="btn btn-primary" id="donate_link_send_money">
+    <i class="fa fa-dollar fa-lg edge hover"></i>
+</a>   
+{% else %}     #}
+<span id="ajax_donate_link_menu_{{rand}}">
+    <a href="javascript:void(0);" id="donate_link_send_money">
+        {% helper lang.l('send_money', 'send_money') %}
+    </a>
+</span>   
+{# {% endif %} #}
+<script>
+    $(function () {
+        ajaxGetSendMoneyBlock{{rand}} = new loadingContent({
+            loadBlockWidth: '400px',
+            loadBlockLeftType: 'right',
+            loadBlockTopType: 'bottom',
+            closeBtnClass: 'w'
+        }).update_css_styles({'z-index': 2000}).update_css_styles({'z-index': 2000}, 'bg');
+        $('#donate_link_send_money').unbind('click').click(function () {
+            $.ajax({
+                url: site_url + 'send_money/ajaxGetSendMoneyBlock/{{ user_id }}',
+                cache: false,
+                success: function (data) {
+                    ajaxGetSendMoneyBlock{{ rand }}.show_load_block(data);
+                }
+            });
+        });
+    });
+    $(function () {
+        loadScripts(
+                "{% helper utils.jscript('send_money', 'send_money.js', 'path') %}",
+                function () {
+                    declineMoneyTransaction = new ajaxDeclineMoneyTransaction({
+                        siteUrl: site_url,
+                    });
+                    approveMoneyTransaction = new ajaxApproveMoneyTransaction({
+                        siteUrl: site_url,
+                    });
+                },
+                ['declineMoneyTransaction', 'approveTransaction'],
+                {async: true}
+        );
+    });
+</script>

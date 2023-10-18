@@ -1,0 +1,47 @@
+{% for message in messages %}
+    <li class="chatbox-messages__item {% if message.dir == 'o' %}user-message{% endif %}" data-message-id="{{ message.id }}" id="chb_msg_{{ message.id }}" data-date-added="{{ message.date_added }}">
+        {% if last_message_time is empty or last_message_time != message.date_added|date('Y-m-d H:i') %}
+            <div class="chatbox-messages__time">{% helper date_format.tpl_date_format(message.date_added, date_format_st.date_time_literal) %}</div>
+        {% endif %}
+        {# {% if last_message_dir is empty or last_message_dir != message.dir %} #}
+        {# <div class="chatbox-messages__userlogo">
+            {% if message.dir == 'i' %}
+                <img class="" src="{{ contact.media.user_logo.thumbs.small }}" alt="{{ contact.output_name }}" />
+            {% else %}
+                <img class="" src="{{ user.media.user_logo.thumbs.small }}" alt="{{ user.output_name }}" />
+            {% endif %}
+        </div> #}
+        {# {% endif %} #}
+        <div class="chatbox-messages__content">
+            <div class="chatbox-messages__bubble {% if message.dir == 'o' %}chatbox-messages__bubble-left{% else %}chatbox-messages__bubble-right{% endif %} chatbox-messages__{{ message.message_type }}">
+                {# {% if last_message_dir is empty or last_message_dir != message.dir %}
+                <div class="chatbox-messages__username">
+                    {% if message.dir == 'i' %}
+                        {{ contact.output_name }}
+                    {% else %}
+                        {{ user.output_name }}
+                    {% endif %}
+                </div>
+                {% endif %} #}
+                {% if message.message %}
+                    <div class="chatbox-messages__message {% if message.attaches_count %}pb5{% endif %}">
+                        {% if message.is_mass_pokes %}
+                            <i class="fa fa-paper-plane" aria-hidden="true" title="{% helper lang.l('title_mass_pokes', 'chatbox', '', 'button') %}" style="margin-right: 10px;"></i>
+                        {% endif %}
+                        {{ message.message }}
+                    </div>
+                {% endif %}
+                {% if message.attaches_count %}
+                    <div class="chatbox-messages__images">
+                    {% for key,attach in message.attaches %}
+                        <img class="chatbox-messages__message-image" src="{{ attach.big }}" gallery-src="{{ attach.grand }}" data-msg-id="{{ message.id }}" data-click="view_media" />
+                    {% endfor %}
+                    </div>
+                {% endif %}
+                {# <i data-message-id="{{ message.id }}" title="{% helper lang.l('link_message_delete', 'chatbox') %}" class="fa fa-times chatbox-messages__delele" data-click="delete_message"></i> #}
+            </div>
+        </div>
+        {% set last_message_dir  = message.dir %}
+        {% set last_message_time = message.date_added|date('Y-m-d H:i') %}
+    </li>
+{% endfor %}

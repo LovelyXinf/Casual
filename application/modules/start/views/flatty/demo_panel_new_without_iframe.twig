@@ -1,0 +1,1555 @@
+{% if TRIAL_MODE %}
+    <script>
+        var isFramed = false; try{isFramed = window != window.top || document != top.document || self.location != top.location;} catch (e) {isFramed = true;}
+    </script>   
+    {% if place == 'top' %}
+        <link rel="stylesheet" href="{{ site_root }}application/views/flatty/css/font-awesome.min.css">
+        <link rel="stylesheet" href="{{ site_root }}application/views/flatty/css/fontawesome-5.0.11/css/fontawesome-all.min.css"> 
+        <style>
+            #demo-panel-control .fa {
+                font-family:Font Awesome\ 5 Free;
+                font-weight:900;
+            }
+            
+            .b-likeme-page {
+                top: 180px;
+            }
+            
+            .product-menu {
+                position: absolute;
+                border: none;
+                width: auto;
+                left: 0;
+                right: 0;
+                top: 85px;
+                bottom: 0;
+                background: #f5f5f5;
+                list-style: none;
+                display: none;
+                flex-wrap: wrap;
+                z-index: 9999;
+                box-shadow: 0 0 7px rgba(0, 0, 0, 0.35);
+                overflow-y: auto;
+            }
+            .social-links-right i:hover {
+                color: #ee2c55;
+            }
+
+            #demo-panel .b-logo {
+                padding: 0 !important;
+            }
+
+            .dashboard-visibility-btn {
+                top: 184px;
+            }
+
+            .dashboard {
+                top: 167px;
+            }
+
+            .registration-block .fa, .pjaxcontainer-inner .fa{
+                    font-family: fontawesome;
+            }
+
+            .demo-panel__inner .nav {
+                margin: 0 !important;
+            }
+
+            .demo-panel__inner .site-mode, .demo-panel__inner .nav__viewport{
+                margin: 0 !important;
+            }
+
+            .demo-panel__inner .nav__viewport .fa-lg{
+                line-height: unset;
+                vertical-align: unset;
+            }
+
+            .demo-panel__inner .nav a{
+                font: inherit;
+            }
+
+            @media (min-width: 1200px) {
+                .product-menu {
+                    bottom: unset;
+                    display: flex;
+                    width: 950px;
+                    height: auto;
+                    position: absolute;
+                    right: 0;
+                    left: 0;
+                    margin: auto;
+                }
+            }
+
+            #pjaxcontainer {
+                height: unset;
+            }
+
+            #frame-wrapper.mobile-h #frame-inner {
+                position: relative;
+                background-image: url(https://www.datingpro.com/wordpress/wp-content/themes/Avada/pilot/icons/mobile-h-bg.png);
+                background-repeat: no-repeat;
+                padding: 25px 88px 24px 84px !important;
+                width: 570px !important;
+                height: 320px !important;
+                box-sizing: content-box;
+            }
+
+            #frame-wrapper.tablet #frame-inner {
+                position: relative;
+                background-image: url(https://www.datingpro.com/wordpress/wp-content/themes/Avada/pilot/icons/tablet-bg.png);
+                background-repeat: no-repeat;
+                padding: 116px 59px 116px !important;
+                width: 768px !important;
+                height: 1024px !important;
+                box-sizing: content-box;
+            }
+
+            #frame-wrapper.mobile #frame-inner {
+                position: relative;
+                background-image: url(https://www.datingpro.com/wordpress/wp-content/themes/Avada/pilot/icons/mobile-bg.png);
+                background-repeat: no-repeat;
+                padding: 88px 25px 84px 24px !important;
+                width: 320px !important;
+                height: 570px !important;
+                box-sizing: content-box;
+            }
+
+            #frame-wrapper.tablet #demo_viewer_mode {
+                position: relative;
+            }
+
+            #frame-wrapper.mobile #demo_viewer_mode {
+                position: relative;
+            }
+
+            #frame-wrapper.mobile-h #demo_viewer_mode {
+                position: relative;
+                left: 4px;
+            }
+
+            #frame-wrapper.mobile-h iframe {
+                top: 54px !important;
+                height: 291px !important;
+            }
+
+            #frame-wrapper.mobile-h iframe {
+                top: 24px !important;
+                left: 4px !important;
+                width: 570px !important;
+                height: 320px !important;
+            }
+
+            #frame-wrapper.tablet #demo_viewer,
+            #frame-wrapper.mobile-h #demo_viewer,
+            #frame-wrapper.mobile #demo_viewer {
+                top: 0 !important;
+            }
+
+            #expired_trial {
+                height: 24px !important;
+                line-height: 24px;
+                position: initial !important;
+            }
+
+            .btn-main.green {
+                background: #ee2c55 !important;
+                border-radius: 2px;
+                border-style: none;
+                transition: all .5s ease-out;
+                box-sizing: border-box;
+                display: inline-block;
+                font-size: 15px;
+                line-height: 41px !important;
+                min-height: 41px !important;
+                letter-spacing: .075em;
+                padding: 0 30px;
+                text-align: center;
+                text-transform: uppercase;
+                cursor: pointer;
+                color: #fff !important;
+                font-weight: 400 !important;
+            }
+
+            .product-menu-scroll {
+                overflow-y: auto;
+                display: flex;
+                flex-wrap: wrap;
+            }
+
+            #demo-panel-control {
+                display: none;
+                height: 2px;
+                position: absolute;
+                right: 0;
+                text-align: center;
+                top: 0;
+                width: 46px;
+                z-index: 1000;
+                font-size: 16px;
+            }
+
+            .product-menu.mobile {
+                top: 0;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                flex-direction: column;
+                flex-wrap: nowrap;
+                max-height: unset;
+                background-color: #fff;
+            }
+
+            .product-menu.mobile .product-menu-scroll {
+                overflow-y: auto;
+            }
+
+            .product-menu.mobile .header-column {
+                display: block;
+                padding: 34px 15px 15px 15px;
+                background-color: #fff;
+            }
+
+            .product-menu.mobile .grey-column {
+                background-color: #fff;
+                width: 100%;
+            }
+
+            .view-demo-btn {
+                padding-left: 5px;
+            }
+
+            .product-menu a {
+                text-decoration: none;
+            }
+
+            .product-menu a:hover {
+                color: #ee2c55;
+            }
+
+            #frame-wrapper {
+                display: none;
+                overflow: auto;
+                width: 100%;
+                z-index: 1;
+                position: relative;
+            }
+
+            #frame-wrapper.desktop {
+                display: none;
+                width: 100%;
+                height: 30px;
+                padding: 0;
+                box-shadow: none;
+            }
+
+            #frame-inner {
+                overflow: hidden;
+                -webkit-overflow-scrolling: touch;
+                vertical-align: middle;
+            }
+
+            .free-quote-block a {
+                color: #118dbc;
+            }
+
+            .view-demo-btn {
+                cursor: pointer;
+            }
+
+            .header-column {
+                display: none;
+            }
+
+            .top-menu-products-item-right div {
+                padding: 6px 0;
+            }
+
+            .product-menu .product-block.first,
+            .product-menu .product-block.last {
+                max-width: 100%;
+                width: 100%;
+            }
+
+            .top-menu-products-item-right a,
+            .top-menu-products-item a {
+                font-size: 15px;
+                color: #118dbc;
+            }
+
+            .top-menu-products-label {
+                padding: 15px;
+                font-size: 13px;
+                font-weight: 600;
+                text-transform: uppercase;
+                padding-bottom: 5px;
+            }
+            .top-menu-products-label.center-menu {
+                text-align: center; 
+                margin: 15px;   
+                width: 100%;
+            }
+
+            .product-menu .product-block {
+                margin: 5px 15px 10px 15px;
+                max-width: 220px;
+            }
+
+            .product-menu .top-menu-products-label .fa {
+                color: gray;
+            }
+
+            .top-menu-products-item-right i.fa {
+                color: #d2d2d2;
+                font-size: 15px;
+            }
+
+            .top-menu-products-label {
+                font-size: 14px;
+                color: #111;
+                padding: 0px 10px 7px 4px !important;
+            }
+
+            .long-title {
+                /*display: table-cell;*/
+                align-items: end;
+                /*height: 43px;*/
+                vertical-align: bottom;
+                line-height: 1.3;
+            }
+
+            .grey-column .top-menu-products-label {
+                padding: 15px 10px 5px 0 !important;
+            }
+
+            .grey-column {
+                margin-bottom: 10px;
+            }
+
+            .b-topnav {
+                cursor: pointer;
+                color: #333 !important;
+            }
+
+            .b-topnav.active {
+                color: #ee2c55 !important;
+            }
+
+            #top-menu .main-top-right-menu {
+                display: block !important;
+            }
+
+            .product-menu .last-slide {
+                min-width: 250px !important;
+            }
+
+            @media (min-width: 1600px) {
+                .product-menu-scroll {
+                    align-content: baseline;
+                }
+            }
+
+            @media (min-width: 992px) and (min-height: 700px) {
+                .product-menu {
+                    bottom: unset;
+                }
+            }
+
+            @media (max-width: 532px) {
+                .product-menu .product-block {
+                    max-width: 100%;
+                    width: 100%;
+                }
+            }
+
+            @media (min-width: 468px) {
+                .product-menu .last-slide {
+                    width: 400px !important;
+                }
+            }
+
+            .gray-column {
+                background: rgba(241, 241, 241, 0.68);
+            }
+
+            .product-menu .description-label {
+                font-size: 13px;
+                color: #777;
+                padding: 0;
+                line-height: 15px;
+            }
+
+            .product-menu .icons {
+                float: right;
+            }
+
+            .product-menu .icons .fa {
+                margin-right: 5px;
+            }
+
+            .product-menu .gray-column {
+                padding-bottom: 20px;
+            }
+
+            .img-thumbnail:hover {
+                cursor: pointer;
+            }
+
+            /* Product menu */
+
+            @media (min-width: 1058px) {
+                .product-menu {
+                    bottom: unset;
+                }
+            }
+
+            @media (min-width: 1600px) {
+                .bx-wrapper {
+                    max-width: 100% !important;
+                }
+
+                .product-menu-scroll {
+                    align-content: baseline;
+                }
+            }
+
+            @media (min-width: 992px) and (max-width: 1214px) {
+                .white-column-body {
+                    flex-wrap: wrap;
+                }
+            }
+
+            @media (min-width: 992px) and (min-height: 700px) {
+                .product-menu {
+                    bottom: unset;
+                }
+            }
+
+            @media (max-width: 992px) and (min-height: 700px) {
+                .product-menu {
+                    max-height: unset;
+                }
+            }
+
+            @media (max-width: 888px) {
+                .white-column-body {
+                    flex-wrap: wrap;
+                }
+            }
+
+            .product-menu.mobile .back-btn {
+                color: #000;
+                cursor: pointer;
+            }
+
+            .product-menu.mobile .white-column {
+                width: 100%;
+            }
+
+            .white-column {
+                display: flex;
+                flex-direction: row;
+                flex-wrap: wrap;
+                align-content: baseline;
+                padding: 0;
+                background-color: #fff;
+            }
+
+            .footer-column {
+                width: 100%;
+                padding: 20px 30px;
+                background-color: #eeeeee;
+            }
+
+            .product-menu .top-menu-products-label .fa {
+                color: gray;
+            }
+
+            .product-menu .free-quote-block {
+                text-align: center;
+            }
+
+            .product-menu .free-quote-block a {
+                font-size: 14px;
+            }
+
+            .grey-column .top-menu-products-label {
+                padding: 15px 10px 5px 0 !important;
+            }
+
+            .product-menu .last-slide {
+                min-width: 250px !important;
+            }
+
+            .white-column-body {
+                display: flex;
+                width: 100%;
+            }
+
+            .product-blocks-wrapper {
+                display: flex;
+                flex-direction: row;
+                flex-wrap: wrap;
+                width: 100%;
+            }
+
+            .product-blocks-wrapper .text-descr {
+                flex-grow: 1;
+                flex-basis: 360px;
+                margin: 0 15px 10px 15px;
+            }
+
+            .product-blocks-wrapper .text-descr strong {
+                margin-bottom: 10px;
+                display: block;
+            }
+
+            .product-blocks-wrapper .text-descr p {
+                font-size: 15px;
+                margin-bottom: 0;
+            }
+
+            .b-topnav-main .b-topnav-more:hover,
+            .b-topnav-main .b-topnav:hover {
+                color: #118dbc !important;
+            }
+
+            /* Product menu ends */
+
+            .navbar.navbar-flatty {
+                position: relative;
+            }
+            body.mod-inner {
+                padding-top: 0px;
+            }
+      
+            #demo-panel {
+                display: none;
+                width: 100%;
+                height: 97px;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                z-index: 2;
+                top: 0;
+                line-height: 24px;
+                position: relative;
+                background: white;
+                font-family: "Open Sans", Arial, Helvetica, sans-serif;
+            }
+
+            #demo_viewer_mode {
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                height: 30px;
+                line-height: 30px;
+                background: #000;
+                color: #fff;
+                font-size: 12px;
+                cursor: pointer;
+                display: block;
+                text-align: left;
+                overflow: hidden;
+            }
+
+            #demo_viewer_mode span {
+                display: block;
+                height: 30px;
+                padding: 0 10px;
+                font-family: "Open Sans", Arial, Helvetica, sans-serif;
+            }
+
+            a.idate-block .pg-icon-text:hover {
+                color: #ee2c55 !important;
+            }
+
+            .idate-block:hover {
+                text-decoration: none;
+            }
+
+            #demo-panel .demo-panel__inner {
+                position: absolute;
+                left: 50%;
+                top: 22px;
+                transform: translateX(-50%);
+                -webkit-transform: translateX(-50%);
+                -moz-transform: translateX(-50%);
+                -ms-transform: translateX(-50%);
+                -o-transform: translateX(-50%);
+                height: 100%;
+            }
+
+            {% if show_tours %}
+            #demo-panel .demo-panel__inner {
+                top: 12px;
+            }
+            {% endif %}
+            .demo-panel__inner a.show-tours {
+                font-size: 14px !important;
+                display: block;
+                line-height: 26px !important;
+                text-decoration: underline;
+                font-weight: 600;
+            }
+
+            a.show-tours-mobile {
+                display: inline;
+                float: right;
+            }
+
+            .center-menu a.show-tours-mobile {
+                float: unset;
+            }
+
+            @media (max-width:767px) {
+                #view_demos_desktop, .show-tours {
+                    display: none !important;
+                }
+                #demo-panel .demo-panel__inner {
+                    left: auto;
+                    right: 70px;
+                    transform: none;
+                    -webkit-transform: none;
+                    -moz-transform: none;
+                    -ms-transform: none;
+                    -o-transform: none;
+                }
+            }
+
+            @media (min-width:768px) {
+                #view_demos_mobile {
+                    display: none !important;
+                }
+            }
+
+            #demo-panel .navbar-nav {
+                height: 41px;
+                line-height: 41px;
+                text-align: center;
+            }
+
+            #demo-panel .navbar-nav>li,
+            #demo-panel .navbar-nav>li a,
+            #demo-panel .navbar-nav>li span,
+            #demo-panel .navbar-nav>li button {
+                height: inherit;
+                line-height: inherit;
+                vertical-align: top;
+                font-size: initial;
+            }
+
+            #demo-panel .navbar-nav>li a>span {
+                height: initial;
+                line-height: initial;
+                vertical-align: middle;
+            }
+
+            #demo-panel .site-mode .btn {
+                background: #4a89fd;
+                color: #fff;
+                display: inline-block;
+                border: none;
+                border-radius: 0;
+                padding: 0 30px;
+                font-size: 14px;
+            }
+
+            @media (min-width: 768px) {
+                a.show-tours-mobile {
+                    display: none;
+                }
+            }
+
+            #demo-panel .site-mode .btn.hide {
+                display: none;
+            }
+
+            #demo-panel .demo-panel__expires {
+                position: absolute;
+                top: 85px;
+                left: 50%;
+                transform: translate(-50%, 0);
+                -webkit-transform: translate(-50%, 0);
+                -moz-transform: translate(-50%, 0);
+                -ms-transform: translate(-50%, 0);
+                -o-transform: translate(-50%, 0);
+                z-index: 2;
+            }
+
+            #demo-panel .nav__viewport {
+                background: #f5f5f5;
+                display: none;
+            }
+
+            #demo-panel .nav__viewport a {
+                display: inline-block;
+                color: #111;
+                width: 41px;
+                padding: 0;
+                text-align: center;
+            }
+
+            #demo-panel .nav__viewport a.active {
+                color: #4a89fd;
+            }
+
+            #demo-panel .nav__viewport a:hover {
+                color: #fff;
+                background: #4a89fd;
+            }
+
+            @media (min-width: 992px) {
+                #demo-panel .nav__viewport {
+                    display: block;
+                }
+            }
+
+            #expired_trial {
+                display: none;
+                position: absolute;
+                top: 4px;
+                left: 0;
+                bottom: 0;
+                right: 0;
+                margin: 0 auto;
+                width: 274px;
+                height: 21px;
+                text-align: center;
+                background: #555;
+                color: #fff;
+                border-radius: 12px;
+                font-size: 12px;
+            }
+
+            #demo-panel-control a {
+                color: #777;
+            }
+
+            #demo-panel-control #btn-collapse {
+                position: absolute;
+                right: 5px;
+                top: 0;
+                line-height: 24px;
+            }
+
+            #demo-panel-control #btn-expand i {
+                position: absolute;
+                left: 15px;
+                top: 1px;
+                font-size: 21px;
+            }
+
+            #demo-panel-control #btn-expand {
+                float: right;
+                display: inline-block;
+                text-align: right;
+                width: 0px;
+                height: 0px;
+                border-style: inset;
+                border-width: 0px 30px 30px 0px;
+                border-color: transparent #c1c1c1 transparent transparent;
+                transform: rotate(360deg);
+                -ms-transform: rotate(360deg);
+                -moz-transform: rotate(360deg);
+                -webkit-transform: rotate(360deg);
+                -o-transform: rotate(360deg);
+            }
+
+            #demo_viewer {
+                position: relative;
+                top: 30px;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+                border: none;
+                padding-bottom: 30px;
+            }
+
+            .mobile-top-btn {
+                margin-top: 0;
+                min-width: 25px;
+                display: block !important;
+                z-index: 999;
+                float: left;
+                position: relative;
+            }
+
+            @media (min-width: 768px) {
+                .mobile-top-btn {
+                    display: none !important;
+                }
+            }
+
+            @media (max-width: 620px) {
+                #demo_viewer_mode {
+                    height: 50px;
+                    line-height: 55px;
+                    text-align: center;
+                }
+
+                #frame-wrapper.desktop {
+                    height: 50px;
+                }
+
+                #demo_viewer {
+                    top: 50px; 
+                    padding-bottom: 50px;  
+                }
+            }
+
+            .b-logo {
+                min-width: 200px;
+                padding-right: 35px;
+            }
+
+            .on_mobile {
+                display: none;
+            }
+
+            @media (max-width: 544px) {
+                .main-top-right-menu {
+                    display: none !important;
+                }
+
+                .no_mobile {
+                    display: none !important;
+                }
+
+                .on_mobile {
+                    display: block !important;
+                }
+
+                .mobile-top-btn {
+                    position: absolute !important;
+                    right: 18px !important;
+                }
+            }
+
+            .sandwich-button {
+                background: url(https://www.datingpro.com/wp-content/uploads/icons/ic-menu.png);
+                height: 25px;
+                width: 25px;
+                z-index: 9999;
+            }
+
+            .sandwich-button.active {
+                background: url(https://www.datingpro.com/wp-content/uploads/icons/ic-menu_close.png);
+            }
+
+            .mobile-top-btn {
+                z-index: 999;
+            }
+
+            .top-menu.top-menu_open {
+                position: fixed;
+                left: 0;
+                right: 0;
+                top: 0;
+                bottom: 0;
+                overflow: auto;
+                overflow-y: scroll;
+            }
+
+            .top-menu {
+                padding: 0 !important;
+                margin: 0 !important;
+                display: none;
+            }
+
+            .top-menu .b-topnav-main {
+                margin: 0;
+            }
+
+            .top-menu .b-topnav-main li {
+                border: none !important;
+            }
+
+            .top-menu .b-topnav-main>li>a {
+                width: 100%;
+                display: unset;
+                padding: 0;
+                float: left;
+                text-align: left;
+                cursor: pointer;
+            }
+
+            .top-menu .b-topnav-main>li>a>.fa {
+                float: right;
+            }
+
+            .top-menu .top-menu-column {
+                padding: 0 0 20px 0 !important;
+                float: left !important;
+                width: unset;
+            }
+
+            .top-menu .top-menu-column hr {
+                margin-bottom: 0;
+            }
+
+            .top-menu .top-menu-column .header {
+                text-transform: uppercase;
+                font-size: 15px;
+                font-weight: bold;
+            }
+
+            .top-menu .top-menu-column.fixed .mobile-top-btn {
+                float: right;
+            }
+
+            .top-menu .main-top-right-menu {
+                display: block !important;
+                margin-top: 0 !important;
+                border: none !important;
+                float: none;
+                text-align: center;
+                margin: 0 auto;
+                padding: 0;
+            }
+
+            .loadersmall {
+                border: 2px solid #f3f3f3;
+                -webkit-animation: spin 1s linear infinite;
+                animation: spin 1s linear infinite;
+                border-top: 2px solid #555;
+                border-radius: 50%;
+                width: 16px;
+                height: 16px;
+                position: relative;
+                top: 4px;
+                display: inline-block;
+            }
+
+            @-webkit-keyframes spin {
+              0% { -webkit-transform: rotate(0deg); }
+              100% { -webkit-transform: rotate(360deg); }
+            }
+
+            @keyframes spin {
+              0% { transform: rotate(0deg); }
+              100% { transform: rotate(360deg); }
+            }
+
+            .demo-loader-switcher {
+                display: none;   
+            } 
+
+            .top-menu .main-search-btn {
+                margin-top: 0 !important;
+            }
+
+            @media (max-width: 1023px) {
+                .top-menu .b-topnav-main li {
+                    line-height: 40px;
+                }
+
+                .top-menu .b-topnav-main>li>a>.fa {
+                    line-height: 40px;
+                }
+
+                .top-menu .top-menu-column.fixed {
+                    width: 50% !important;
+                }
+
+                .top-menu .top-menu-column {
+                    width: 100% !important;
+                    max-width: 100% !important;
+                }
+
+                .top-menu .b-topnav-main li {
+                    width: 100%;
+                }
+
+                .top-menu .b-logo {
+                    display: none;
+                }
+            }
+
+            @media (min-width: 1024px) {
+                .top-menu .top-menu-column {
+                    padding: 35px 30px !important;
+                }
+
+                .top-menu-column.mobile {
+                    display: none !important;
+                }
+
+                .top-menu-column.fixed {
+                    padding: 0 !important;
+                }
+            }
+
+            .mob-description-label {
+                font-size: 13px;
+                line-height: 15px;
+            }
+
+            ul#top-menu-item-9 li {
+                line-height: 20px;
+                margin-bottom: 10px;
+            }
+
+            ul#top-menu-item-9 li:first-child {
+                margin-top: 5px;
+            }
+
+            ul#top-menu-item-9 li:last-child {
+                margin-bottom: 30px;
+            }
+
+            .social-links-mobile {
+                padding-top: 20px;
+                text-align: center;
+            }
+
+            .social-links-mobile a {
+                text-decoration: none;
+                padding: 0 10px;
+            }
+
+            .social-links-mobile i {
+                vertical-align: middle;
+                color: #999;
+                font-size: 25px;
+            }
+            .social-links-right {
+                    position: absolute;
+                    right: 41px;
+                    top: 24px;
+                    display: none;
+            }
+            #btn-collapse i {
+                line-height: 24px !important;
+            }
+
+            .social-links-right a {
+                text-decoration: none;
+                padding: 0 4px;
+                font-size: 24px;
+            }
+
+            .social-links-right i {
+                vertical-align: middle;
+                color: #999;
+                font-size: 20px;
+                font-style: normal;
+            }
+
+            @media (min-width: 1520px) {
+                .social-links-right {
+                    display: block;
+                }
+            }
+            .on_mobile .social-links-right {
+                display: block;
+                position: relative !important;
+                right: 0 !important;
+                top: 0 !important;
+            }
+            .main-demo-block {
+                display: flex;
+                width: 100%;
+                align-items: center;
+                padding: 19px 15px;
+                max-width: 1170px;
+                margin: auto;
+            }
+            .pg-icon-text.logo-text {
+                font-size: 12px;
+                line-height: 12px;
+                vertical-align: top;
+                color: #777;
+                margin-top: 7px;
+            }
+            .main-top-right-menu.btn-right-top {
+                text-align: right;
+                z-index: 999;
+                position: relative;
+                width: 190px;
+                float: right;
+                min-width: 260px;
+                margin-top: 0;
+                margin-left: auto;
+            }
+        </style>
+        <div id="demo-panel-control" style="display:none;">
+            <a id="btn-collapse" href="javascript:void(0);" class=""><i class="fa fa-angle-double-up"></i></a>
+            <a id="btn-expand" href="javascript:void(0);" class="hidden"><i class="fa  fa-angle-double-down"></i></a>
+        </div>
+        <div id="demo-panel">
+            <div class="demo-panel__inner">
+                <ul class="nav navbar-nav">
+                     <li class="site-mode">
+                        <span> 
+                            <a href="javascript:;" class="btn btn-primary" id="view_demos_desktop">
+                                VIEW DEMOS
+                                <i class="fa fa-caret-down"></i>
+                            </a>
+                        {% if show_tours %}
+                            <a class="show-tours" href="{{ site_root }}start/index/tours/"> 
+                                Return back to tours page
+                            </a>
+                        {% endif %}
+                        </span>
+                    </li> 
+                </ul>
+            </div>
+            <div class="main-demo-block">
+                <div class="b-logo">
+                    <a href="https://www.datingpro.com" target="_blank">
+                        <img src="{{ site_root }}uploads/demo-panel/dp.logoheart_24px.png" alt="PG Dating Pro" class="normal_logo">
+                    </a>
+                    <a class="idate-block" href="https://www.datingpro.com/reviews/" target="_blank">
+                        <div class="pg-icon-text logo-text">dating software of the future</div>
+                    </a>
+                </div>
+                <a href="#" id="mobile-top-btn" class="mobile-top-btn sandwich-button"></a>
+                <div id="top-menu" class="top-menu">
+                    <div class="container-fluid">
+                        <div class="top-menu-column fixed">
+                            <div class="b-logo">
+                                <a href="https://www.datingpro.com" target="_blank">
+                                    <img src="{{ site_root }}uploads/demo-panel/dp.logoheart_24px.png" alt="PG Dating Pro" class="normal_logo" scale="0">
+                                </a>
+                                <a class="idate-block" href="https://www.datingpro.com/reviews/" target="_blank">
+                                    <div class="pg-icon-text">dating software of the future</div>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="top-menu-column fixed">
+                            <a href="#" class="mobile-top-btn sandwich-button close"></a>
+                        </div>
+                        <div class="top-menu-column mobile">
+                            <ul class="b-topnav-main" style="width: inherit !important;">
+                                <li>
+                                    <a data-id="products-dropdown" class="b-topnav-more products-dropdown ">
+                                        Products
+                                        <i class="fa fa-caret-right"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="b-topnav-more">
+                                        Demos
+                                        <i class="fa fa-caret-right"></i>
+                                    </a>
+                                </li>
+                                <li class="">
+                                    <a data-url="https://marketplace.datingpro.com/information/pricing/" data-curl="https://www.datingpro.com/" data-id="16728" class="b-topnav-more" href="https://marketplace.datingpro.com/information/pricing/" target="_blank" role="button" aria-expanded="false">
+                                        Pricing
+                                    </a>
+                                </li>
+                                <li class="">
+                                    <a data-url="https://marketplace.datingpro.com/" data-curl="https://marketplace.datingpro.com/" data-id="21321" class="b-topnav-more" href="https://marketplace.datingpro.com/" target="_blank" role="button" aria-expanded="false">
+                                        App store
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="b-topnav-more ">
+                                        Learn
+                                        <i class="fa fa-caret-right"></i>
+                                    </a>
+                                </li>
+                      
+                            </ul>
+                        </div>
+                        <div class="top-menu-column mobile">
+                            <div class="main-top-right-menu" style="display: none;">
+                                <div class="gs-button main-search-btn mobile">
+                                    <a class="gs-button-a" style="color: #111111; font-size: 16px !important;" href="#">
+                                        <i class="gs-button-i fa fa-search"></i>
+                                    </a>
+                                </div>
+                                <a style="padding: 0 12px;" data-goal="request-tour" href="#">
+                                    <span class="btn-main green">
+                                        REQUEST A TOUR </span>
+                                </a>
+                            </div>
+                            <div class="social-links-mobile">
+                                <a target="_blank" href="https://www.facebook.com/DatingPro">
+                                    <i class="fab fa-facebook-f"></i>
+                                </a>
+                                <a target="_blank" href="https://twitter.com/PGDating">
+                                    <i class="fab fa-twitter"></i>
+                                </a>
+                                <a target="_blank" href="https://www.youtube.com/c/Datingpro/">
+                                    <i class="fab fa-youtube"></i>
+                                </a>
+                                <a target="_blank" href="https://www.instagram.com/pilotgroupnet/">
+                                    <i class="fab fa-instagram"></i>
+                                </a>
+                                <a target="_blank" href="https://www.linkedin.com/showcase/datingpro">
+                                    <i class="fab fa-linkedin-in"></i>
+                                </a>
+                            </div>
+                            <div class="pilot-search-block mobile container-fluid  hide">
+                                <form action="search" method="post">
+                                    <p>
+                                    </p>
+                                    <div class="input-group">
+                                        <input type="text" name="search" value="" class="form-control" placeholder="Search" style="color: #000;">
+                                        <span class="input-group-btn">
+                                            <button class="btn btn-primary" type="submit" data-target="#search-results" disabled="" data-toggle="modal" value="1"><i class="fa fa-search"></i></button>
+                                        </span>
+                                    </div>
+                                    <p></p>
+                                </form>
+                            </div>
+                            <hr>
+                        </div>
+                    </div>
+                </div>
+                <div class="main-top-right-menu btn-right-top">
+                    <a style="padding: 0 12px;" data-goal="request-tour" href="#">
+                        <span class="btn-main green">
+                            REQUEST A TOUR </span>
+                    </a>
+                </div>
+                <div class="social-links-right">
+                    <a target="_blank" href="https://www.facebook.com/DatingPro">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a target="_blank" href="https://twitter.com/PGDating">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <a target="_blank" href="https://www.youtube.com/c/Datingpro/">
+                        <i class="fab fa-youtube"></i>
+                    </a>
+                    <a target="_blank" href="https://www.instagram.com/pilotgroupnet/">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a target="_blank" href="https://www.linkedin.com/showcase/datingpro">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="demo-panel__expires"><span id="expired_trial" style="display: block;">You have {{ trial_expired }} days left of your trial</span></div>
+        </div>
+        <div class="product-menu" id="demo-product-menu" style="display: none;">
+            <div class="product-menu-scroll">
+                <div class="header-column col-xs-12">
+                    <a class="back-btn" id="product-menu-back">
+                        <i class="fa fa-caret-left"></i> Back
+                    </a>
+                    <a href="#" class="mobile-top-btn sandwich-button pull-right close" style="margin:0;"></a>
+                </div>
+                <div class="grey-column col-xs-12 col-sm-12 col-md-4 col-lg-3 hide">
+                    <div class="top-menu-products-label">
+                        Products
+                        {% if show_tours %}
+                         <a class="show-tours-mobile" href="{{ site_root }}start/index/tours/"> 
+                                Return back to tours page
+                            </a>
+                        {% endif %}
+                    </div>
+                    <div class="top-menu-products-item-right">
+                        <div>
+                            <a href="https://www.datingpro.com/dating-software/features/" target="_blank" onclick="try {
+                                ga('send', 'event', 'Demo Menu', 'Products', 'Dating Software');
+                            } catch (e) {
+                            }">
+                                Dating Software
+                            </a>
+                            <div class="description-label">
+                                100% ready dating site
+                            </div>
+                        </div>
+                        <div>
+                            <a href="https://www.datingpro.com/mobile-service/" target="_blank" onclick="try {
+                                ga('send', 'event', 'Demo Menu', 'Products', 'Mobile Dating');
+                            } catch (e) {
+                            }">
+                                Mobile Dating
+                            </a>
+                            <div class="description-label">
+                                Ready mobile dating apps with site
+                            </div>
+                        </div>
+                        <div>
+                            <a href="https://www.datingpro.com/enterprise/" target="_blank" onclick="try {
+                                ga('send', 'event', 'Demo Menu', 'Solutions', 'Dating Pro Enterprise');
+                            } catch (e) {
+                            }">
+                                Dating Pro Enterprise
+                            </a>
+                            <div class="description-label">
+                                Will earn you 3 times more than any other dating software
+                            </div>
+                        </div>
+                        <div>
+                            <a href="https://www.datingpro.com/dating-software/features-comparison/" target="_blank" onclick="try {
+                                ga('send', 'event', 'Demo Menu', 'Solutions', 'Compare');
+                            } catch (e) {
+                            }">
+                                Compare
+                            </a>
+                            <div class="description-label">
+                                Compare the packages and see what’s best for you
+                            </div>    
+                        </div>
+                    </div>
+                </div>
+                <div class="white-column col-xs-12 col-sm-12 {# col-md-8 col-lg-9 #}">
+                    <div class="top-menu-products-label center-menu">
+                        {% if show_tours %}
+                         <a class="show-tours-mobile" href="{{ site_root }}start/index/tours/"> 
+                                Return back to tours page
+                            </a>
+                        {% endif %}
+                    </div>
+                    <div class="product-block first">
+                        <div class="row on_mobile" style="padding-top: 15px;text-align: center;">
+                            <a style="padding: 0 20px;" data-goal="request-tour" href="#">
+                                <span class="btn-main green" style="">
+                                    REQUEST A TOUR </span>
+                            </a>
+                        </div>
+                        <div class="row on_mobile" style="padding-top: 8px;padding-bottom: 40px;text-align: center;">
+                            <div class="social-links-right">
+                                <a target="_blank" href="https://www.facebook.com/DatingPro">
+                                    <i class="fab fa-facebook-f"></i>
+                                </a>
+                                <a target="_blank" href="https://twitter.com/PGDating">
+                                    <i class="fab fa-twitter"></i>
+                                </a>
+                                <a target="_blank" href="https://www.youtube.com/c/Datingpro/">
+                                    <i class="fab fa-youtube"></i>
+                                </a>
+                                <a target="_blank" href="https://www.instagram.com/pilotgroupnet/">
+                                    <i class="fab fa-instagram"></i>
+                                </a>
+                                <a target="_blank" href="https://www.linkedin.com/showcase/datingpro">
+                                    <i class="fab fa-linkedin-in"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="product-blocks-wrapper">
+                            <div class="product-block" style="{# margin-left: 0px; #}">
+                                <div class="top-menu-products-label demo">DATING SITE DEMO</div>
+                                <div class="top-menu-products-item-right">
+                                    <a data-id="get_demo_user" data-theme="default" class="product-get-demo open-frame" onclick="
+                                    try {
+                                        ga('send', 'event', 'Demo Menu', 'User Demo', 'View your dating site');
+                                    } catch (e) {
+                                    }">
+                                        <img class="img-thumbnail" src="{{ site_root }}uploads/demo-panel/Layer-525.png" alt="Dating site demo by PG Dating Pro" onclick="
+                                    if ($('#demo_viewer_admin_mode').is(':visible')) {
+                                        $('#demo_viewer_admin_mode').trigger('click');
+                                    }
+                                    ">
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="product-block  ">
+                                <div class="top-menu-products-label demo long-title">iOS Demo</div>
+                                <div class="top-menu-products-item-right">
+                                    <a data-id="get_app_ios_link" class="product-get-demo link" onclick="try {
+                                        ga('send', 'event', 'Demo Menu', 'IOS Demos', 'iOS dating app');
+                                    } catch (e) {
+                                    }" href="https://demo.datingpro.com/requests/index.php?controller=ios&amp;action=ios_request&amp;code=" target="_blank">
+                                        <img class="img-thumbnail" src="{{ site_root }}uploads/demo-panel/ios_dating_app_v1.png" alt="iOS dating app demo by PG Dating Pro">
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="product-block  ">
+                                <div class="top-menu-products-label demo long-title">Android demo</div>
+                                <div class="top-menu-products-item-right">
+                                    <a data-id="get_app_android_link" class="product-get-demo link" onclick="try {
+                                        ga('send', 'event', 'Demo Menu', 'Android Demos', 'Android dating app');
+                                    } catch (e) {
+                                    }" href="https://demo.datingpro.com/requests/index.php?controller=android&amp;action=android_request&amp;code=" target="_blank">
+                                        <img class="img-thumbnail" src="{{ site_root }}uploads/demo-panel/android_dating_app_v1.png" alt="Android dating app demo by PG Dating Pro">
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="product-block  ">
+                                <div class="top-menu-products-label demo long-title">Android demo <br>with in-app billing</div>
+                                <div class="top-menu-products-item-right">
+                                    <a data-id="native_android_get_app" class="product-get-demo link" onclick="try {
+                                        ga('send', 'event', 'Demo Menu', 'Android Demos', 'Android dating app with in-app billing');
+                                    } catch (e) {
+                                    }" href="https://play.google.com/store/apps/details?id=pgdating.pilotgroup.datingpro" target="_blank">
+                                        <img class="img-thumbnail" src="{{ site_root }}uploads/demo-panel/android_dating_app_bill_v1.png" alt="Android dating app with in-app payments by PG Dating Pro">
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="product-block">
+                                <div class="top-menu-products-label demo long-title">Downloads</div>
+                                <div class="top-menu-products-item-right">             
+                                    <div><a id="trial_get" style="cursor:pointer;padding: 4px;" href="http://lighthouse.pilotgroup.net/trial/datingpro_core_trial.zip" onclick="try{ga('send','event','Demo Menu','Server Trial','Download free server trial');}catch(e){}">Download free server trial</a></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="white-column-body">
+                        <div class="product-blocks-wrapper">
+                        </div>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <div class="free-quote-block">
+                        <a href="https://www.datingpro.com/experts/" target="_blank" onclick="try {
+                            setCookie('hide_help_popup', 1);
+                            ga('send', 'event', 'Demo Menu', 'Products', 'Custom');
+                        } catch (e) {};">
+                            Get free quote for any sort of customization from Dating Pro experts
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="frame-wrapper" class="desktop">
+            <div id="frame-inner">
+                <div id="demo_viewer_mode">
+                    <span id="demo_viewer_admin_mode" style="{% if type == 'user' %}display: none;{% endif %}">Switch to user mode</span>
+                    <span id="demo_viewer_user_mode" style="{% if  type == 'admin' %}display: none;{% endif %};">Switch to admin mode</span>
+                    <div class="demo-loader-switcher">
+                            <span style="display: inline; margin: 0 0 0 10px;">Loading...</span>
+                            <div class="loadersmall"></div>
+                    </div>
+                </div>
+                <div id="request_tour_wrapper"></div>
+            </div>
+        </div>
+        <script>
+            window.addEventListener('message', function (event) {
+                if (event.data == 'market') {
+                    window.location.href = 'https://datingpro.com/dating-software/pricing';
+                }
+            }, false);
+            jQuery(function ($) {
+                $('#im_chat_btn').removeClass('hide');
+                if (!isFramed) {
+                    $('#frame-wrapper').show();
+                    $('#demo-panel-control').show();
+                    $('#demo-panel').show();
+                } else {
+                    $('.dashboard-visibility-btn').css('top', '57px');
+                }
+
+                $('body').find('[data-goal="request-tour"]').on('click', function (e) {
+                    if (typeof Intercom !== 'undefined') {
+                        Intercom('show');
+                    }
+                })
+            });
+            jQuery('.sandwich-button').bind('click', function (e) {
+                e.preventDefault();
+                e.stopPropagation();
+                if (jQuery('.product-menu').is(':visible')) {
+                    jQuery(this).removeClass('active');
+                } else {
+                    jQuery(this).addClass('active');
+                }
+                jQuery('#view_demos_desktop').trigger('click');
+            });
+            jQuery('#view_demos_desktop').bind('click', function (e) {
+                e.preventDefault();
+                e.stopPropagation();
+
+                if (jQuery('.product-menu').is(':visible')) {
+                    jQuery(this).removeClass('active');
+                    jQuery('.sandwich-button').removeClass('active');
+                    jQuery(this).find('.fa').removeClass('fa-caret-up').addClass('fa-caret-down');
+
+                    jQuery('.product-menu').hide();
+                    jQuery('#explore_menu').hide();
+                } else {
+                    jQuery(this).addClass('active');
+                    if (!jQuery('.sandwich-button').hasClass('active')) {
+                        jQuery('.sandwich-button').addClass('active');
+                    }
+                    jQuery(this).find('.fa').addClass('fa-caret-up').removeClass('fa-caret-down');
+
+                    jQuery('.product-menu').css('display', 'flex');
+                }
+            });
+            jQuery('#view_demos_mobile').bind('click', function (e) {
+                e.preventDefault();
+                e.stopPropagation();
+
+                if (jQuery('.product-menu').is(':visible')) {
+                    jQuery('.b-topnav').trigger('click');
+                } else {
+                    jQuery('#view-demo').trigger('click');
+                }
+            });
+            jQuery('#btn-collapse').bind('click', function (e) {
+                e.preventDefault();
+                jQuery('#demo-panel').hide();
+                $('#dashboard').css('top', '70px');
+                $('.dashboard-visibility-btn').css('top', '87px');
+                jQuery('#frame-wrapper').addClass('hide-panel');
+                jQuery('#btn-collapse').addClass('hidden');
+                jQuery('#btn-expand').removeClass('hidden');
+                if (jQuery('.product-menu').is(':visible')) {
+                    jQuery('.product-menu').hide();
+                }
+            });
+            jQuery('#btn-expand').bind('click', function (e) {
+                e.preventDefault();
+                $('#dashboard').css('top', '167px');
+                $('.dashboard-visibility-btn').css('top', '184px');
+                jQuery('#demo-panel').show();
+                jQuery('#frame-wrapper').removeClass('hide-panel');
+                jQuery('#btn-collapse').removeClass('hidden');
+                jQuery('#btn-expand').addClass('hidden');
+                if (jQuery('.sandwich-button').hasClass('active')) {
+                    jQuery('.product-menu').show();
+                }
+            });
+            jQuery(function ($) {
+                $('#demo_viewer_user_mode').bind('click', function (e) {
+                    e.preventDefault();
+                    localStorage.setItem('access_page', 'user');
+                    $('#demo_viewer_user_mode').hide();
+                    $('#demo_viewer_admin_mode').hide();
+                    window.stop();
+                    $('.demo-loader-switcher').show();
+                    document.location.href = site_url + 'admin';
+                });
+                $('#demo_viewer_admin_mode').bind('click', function (e) {
+                    e.preventDefault();
+                    localStorage.setItem('access_page', 'admin');
+                    $('#demo_viewer_admin_mode').hide();
+                    $('#demo_viewer_user_mode').hide();
+                    window.stop();
+                    $('.demo-loader-switcher').show();
+                    document.location.href = site_url;
+                });
+                $(document).scroll(function(e) {
+                    e.preventDefault();
+                    if (window.scrollY > 130) {
+                        $('.navbar.navbar-flatty').css('position', 'fixed');
+                        $('.mobile-top-menu').css('position', 'fixed');
+                        $('.mobile-top-menu').css('top', '46px');
+                        $('.product-menu').hide();
+                        $('.mobile-top-btn').removeClass('active');
+                    } else {
+                        $('.navbar.navbar-flatty').css('position', 'relative');
+                        $('.mobile-top-menu').css('position', 'relative');
+                        $('.mobile-top-menu').css('top', 'unset');
+                    }
+                })
+            });
+        </script>
+    {% endif %}
+        <!-- Intercom -->
+        <script>
+            window.intercomSettings = {
+                app_id: "fslaoeto"
+            };
+            (function(){
+                if (!isFramed) {
+                    var w=window;var ic=w.Intercom;if(typeof ic==="function"){ic('reattach_activator');ic('update',w.intercomSettings);}else{var d=document;var i=function(){i.c(arguments);};i.q=[];i.c=function(args){i.q.push(args);};w.Intercom=i;var l=function(){var s=d.createElement('script');s.type='text/javascript';s.async=true;s.src='https://widget.intercom.io/widget/fslaoeto';var x=d.getElementsByTagName('script')[0];x.parentNode.insertBefore(s,x);};if(w.attachEvent){w.attachEvent('onload',l);}else{w.addEventListener('load',l,false);}}
+                }
+            })();
+            </script>
+        <!-- END Intercom -->
+{% endif %}
+

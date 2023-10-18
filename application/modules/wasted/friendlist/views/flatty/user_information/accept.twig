@@ -1,0 +1,12 @@
+<div class="content-page">
+    <div class="ui-title">{% helper lang.l('friends', 'friendlist') %}</div>
+    <div class="ui-descr">
+        {% helper lang.l('field_usr_inf_description', 'friendlist') %}
+    </div>
+</div>
+{% for item in data %}
+    <div class="col-xs-12 content-page">
+        <div class="ui-title bb">{{ item.user.output_name }}</div>
+        <div>{{ item.date_add }}</div>
+    </div>
+{% endfor %}

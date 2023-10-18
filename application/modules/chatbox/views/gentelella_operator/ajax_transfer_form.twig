@@ -1,0 +1,19 @@
+{% if is_transfer_back_form %}
+    <div class="chatbox-transfer">
+        <div class="chatbox-transfer__header">
+            <h2>{% helper lang.l('header_transfer_back_to_operator', 'chatbox') %}</h2>
+        </div>
+        <div class="chatbox-transfer__body">
+            {% helper lang.l('text_transfer_back_to_operator', 'chatbox') %}
+        </div>
+    </div>
+{% else %}
+    <div class="chatbox-transfer">
+        <div class="chatbox-transfer__header">
+            <h2>{% helper lang.l('header_transfer_to_supervisor', 'chatbox') %}</h2>
+        </div>
+        <div class="chatbox-transfer__body">
+            {% helper lang.l('text_transfer_to_supervisor', 'chatbox') %}
+        </div>
+    </div>
+{% endif %}

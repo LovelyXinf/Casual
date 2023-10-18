@@ -1,0 +1,30 @@
+{% include '@app/header.twig' with {load_type: 'ui'} %}
+<div class="col-md-12 col-sm-12 col-xs-12">
+    <div class="x_panel">
+        <div role="tabpanel" data-example-id="togglable-tabs">
+            <ul id="myTab" class="nav nav-tabs bar_tabs" role="tablist">
+                {% for service in services %}
+                    <li class="{% if filter == service %}active{% endif %}">
+                        <a href="{{ site_url }}admin/marketing/index/{{ service }}"
+                            {% if service == 'google' %} onclick="{% helper start.setAnalytics('google_analytics', 'btn_google_analytics') %}" 
+                            {% elseif service == 'intercom' %} onclick="{% helper start.setAnalytics('intercom', 'btn_intercom') %}" 
+                            {% endif %}>
+                            {% helper lang.l('filter_'~service, 'intercom') %}
+                        </a>
+                    </li>
+                {% endfor %}
+            </ul>
+        </div>
+        <div class="x_content">{{ content }}</div>
+    </div>
+</div>
+{% helper utils.jscript('intercom', 'Marketing.js') %}
+<script type='text/javascript'>
+    $(function () {
+        new Marketing({
+            siteUrl: '{{ site_root }}',
+            load: '{{ filter }}'
+        });
+    });
+</script>
+{% include '@app/footer.twig' %}

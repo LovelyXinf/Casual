@@ -1,0 +1,95 @@
+{% helper is_module_installed = utils.depends('access_permissions', 'ratings', 'mailbox') %}
+<div class="magazine-profile__prename user-all-magazine-description">
+    {{ data.age }} {% helper lang.l('text_age', 'users') %}<span class="dot-splitter">•</span>
+    <span {% if is_owner %}class="pointer" data-change="location"{% endif %}>
+        <i class="fa fa-map-marker"></i>&nbsp;
+        {% if data.city %}
+            {{ data.location }}
+        {% else %}
+            {% if is_user_owner %}
+                {% helper lang.l('link_select_region', 'countries') %}
+            {% else %}
+                {% helper lang.l('location_not_specified', 'countries') %}    
+            {% endif %}
+        {% endif %}
+    </span>
+    <script>
+        $(function () {
+            loadScripts(
+                    ["{% helper utils.jscript('users', 'users-settings.js', 'path') %}"],
+                    function () {
+                        change_location = new usersSettings({
+                            siteUrl: site_url,
+                            langs: {
+                                link_select_region: '{% helper lang.l('link_select_region', 'countries') %}'
+                            }
+                        });
+                    },
+                    ['change_location'],
+                    {async: false}
+            );
+        });
+    </script>
+    {% if is_module_installed.ratings %}
+        <span class="dot-splitter">•</span>
+        {% if is_owner %}
+            <div class="view-rating-block">                   
+                <div class="get-rating">
+                    {% helper ratings.getRateItem({'object_id': data.id, 'type_gid': 'users_object', 'all_count': 1}) %}
+                    {{ rating_count }}
+                </div>
+                <div class="set-rating">
+                    {% helper my_mark = ratings.getMyMark({
+                            'id_object': data.id,
+                            'gid_type': 'users_object',
+                            'id_poster': user_session_data.user_id
+                        }) %}
+                </div>
+            </div>
+        {% else %}
+            <script>
+                $(function(){
+                    $('.form-rating').css('min-width', $('.empty-rating').width() + 'px');
+                    $('.set-rating').css('min-width', $('.empty-rating').width() + 'px');
+                });
+            </script>                
+            <div class="view-rating-block">                   
+                <div class="get-rating">
+                    {% helper ratings.getRateItem({'object_id': data.id, 'type_gid': 'users_object', 'all_count': 1}) %}
+                </div>
+                <div class="set-rating">
+                    {% helper my_mark = ratings.getMyMark({
+                            'id_object': data.id,
+                            'gid_type': 'users_object',
+                            'id_poster': user_session_data.user_id
+                        }) %}
+                    {% if my_mark > 0 %}                                    
+                        <div class="empty-rating set">
+                            <i class="fa fa-star"></i>
+                            <span class="top" data-rating="my_mark">{{ my_mark }}</span>
+                            <span class="bottom">{% helper lang.l('field_you', 'users') %}</span>
+                        </div>
+                    {% else %}
+                        <div class="empty-rating">
+                            <i class="fa fa-star-o"></i>
+                            <span class="top" data-rating="my_mark">{% helper lang.l('field_rate', 'ratings') %}</span>
+                            <span class="bottom"><span class="bottom_rate">{% helper lang.l('field_this', 'ratings') %}</span></span>
+                        </div>                        
+                    {% endif %}
+                    <div class="form-rating">
+                        {% helper ratings.sendRatingBlock({
+                            'object_id': data.id,
+                            'type_gid': 'users_object',
+                            'responder_id': data.id,
+                            'success': rating_callback,
+                            'is_owner': is_user_owner,
+                            'template': 'form'
+                        }) %}
+                    </div>
+                </div>
+            </div>
+        {% endif %}
+    {% endif %}
+</div>
+
+<h1 class="magazine-profile__name">{{ data.output_name }}</h1>

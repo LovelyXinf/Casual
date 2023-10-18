@@ -1,0 +1,32 @@
+<?php
+
+$install_lang["admin_header_configuration"] = "Configuratie";
+$install_lang["admin_header_preview"] = "Voorbeeld";
+$install_lang["admin_header_widget_code"] = "Kopieer en plak de code op een website";
+$install_lang["admin_header_widget_edit"] = "Bewerk widget";
+$install_lang["admin_header_widgets_install"] = "Schakel widgets in";
+$install_lang["admin_header_widgets_list"] = "Geinstalleerde widgets";
+$install_lang["btn_get_code"] = "Krijg code";
+$install_lang["colors_background"] = "Achtergrond";
+$install_lang["colors_block"] = "Auteursrecht";
+$install_lang["colors_border"] = "Grens";
+$install_lang["colors_header"] = "Hoofd";
+$install_lang["colors_link"] = "Links";
+$install_lang["colors_text"] = "Tekst";
+$install_lang["error_module_install"] = "De module is niet geinstalleerd";
+$install_lang["error_widget_invalid"] = "Pad naar widget is ongeldig";
+$install_lang["field_module"] = "Module";
+$install_lang["field_name"] = "Naam";
+$install_lang["field_widget_colors"] = "Kleuren";
+$install_lang["field_widget_footer"] = "Voettekst";
+$install_lang["field_widget_size"] = "Grootte";
+$install_lang["field_widget_title"] = "Titel";
+$install_lang["link_delete_widget"] = "Verwijder widget";
+$install_lang["link_edit_widget"] = "Bewerk widget";
+$install_lang["link_install_widget"] = "Installeer";
+$install_lang["no_widgets"] = "Geen widgets";
+$install_lang["no_widgets_install"] = "Geen widgets. <a href=\"https://www.datingpro.com/contact/\">Neem contact met ons op </a> voor meer informatie.";
+$install_lang["note_delete_widget"] = "Wil je de widget verwijderen?";
+$install_lang["success_widget_delete"] = "De widget is succesvol verwijderd";
+$install_lang["success_widget_install"] = "De widget is succesvol geinstalleerd";
+$install_lang["success_widget_update"] = "De widget is succevol bijgewerkt";

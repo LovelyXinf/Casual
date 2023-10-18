@@ -1,0 +1,512 @@
+<div class="chatbox-dialog__header">
+    <div class="chatbox-dialog__h-user">
+        <img class="chatbox-dialog__h-user-image" src="{{ contact.info.media.user_logo.thumbs.small }}" />
+        <span class="chatbox-dialog__h-user-name">
+            {{ contact.info.output_name }}
+        </span>
+        <span class="chatbox-dialog__h-user-status">
+            {% if contact.info.online_status %}
+                {% helper lang.l('status_online_1', 'users') %}
+            {% else %}
+                {% helper lang.l('text_user_last_active', 'chatbox') %}&nbsp;
+                {% helper date_format.tpl_date_format(contact.info.date_last_activity, date_format_st.date_time_literal) %}
+            {% endif %}
+        </span>
+    </div>
+    <div class="chatbox-dialog__h-note" title="{% helper lang.l('link_open_notes', 'chatbox', '', 'button') %}" data-click="open_notes">
+        <i class="fa fa-sticky-note"></i>
+        <span>{% helper lang.l('link_add_note', 'chatbox') %}</span>
+    </div>
+</div>
+<div class="chatbox-dialog__header-mobile">
+    <div class="chatbox-dialog__header-mobile-credits">
+        {% helper lang.l('field_credits', 'chatbox') %}:
+        <span>{{ contact.info.credits }}</span>
+    </div>
+    <div class="chatbox-dialog__header-mobile-buttons">
+        <button type="button" class="btn btn-green" data-action="view-my-info">{% helper lang.l('link_view_my_info', 'chatbox') %}</button>
+        <button type="button" class="btn btn-red" data-action="view-user-info">{% helper lang.l('link_view_user_info', 'chatbox') %}</button>
+        <button type="button" class="btn btn-primary c-mobile-hide" data-action="view-messages">{% helper lang.l('link_view_messages', 'chatbox') %}</button>
+    </div>
+</div>
+<div class="chatbox-dialog__body">
+    <div class="chatbox-dialog__userinfo chatbox-dialog__userinfo-current c-mobile-hide" id="chbx_my_info">
+        <div class="chatbox-dialog__userinfo-role {{ user.info.user_type }}">
+            {% helper lang.l('text_you', 'chatbox') %}
+        </div>
+        <div class="chatbox-dialog__userinfo-top">
+            <div class="media">
+                <img class="img-responsive" src="{{ user.info.media.user_logo.thumbs.small }}" alt="{{ user.info.output_name|e }}" width="60" />
+            </div>
+            <div class="media-body">
+                <div class="chatbox-dialog__userinfo-name">
+                    {{ user.info.output_name }}</a>{% if user.info.age %}, {{ user.info.age }}{% endif %}
+                </div>
+                {% if user.info.birth_date %}
+                    <div>
+                        {% helper date_format.tpl_date_format(user.info.birth_date, date_format_st.date_literal) %}
+                    </div>
+                {% endif %}
+                {% if user.info.location %}
+                    <div class="chatbox-dialog__userinfo-location">
+                        <i class="fa fa-map-marker"></i>
+                        {{ user.info.location }}
+                    </div>
+                {% endif %}
+                <div class="chatbox-dialog__userinfo-looking">
+                    {% helper lang.l('field_user_type_look', 'users') %} {{ user.info.looking_user_type_str }},
+                    {{ user.info.age_min }}-{{ user.info.age_max }} {% helper lang.l('text_age', 'users') %}
+                </div>
+            </div>
+        </div>
+        {% if user.info.images %}
+            <div class="chatbox-dialog__userinfo-images">
+                <div class="chatbox-dialog__userinfo-images-slider js-user-images">
+                    {% for image in user.info.images %}
+                        <div class="chatbox-dialog__userinfo-images-item" data-click="view-single-media" data-gallery-src="{{ image.media.mediafile.thumbs.grand }}" >
+                            <img src="{{ image.media.mediafile.thumbs.small }}" alt="{{ image.media.mediafile.photo_alt|e }}">
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+        {% endif %}
+        <div class="chatbox-dialog__userinfo-credits">
+            {% helper lang.l('field_credits', 'chatbox') %}:
+            <span>{{ user.info.credits }}</span>
+        </div>
+        <div class="chatbox-dialog__userinfo-sections">
+            {% for sgid,sdata in user.info.field_editor %}
+                {% if sgid != 'my-interests' %}
+                <div class="section-name" data-gid="{{ sgid }}">{{ sdata.name }}</div>
+                <div class="view-section">
+                    {% for gid,field in sdata.fields %}
+                        <div class="r">
+                            <div class="f">{{ field.name }}:</div>
+                            <div class="v">
+                                {% if field.field_type == 'select' %}
+                                    {% if field.value %}{{ field.value|nl2br }}{% endif %}
+                                {% elseif field.field_type == 'textarea' %}
+                                    {% if field.value %}{{ field.value|nl2br }}{% endif %}
+                                {% elseif field.field_type == 'text' %}
+                                    {% if field.value %}{{ field.value|nl2br }}{% endif %}
+                                {% elseif field.field_type == 'range' %}
+                                    {% if field.value %}{{ field.value }}{% endif %}
+                                {% elseif field.field_type == 'multiselect' %}
+                                    {% if field.value %}{{ field.value_str }}{% endif %}
+                                {% elseif field.field_type == 'checkbox' %}
+                                    {% if field.value %}
+                                        {% helper lang.l('option_checkbox_yes', 'start') %}
+                                    {% else %}
+                                        {% helper lang.l('option_checkbox_no', 'start') %}
+                                    {% endif %}
+                                {% endif %}
+                            </div>
+                        </div>
+                    {% else %}
+                        <div class="r">
+                            <div class="f">{% helper lang.l('no_information', 'start') %}</div>
+                        </div>
+                    {% endfor %}
+                </div>
+                {% endif %}
+            {% endfor %}
+        </div>
+        <div class="chatbox-dialog__userinfo-notes">
+            <div class="chatbox-dialog__userinfo-notes-title">
+                {% helper lang.l('header_last_notes', 'chatbox') %}
+            </div>
+            <div class="chatbox-dialog__userinfo-notes-items">
+                <ul>
+                    {% for note in notes_user %}
+                        <li>
+                            <div class="chatbox-dialog__userinfo-notes-category">
+                                {{ note.category_str }}
+                            </div>
+                            <div class="chatbox-dialog__userinfo-notes-date">
+                                {% helper date_format.tpl_date_format(note.date_added, date_format_st.date_time_literal) %}
+                            </div>
+                            <div class="chatbox-dialog__userinfo-notes-text">
+                                {{ note.message }}
+                            </div>
+                        </li>
+                    {% else %}
+                        <li>
+                            <div class="chatbox-dialog__userinfo-notes-empty">
+                                {% helper lang.l('no_notes', 'chatbox') %}
+                            </div>
+                        </li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+        <div class="chatbox-dialog__userinfo-sections">
+            {% for sgid,sdata in user.info.field_editor %}
+                {% if sgid == 'my-interests' %}
+                <div class="section-name" data-gid="{{ sgid }}">{{ sdata.name }}</div>
+                <div class="view-section">
+                    {% for gid,field in sdata.fields %}
+                        <div class="r">
+                            <div class="f">{{ field.name }}:</div>
+                            <div class="v">
+                                {% if field.field_type == 'select' %}
+                                    {% if field.value %}{{ field.value|nl2br }}{% endif %}
+                                {% elseif field.field_type == 'textarea' %}
+                                    {% if field.value %}{{ field.value|nl2br }}{% endif %}
+                                {% elseif field.field_type == 'text' %}
+                                    {% if field.value %}{{ field.value|nl2br }}{% endif %}
+                                {% elseif field.field_type == 'range' %}
+                                    {% if field.value %}{{ field.value }}{% endif %}
+                                {% elseif field.field_type == 'multiselect' %}
+                                    {% if field.value %}{{ field.value_str }}{% endif %}
+                                {% elseif field.field_type == 'checkbox' %}
+                                    {% if field.value %}
+                                        {% helper lang.l('option_checkbox_yes', 'start') %}
+                                    {% else %}
+                                        {% helper lang.l('option_checkbox_no', 'start') %}
+                                    {% endif %}
+                                {% endif %}
+                            </div>
+                        </div>
+                    {% else %}
+                        <div class="r">
+                            <div class="f">{% helper lang.l('no_information', 'start') %}</div>
+                        </div>
+                    {% endfor %}
+                </div>
+                {% endif %}
+            {% endfor %}
+        </div>
+    </div>
+    <div class="chatbox-dialog__main" id="chbx_main">
+        <div class="chatbox-dialog__chat-started">
+            {# {% helper lang.l('field_conversation_started_period_ago', 'chatbox', '', '', {'period': conversation_start_period}) %} #}
+            {% helper lang.l('field_conversation_started', 'chatbox') %}
+            {% helper date_format.tpl_date_format(first_message.date_added, date_format_st.date_time_literal) %}
+        </div>
+        <div class="chatbox-dialog__messages" gallery="contact_{{ contact.id }}">
+            <div class="chatbox-dialog__messages-empty" {% if messages is not empty %}style="display:none;"{% endif %}>{% helper lang.l('empty_messages', 'chatbox') %}</div>
+            <ul>
+                {% include 'messages.twig' %}
+            </ul>
+        </div>
+    </div>
+    <div class="chatbox-dialog__userinfo c-mobile-hide" id="chbx_user_info">
+        <div class="chatbox-dialog__userinfo-role {{ contact.info.user_type }}">
+            {% if contact.info.user_type == 'female' %}
+                {% helper lang.l('text_her', 'chatbox') %}
+            {% elseif contact.info.user_type == 'male' %}
+                {% helper lang.l('text_him', 'chatbox') %}
+            {% endif %}
+        </div>
+        <div class="chatbox-dialog__userinfo-top">
+            <div class="media">
+                <img class="img-responsive" src="{{ contact.info.media.user_logo.thumbs.small }}" alt="{{ contact.info.output_name|e }}" width="60" />
+            </div>
+            <div class="media-body">
+                <div class="chatbox-dialog__userinfo-name">
+                    {{ contact.info.output_name }}</a>{% if contact.info.age %}, {{ contact.info.age }}{% endif %}
+                </div>
+                {% if contact.info.birth_date %}
+                    <div>
+                        {% helper date_format.tpl_date_format(contact.info.birth_date, date_format_st.date_literal) %}
+                    </div>
+                {% endif %}
+                {% if contact.info.location %}
+                    <div class="chatbox-dialog__userinfo-location">
+                        <i class="fa fa-map-marker"></i>
+                        {{ contact.info.location }}
+                    </div>
+                {% endif %}
+                <div class="chatbox-dialog__userinfo-looking">
+                    {% helper lang.l('field_user_type_look', 'users') %} {{ contact.info.looking_user_type_str }},
+                    {{ contact.info.age_min }}-{{ contact.info.age_max }} {% helper lang.l('text_age', 'users') %}
+                </div>
+            </div>
+        </div>
+        {% if contact.info.images %}
+            <div class="chatbox-dialog__userinfo-images">
+                <div class="chatbox-dialog__userinfo-images-slider js-user-images">
+                    {% for image in contact.info.images %}
+                        <div class="chatbox-dialog__userinfo-images-item" data-click="view-single-media" data-gallery-src="{{ image.media.mediafile.thumbs.grand }}" >
+                            <img src="{{ image.media.mediafile.thumbs.small }}" alt="{{ image.media.mediafile.photo_alt|e }}">
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+        {% endif %}
+        <div class="chatbox-dialog__userinfo-credits">
+            {% helper lang.l('field_credits', 'chatbox') %}:
+            <span>{{ contact.info.credits }}</span>
+        </div>
+        <div class="chatbox-dialog__userinfo-sections">
+            {% for sgid,sdata in contact.info.field_editor %}
+                {% if sgid != 'my-interests' %}
+                <div class="section-name" data-gid="{{ sgid }}">{{ sdata.name }}</div>
+                <div class="view-section">
+                    {% for gid,field in sdata.fields %}
+                        <div class="r">
+                            <div class="f">{{ field.name }}:</div>
+                            <div class="v">
+                                {% if field.field_type == 'select' %}
+                                    {% if field.value %}{{ field.value|nl2br }}{% endif %}
+                                {% elseif field.field_type == 'textarea' %}
+                                    {% if field.value %}{{ field.value|nl2br }}{% endif %}
+                                {% elseif field.field_type == 'text' %}
+                                    {% if field.value %}{{ field.value|nl2br }}{% endif %}
+                                {% elseif field.field_type == 'range' %}
+                                    {% if field.value %}{{ field.value }}{% endif %}
+                                {% elseif field.field_type == 'multiselect' %}
+                                    {% if field.value %}{{ field.value_str }}{% endif %}
+                                {% elseif field.field_type == 'checkbox' %}
+                                    {% if field.value %}
+                                        {% helper lang.l('option_checkbox_yes', 'start') %}
+                                    {% else %}
+                                        {% helper lang.l('option_checkbox_no', 'start') %}
+                                    {% endif %}
+                                {% endif %}
+                            </div>
+                        </div>
+                    {% else %}
+                        <div class="r">
+                            <div class="f">{% helper lang.l('no_information', 'start') %}</div>
+                        </div>
+                    {% endfor %}
+                </div>
+                {% endif %}
+            {% endfor %}
+        </div>
+        <div class="chatbox-dialog__userinfo-notes">
+            <div class="chatbox-dialog__userinfo-notes-title">
+                {% helper lang.l('header_last_notes', 'chatbox') %}
+            </div>
+            <div class="chatbox-dialog__userinfo-notes-items">
+                <ul>
+                    {% for note in notes_contact %}
+                        <li>
+                            <div class="chatbox-dialog__userinfo-notes-category">
+                                {{ note.category_str }}
+                            </div>
+                            <div class="chatbox-dialog__userinfo-notes-date">
+                                {% helper date_format.tpl_date_format(note.date_added, date_format_st.date_time_literal) %}
+                            </div>
+                            <div class="chatbox-dialog__userinfo-notes-text">
+                                {{ note.message }}
+                            </div>
+                        </li>
+                    {% else %}
+                        <li>
+                            <div class="chatbox-dialog__userinfo-notes-empty">
+                                {% helper lang.l('no_notes', 'chatbox') %}
+                            </div>
+                        </li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+        <div class="chatbox-dialog__userinfo-sections">
+            {% for sgid,sdata in contact.info.field_editor %}
+                {% if sgid == 'my-interests' %}
+                <div class="section-name" data-gid="{{ sgid }}">{{ sdata.name }}</div>
+                <div class="view-section">
+                    {% for gid,field in sdata.fields %}
+                        <div class="r">
+                            <div class="f">{{ field.name }}:</div>
+                            <div class="v">
+                                {% if field.field_type == 'select' %}
+                                    {% if field.value %}{{ field.value|nl2br }}{% endif %}
+                                {% elseif field.field_type == 'textarea' %}
+                                    {% if field.value %}{{ field.value|nl2br }}{% endif %}
+                                {% elseif field.field_type == 'text' %}
+                                    {% if field.value %}{{ field.value|nl2br }}{% endif %}
+                                {% elseif field.field_type == 'range' %}
+                                    {% if field.value %}{{ field.value }}{% endif %}
+                                {% elseif field.field_type == 'multiselect' %}
+                                    {% if field.value %}{{ field.value_str }}{% endif %}
+                                {% elseif field.field_type == 'checkbox' %}
+                                    {% if field.value %}
+                                        {% helper lang.l('option_checkbox_yes', 'start') %}
+                                    {% else %}
+                                        {% helper lang.l('option_checkbox_no', 'start') %}
+                                    {% endif %}
+                                {% endif %}
+                            </div>
+                        </div>
+                    {% else %}
+                        <div class="r">
+                            <div class="f">{% helper lang.l('no_information', 'start') %}</div>
+                        </div>
+                    {% endfor %}
+                </div>
+                {% endif %}
+            {% endfor %}
+        </div>
+    </div>
+</div>
+<div class="chatbox-dialog__footer">
+    <form id="chatbox_message_form" onsubmit="javascript: return false;" method="post" enctype="multipart/form-data" name="chatbox_message_form">
+        <input type="hidden" name="id" value="0" />
+        <input type="hidden" name="user_id" value="{{ user.id }}" />
+        <input type="hidden" name="contact_id" value="{{ contact.id }}" />
+        <div class="chatbox-dialog__footer-top">
+            <div class="chatbox-dialog__footer-queue" id="chb_queue">
+                {% helper lang.l('field_messages_in_queue', 'chatbox') %}:
+                <span>0</span>
+            </div>
+            <div class="chatbox-dialog__footer-timer" id="chb_timer">
+                <span>0:00</span>
+                {% helper lang.l('text_minutes_left', 'chatbox') %}
+            </div>
+        </div>
+        <div class="chatbox-dialog__footer-msgbox">
+            <textarea class="form-control" name="message" placeholder="{% helper lang.l('placeholder_enter_message', 'chatbox') %}" id="chb_message" data-emojiable="true" autofocus="true"></textarea>
+        </div>
+        <div class="chatbox-attaches-block" id="chb_attaches">
+            <ul class="clearfix"></ul>
+        </div>
+        {# {% if use_attach %}
+            <div class="chatbox-attaches-block" id="chb_attaches">
+                <div id="dnd_upload" class="drag">
+                    <div id="chatbox_attachbox" class="drag-area">
+                        <div class="drag">
+                            <p>{% helper lang.l('text_drag_files', 'chatbox') %}</p>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <div class="upload-btn">
+                        <span data-role="filebutton">
+                            <s>{% helper lang.l('btn_choose_file', 'start') %}</s>
+                            <input type="file" name="attach" id="chatbox_attach" multiple />
+                        </span>
+                        {% if attach_settings.max_size > 0 %}&nbsp;({% helper lang.l('max', 'start') %} {% helper utils.bytesFormat(attach_settings.max_size) %}){% endif %}
+                    </div>
+                    &nbsp;<span id="attach-input-error"></span>
+                    <div id="attach-input-warning"></div>
+                </div>
+            </div>
+        {% endif %} #}
+
+        <div class="chatbox-dialog__footer-actions clearfix">
+            <button type="button" class="btn btn-green" id="chb_send_msg_btn" data-click="send_message">{% helper lang.l('button_send_message', 'chatbox') %}</button>
+            <button type="button" class="btn btn-red" data-click="show_attach_form">
+                {% helper lang.l('btn_show_attach_form', 'chatbox') %}
+            </button>
+            {# {% if use_attach %}
+                <button class="btn btn-primary" onclick="$('#chb_attaches').stop().slideToggle(); return false;">
+                    {% helper lang.l('btn_show_attach_form', 'chatbox') %}
+                </button>
+            {% endif %} #}
+            {% if available_chat_actions.kisses %}
+                <button type="button" class="btn btn-default" data-action="kisses-form">
+                    {% helper lang.l('btn_kisses', 'chatbox') %}
+                </button>
+            {% endif %}
+            {% if available_chat_actions.like_me %}
+                <button type="button" class="btn btn-default" data-action="like-me">
+                    {% helper lang.l('btn_like_me', 'chatbox') %}
+                </button>
+            {% endif %}
+            {% if available_chat_actions.winks %}
+                <button type="button" class="btn btn-default" data-action="wink">
+                    {% helper lang.l('btn_wink', 'chatbox') %}
+                </button>
+            {% endif %}
+
+            <div class="chatbox-dialog__chars">
+                <div class="chatbox-dialog__chars-written" id="chb_chars_written">
+                    {% helper lang.l('field_chars_written', 'chatbox') %}
+                    <span>0</span>
+                </div>
+                <div class="chatbox-dialog__chars-min" id="chb_min_chars">
+                    {% helper lang.l('field_min_chars', 'chatbox') %}
+                    <span></span>
+                </div>
+                <div class="chatbox-dialog__chars-max" id="chb_max_chars">
+                    {% helper lang.l('field_max_chars', 'chatbox') %}
+                    <span></span>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+
+{# {% helper utils.jscript('', 'uploader.js') %}
+<script type="text/javascript">
+    var allowed_mimes = {{ attach_settings.allowed_mimes|json_encode() }};
+    $(function () {
+        chatboxUpload = new uploader({
+            siteUrl: site_url,
+            uploadUrl: 'operator/chatbox/post_upload',
+            zoneId: 'chatbox_attachbox',
+            fileId: 'chatbox_attach',
+            formId: 'chatbox_message_form',
+            sendType: 'file',
+            sendId: 'chb_send_msg_btn',
+            filebarId: 'filebar',
+            messageId: 'attach-input-error',
+            warningId: 'attach-input-warning',
+            maxFileSize: '{{ attach_settings.max_size }}',
+            mimeType: allowed_mimes,
+            allowEmptyFile: true,
+            isChat: true,
+            cbOnSend: function (resp) {
+                if (typeof window.chatbox.properties.emojiPicker !== 'undefined') {
+                    $('.emoji-wysiwyg-editor').find('img').each(function(){
+                        var alt = $(this).attr('alt');
+                        $(this).replaceWith(alt);
+                    });
+                    let message = $('.emoji-wysiwyg-editor').html();
+                    message = window.chatbox.getMessageText(message);
+                    $('#' + window.chatbox.properties.elementsDOM.messageTextarea).val(message);
+                }
+                if (resp == true) {
+                    chatboxUpload.sendNoFileApi();
+                } else {
+                    chatboxUpload.send();
+                }
+            },
+            cbOnComplete: function(resp) {
+                window.chatbox.properties.uploaded = true;
+                if (resp.message_id) {
+                    $('#chatbox_message_form').find('input[name="id"]').val(resp.message_id);
+                }
+            },
+            cbOnQueueComplete: function(resp) {
+                $('#chatbox_message_form').find('input[name="id"]').val('0');
+                if (!window.chatbox.properties.uploaded) {
+                    window.chatbox.sendMessage();
+                } else {
+                    $('#' + window.chatbox.properties.elementsDOM.messageTextarea).val('');
+                    $('#' + window.chatbox.properties.elementsDOM.messageTextarea).css('height', 'auto');
+                    if(typeof window.chatbox.properties.emojiPicker !== 'undefined') {
+                        window.chatbox.properties.emojiPicker.clearTextarea('.emoji-wysiwyg-editor');
+                    }
+                    $('#' + window.chatbox.properties.elementsDOM.messageTextarea).parent().find('.emoji-wysiwyg-editor').css('height', 'auto');
+
+                    window.chatbox.getMessages();
+                }
+
+                $('#chb_attaches').stop().slideUp();
+                window.chatbox.properties.uploaded = false;
+                return false;
+            },
+            cbOnError: function(resp) {
+                if (resp.errors.length){
+                    error_object.show_error_block(resp.errors, 'error');
+                }
+            },
+            cbOnProcessError: function(resp) {
+                error_object.show_error_block(resp, 'error');
+            },
+            createThumb: true,
+            thumbWidth: 60,
+            thumbHeight: 60,
+            thumbCrop: true,
+            thumbJpeg: false,
+            thumbBg: 'transparent',
+            fileListInZone: true,
+            filebarHeight: 200,
+            jqueryFormPluginUrl: "{% helper utils.jscript('', 'jquery.form.min.js', 'path') %}",
+        });
+    });
+</script> #}

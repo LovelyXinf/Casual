@@ -1,0 +1,66 @@
+<div class="content-block load_content">
+    <h1>
+        {% helper lang.l('header_kisses_form', 'chatbox') %}
+    </h1>
+    <form id="kisses_form" method="post" role="form" onsubmit="javascript:return false;">
+        <div>
+            {% helper lang.l('kisses_annotation', 'chatbox') %}
+        </div>
+        <div class="scroll_f_kiss">
+            <ul class="list-inline">
+                {% for kiss in kisses %}
+                    <li>
+                        <label for="kiss-{{ kiss.id }}">
+                            <input type="radio" value="{{ kiss.id }}" id="kiss-{{ kiss.id }}" name="kiss" />
+                            <img src="{{ kiss.media.thumbs.kisses }}" alt="{{ kiss.id }}" />
+                        </label>
+                    </li>
+                {% endfor %}
+            </ul>
+        </div>
+        <div class="message-kiss">
+            <div>
+                {% helper lang.l('kisses_message', 'chatbox') %}
+            </div>
+            <div class="form-group">
+                <textarea name="message" id="kisses_message" maxlength="{{ maxlength }}" row="5" cols="50" class="form-control"></textarea>
+            </div>
+        </div>
+        <button type="button" class="btn btn-primary" value="1" data-action="kisses">
+            {% helper lang.l('btn_send', 'start') %}
+        </button>
+        <div id="kisses_symbols" class="pull-right">{{ maxlength }}</div>
+    </form>
+</div>
+<script>
+    $(function () {
+        $('#kisses_form li').off('click').on("click", function () {
+            $("#kisses_form li").removeClass("selected");
+            $(this).addClass("selected");
+        });
+
+        $('#kisses_form li img').off('click').on('click', function () {
+            $("#" + $(this).parents("label").attr("for")).click();
+        });
+
+        var maxLength = $('#kisses_message').attr('maxlength');
+        $('#kisses_message').off('keyup').keyup(function () {
+            var curLength = $('#kisses_message').val().length;
+            $(this).val($(this).val().substr(0, maxLength));
+
+            var remaning = maxLength - curLength;
+
+            if (remaning < 0) {
+                remaning = 0;
+            }
+
+            $('#kisses_symbols').html(remaning);
+
+            if (remaning < 10) {
+                $('#kisses_symbols').addClass('warning');
+            } else {
+                $('#kisses_symbols').removeClass('warning');
+            }
+        });
+    });
+</script>

@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta content="PG Dating Pro | Online dating and personals. Welcome to Dating Pro Professional service for Online Dating and Networking. Thousands of members join our community from all over the world." name="Description">
+    <meta content="dating, dating site" name="Keywords">
+	<!-- path settings -->
+	<base href="http://192.168.5.93/bonatea/"></base>
+    <script>
+        var siteUrl = 'http://192.168.5.93/';
+    </script>
+
+    <title>Index page</title>
+    
+    <link type="text/css" rel="stylesheet" href="styles/bootstrap.min.css" media="all"> 
+    
+	<link type="text/css" rel="stylesheet" href="styles/font-awesome.css" media="all">
+    <link type="text/css" rel="stylesheet" href="styles/style.css" media="all">
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script src="js/bootstrap/jquery-ui.min.js"></script>
+    <script src="js/twig.js/twig.js"></script>
+    <script src="js/pgapi/pgapi.js"></script>
+    
+    <script>
+        var langs = ["en", "ru"];
+    </script>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+</head>
+<body>
+    <header class="container-fluid containerHeader">
+        <section class="row mb20pt">
+            <div class="col-md-12">
+                   <h3 data-bind="logo" class="logo_title"></h3>      
+			</div>	
+        </section>
+		<section class="row ml30px">
+            <nav class="navbar navbar-default upperRefs">
+                <div class="container-fluid">
+                    <div class="navbar-header floatLeft">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbarCollapsed">
+                        <span class="sr-only"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                      </button>
+
+                </div>
+                <div class="collapse navbar-collapse floatLeft" id="navbarCollapsed">
+                    <ul class="nav navbar-nav navbar-left" id="leftNavbar">
+                        <li>
+                            <a href="#" data-bind="home"></a>
+                        </li>
+                        <li>
+                            <a href="../../../content/view/about_us" data-bind="how_it_works"></a>
+                        </li>
+                        <li>
+                            <a href="../../../users/search" data-bind="top_travellers"></a>
+                        </li>
+                        <li>
+                            <a href="../../../media/index" data-bind="photos"></a>
+                        </li>
+                        
+                    </ul>
+                </div>
+                <div class="notCollapsed">
+                     <ul class="nav navbar-nav navbar-right">
+                        
+                        <li>
+                            <a href="../../../users/login_form" data-bind="header_login"></a>
+                        </li>
+                        <li>
+                            <a href="../../../users/registration" data-bind="registration"></a>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+            </nav>
+		</section>
+	</header>
+    
+    <main class="container-fluid">
+        <div class="row">
+            <div id="green-field" class="col-md-6 col-sm-6 greenBg likeTable">
+                <div class="inner txt">
+                    
+            			<h2 data-bind="find_partner"></h2>
+                        <p class="whiteP" data-bind="find_partner_text"></p>
+                            
+                                <a class="registrHref" href="../../../users/registration"> 
+                                    <button class="btn registrBtn" data-bind="signup"></button>
+                                </a>
+                          
+                    
+                </div>
+            </div>
+            
+            <div id="picture-field" class="col-md-6 col-sm-6  noPadding">
+                
+                <div class="row noMargin">
+                    <div class="col-md-6 col-sm-6 col-xs-6 text-center noPadding likeTable textField">
+                        <div class="inner">
+                            
+                                <p data-bind="clean_conversation"></p>
+                           
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-sm-6 col-xs-6 text-center noPadding responsivePicture">
+                        <img src="images/cells-2.jpg" alt="" class="img-responsive">
+						<figcaption></figcaption>
+                    </div>
+                </div>
+    			<div class="row noMargin">
+                    <div class="col-md-6 col-sm-6 col-xs-6 text-center noPadding responsivePicture">
+                        <img src="images/cells-3.jpg" alt="" class="img-responsive">
+						<figcaption></figcaption>
+                    </div>
+                    <div class="col-md-6 col-sm-6 col-xs-6 text-center noPadding likeTable textField" >
+                        <div class="inner">
+                            <p data-bind="travel_companions"></p>
+                        </div>
+      
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row addDeviders">
+        <section class="col-md-6 col-sm-12 addDevidersToCols1">
+			<h3 class="mobileApps" data-bind="mobile_apps"></h3>
+            <ul class="list-inline">
+                <li>
+                    <img src="images/android.png" alt="">
+                </li>
+                <li>
+                    <img src="images/ios.png" alt="">
+                </li>
+                <li>
+                    <a class=" href" href="../../../m/" data-bind="mobile_version"></a>
+                </li>
+            </ul>
+        </section>
+        
+        <section class="col-md-6 col-sm-12 addDevidersToCols2">
+			<h3 class="mobileApps h3mobApps" data-bind="partnership"></h3>
+            <p data-bind="partnership_text" class="partnership"></p>
+        </section>
+    </div>
+
+
+    </main>
+    <footer class="container-fluid">
+        <div class="row rlPadds footerTxt">
+
+        
+
+		<section id="footer-list" class="col-md-5 noPadds">
+            <ul class="transUp">
+                <li class="col-md-3 ">
+                    <a href="../../../site_map/index/" data-bind="footer_site_map"></a>
+                </li>
+                <li class="col-md-3 ">
+                    <a href="../../../contact_us/index/" data-bind="footer_contact_us"></a>
+                </li>	
+                <li class="col-md-3 ">
+                    <a href="../../../content/view/about_us" data-bind="header_about_us"></a>
+                </li>
+                <li class="col-md-3 ">
+                    <a href="../../../m/" data-bind="mobile_version"></a>
+                </li>	
+            </ul>
+        </section>
+        
+        <section class="col-md-2 col-sm-5 text-center noPadds" id="languages">
+            <!-- languages block -->
+			<script>
+                twig({
+                    id: "languages",
+                    href: "templates/languages.twig",
+                    async: false
+                });
+                            
+                var languagesHTML = twig({ref: "languages"}).render({'languages': langs});
+                document.getElementById("languages").innerHTML = languagesHTML;
+            </script>
+        </section>
+
+        
+        <section id="copyright" class="col-md-3 col-md-offset-2 col-sm-7 copyright text-center ">
+		&copy; 2010 - 2015 <a href="http://www.pilotgroup.net">PilotGroup.NET</a> Powered by <a href="http://www.datingpro.com/">PG Dating Pro</a>
+        </section>
+    </div>
+    </footer>
+	
+    <script src="js/bootstrap/bootstrap.min.js"></script>
+    <script> 
+        var globalize = {};
+         
+        for (var i in langs) {
+            globalize[langs[i]] = {};
+        }
+        
+        $.when.apply($, $.map(langs, function(lang){
+            return $.get( "langs/" + lang + ".json" );
+        })).then(function() {
+            if (langs.length > 1) {
+                [].slice.apply(arguments, [0]).map(function(result, index) {
+                    globalize[langs[index]].messages = result[0];
+                }); 
+            } else {
+                globalize[langs[0]].messages = arguments[0];
+            }
+        }).then(function() {
+            $('[data-bind]').each(function () {
+                $(this).html(globalize["en"].messages[$(this).data("bind")]);
+            });
+        });     
+        
+        $('#language-menu .dropdown-menu li').click(function(){
+            var lang_id = $(this).data('id')
+            var lang_code = $(this).data('code')
+            
+            $('[data-bind]').each(function () {
+                $(this).html(globalize[lang_code].messages[$(this).data("bind")]);
+            });
+            
+            $('#current_language').html($(this).html());
+            
+            $.get(siteUrl + 'users/change_language/' + lang_id);
+        });
+        
+        if ('object' !== typeof window.JSON) {
+            var script = document.createElement('script');
+            script.src = '//cdnjs.cloudflare.com/ajax/libs/json3/3.3.2/json3.min.js';
+            document.body.appendChild(script);
+        }
+
+       
+       //var controlBlockHeight = function(){
+        //if ($(window).width() > 768){
+
+       // $("#green-field").css("height", $("#green-field").next().height());
+        
+        
+
+        function detectBrowserSize() {
+        var myWidth = 0;
+        if (typeof (window.innerWidth) == 'number') {
+            //Non-IE
+            myWidth = window.innerWidth;
+        } else if (document.documentElement && document.documentElement.clientWidth) {
+            //IE 6+ in 'standards compliant mode'
+            myWidth = document.documentElement.clientWidth;
+        } else if (document.body && document.body.clientWidth) {
+            //IE 4 compatible
+            myWidth = document.body.clientWidth;
+        }
+        return myWidth;
+    }
+
+        $(window).ready(function(){
+            var mWidth = detectBrowserSize();
+            //console.log(mWidth);
+            if (mWidth > 768){
+                
+                 $("#languages").insertBefore("#copyright");
+               
+               $("#green-field").removeAttr("style");
+                var pictureFieldHeight = $("#picture-field").height();
+                //console.log(pictureFieldHeight);
+                $("#green-field").css("height", pictureFieldHeight);
+                //console.log($("#green-field").height());
+               
+            }
+            else
+                {
+                    $("#green-field").removeAttr("style").css("padding","30px");
+                    $("#languages").insertBefore("#footer-list");
+                }
+
+            
+        
+        $(window).resize(function(){
+            var mWidth = detectBrowserSize();
+            console.log(mWidth);
+            if (mWidth > 768){
+                
+                $("#languages").insertBefore("#copyright");
+                $("#green-field").removeAttr("style");
+                var pictureFieldHeight = $("#picture-field").height();
+                //console.log(pictureFieldHeight);
+                //if (pictureFieldHeight>$("#green-field").height())
+                    $("#green-field").css("height", pictureFieldHeight);
+                    //console.log($("#green-field").height());
+               
+            }
+            else
+                {
+                    $("#green-field").removeAttr("style").css("padding","30px");
+                    $("#languages").insertBefore("#footer-list");
+                   
+                }
+            
+            var blockHeight = $(".responsivePicture").height();
+            $(".textField").css("height", blockHeight);
+
+        });
+
+        var blockHeight = $(".responsivePicture").height();
+            $(".textField").css("height", blockHeight);
+         })
+
+    //}
+        //else $(window).unbind('resize');
+
+        //}
+        //controlBlockHeight();
+       //$(window).resize(controlBlockHeight);
+    </script>
+</body>
+</html>

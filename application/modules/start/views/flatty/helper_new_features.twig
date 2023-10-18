@@ -1,0 +1,39 @@
+{% if new_features_page %} 
+    <link href="{{ features_url }}css/main.css" rel="stylesheet" type="text/css"> 
+    <link href="{{ features_url }}css/intercom.css" rel="stylesheet" type="text/css">
+    
+    <script type="text/javascript">
+        $(function(){
+            $.ajax({
+                method: "GET",
+                url: "{{ features_url }}index.php?page={{ new_features_page }}",
+                cache: false,
+                crossDomain: true,
+                dataType: 'json',
+                success: function (data) {
+                    if(data) {
+                        if(data['css']) {
+                            $.each(data['css'], function( index, css ) {
+                                $('head').append( $('<link rel="stylesheet" type="text/css" />').attr('href', '{{ features_url }}' + 'css/' + css) );
+                            });
+                        }
+                        if(data.length == 0) {
+                            data['page'] = '{{ orig_page }}';
+                        }
+                        loadScripts(
+                            ["{{ features_url }}features.js"],
+                            function () {
+                                featuresSearch = new newFeaturesSearch({                          
+                                    upload_link: '{{ features_url }}',
+                                    features_page: data['page'],
+                                    id_badges: data['content'],
+                                    is_first_actions: {{show_blue_tips}}
+                                });
+                            }
+                        );  
+                    }
+                }
+            });
+        });
+    </script>
+{% endif %}
